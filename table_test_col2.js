@@ -97,7 +97,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' colspan='15'></th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
-    generatedHTML += `<th class='table-header' colspan='2'></th>`;
+    generatedHTML += `<th class='table-header' colspan='1'></th>`;
     generatedHTML += `<th class='table-header' colspan='6'>Direct exposures</th>`;
     generatedHTML += `<th class='table-header' colspan='6'>Indirect exposures</th>`;
     generatedHTML += "</tr>";
@@ -113,20 +113,20 @@ looker.plugins.visualizations.add({
 
 
     // First row is the header
-//     generatedHTML += "<tr class='table-header'>";
-//     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-//       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
-//     }
-//     generatedHTML += "</tr>";
+    generatedHTML += "<tr class='table-header'>";
+    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+      generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
+    }
+    generatedHTML += "</tr>";
 
-//     // Next rows are the data
-//     for (row of data) {
-//       generatedHTML += "<tr class='table-row'>";
-//       for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-//         generatedHTML += `<td class='table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
-//       }
-//       generatedHTML += "</tr>";
-//     }
+    // Next rows are the data
+    for (row of data) {
+      generatedHTML += "<tr class='table-row'>";
+      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+        generatedHTML += `<td class='table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
+      }
+      generatedHTML += "</tr>";
+    }
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
