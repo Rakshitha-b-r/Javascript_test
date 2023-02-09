@@ -10,9 +10,19 @@ looker.plugins.visualizations.add({
       label: "Font Size (px)",
       default: 11
     },
-    merge_cell: {
+    merge_cell_from: {
       type: "number",
-      label: "Merge Cell",
+      label: "Merge Cell From",
+      default: 0
+    },
+    merge_cell_to: {
+      type: "number",
+      label: "Merge Cell To",
+      default: 0
+    },
+    merge_row_no: {
+      type: "number",
+      label: "Merge row no",
       default: 0
     }
   },
@@ -112,16 +122,9 @@ looker.plugins.visualizations.add({
     var table = d3.select("#looker_table");
 
     // Define the row and column numbers to be merged
-    var rowNum = 3;
-    var colNum = 1;
-
-    // Merge the cells
-table.selectAll("tr")
-  .filter(function(d, i) { return i === rowNum; })
-  .selectAll("td")
-  .filter(function(d, i) { return i === colNum; })
-  .attr("colspan", 2)
-  .next().remove();
+    var rowNum = ${config.merge_row_no};
+    var colNumFrom = ${config.merge_cell_from};
+    var colNumTo = ${config.merge_cell_to};
 
     done();
   }
