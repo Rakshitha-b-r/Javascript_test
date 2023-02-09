@@ -77,6 +77,10 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+         .table-row {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
       </style>
     `;
     generatedHTML += "<table class='table'>";
