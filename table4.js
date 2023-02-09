@@ -108,10 +108,6 @@ looker.plugins.visualizations.add({
             }
         }
             generatedHTML += '</tr>';
-      // Next columns are the data
-      for (field of queryResponse.fields[row_type]){
-            
-      }
     }
     generatedHTML += '</table>';
 
