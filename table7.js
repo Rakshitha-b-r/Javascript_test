@@ -19,14 +19,20 @@ looker.plugins.visualizations.add({
       <style>
         .table {
           font-size: ${config.font_size}px;
+          border: 1px solid black;
+          border-collapse: collapse;
         }
         .table-header {
           font-weight: bold;
           background-color: #eee;
+          border: 1px solid black;
+          border-collapse: collapse;
         }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
+          border: 1px solid black;
+          border-collapse: collapse;
         }
       </style>
     `;
@@ -56,14 +62,20 @@ looker.plugins.visualizations.add({
       <style>
         .table {
           font-size: ${config.font_size}px;
+          border: 1px solid black;
+          border-collapse: collapse;
         }
         .table-header {
           font-weight: bold;
           background-color: #eee;
+          border: 1px solid black;
+          border-collapse: collapse;
         }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
+          border: 1px solid black;
+          border-collapse: collapse;
         }
       </style>
     `;
