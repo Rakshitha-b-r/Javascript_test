@@ -9,6 +9,11 @@ looker.plugins.visualizations.add({
       type: "number",
       label: "Font Size (px)",
       default: 11
+    },
+    merge_cell: {
+      type: "number",
+      label: "Merge Cell",
+      default: 0
     }
   },
   // Set up the initial state of the visualization
@@ -103,6 +108,21 @@ looker.plugins.visualizations.add({
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
+    // Select the table element
+    var table = d3.select("#table");
+
+    // Define the row and column numbers to be merged
+    var rowNum = 5;
+    var colNum = 3;
+
+    // Merge the cells
+table.selectAll("tr")
+  .filter(function(d, i) { return i === rowNum; })
+  .selectAll("td")
+  .filter(function(d, i) { return i === colNum; })
+  .attr("colspan", 2)
+  .next().remove();
+
     done();
   }
 });
