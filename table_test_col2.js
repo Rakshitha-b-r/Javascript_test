@@ -90,9 +90,24 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' colspan='15'>ORIGINAL EXPOSURES</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' rowspan='3'>Code</th>`;
-    generatedHTML += `<th class='table-header' rowspan='3'>Group or individual</th>`;
-    generatedHTML += `<th class='table-header' rowspan='3'>Transactions where there is an exposure to underlying assets</th>`;
+    generatedHTML += `<th class='table-header' rowspan='4'>Code</th>`;
+    generatedHTML += `<th class='table-header' rowspan='4'>Group or individual</th>`;
+    generatedHTML += `<th class='table-header' rowspan='4'>Transactions where there is an exposure to underlying assets</th>`;
+    generatedHTML += `<th class='table-header' rowspan='4'>Total original exposure</th>`;
+    generatedHTML += `<th class='table-header' colspan='15'></th>`;
+    generatedHTML += "</tr>";
+    generatedHTML += "<tr>";
+    generatedHTML += `<th class='table-header' colspan='2'></th>`;
+    generatedHTML += `<th class='table-header' colspan='6'>Direct exposures</th>`;
+    generatedHTML += `<th class='table-header' colspan='6'>Indirect exposures</th>`;
+    generatedHTML += "</tr>";
+    generatedHTML += "<tr>";
+    generatedHTML += `<th class='table-header' rowspan='2'>Of which: defaulted</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
+    generatedHTML += "</tr>";
+    generatedHTML += "<tr>";
     generatedHTML += "</tr>";
 
 
