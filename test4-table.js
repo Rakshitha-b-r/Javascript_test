@@ -119,12 +119,12 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
     // Select the table element
-    var table = d3.select("#looker_table");
+//     var table = d3.select("#looker_table");
 
     // Define the row and column numbers to be merged
-    var rowNum = ${config.merge_row_no};
-    var colNumFrom = ${config.merge_cell_from};
-    var colNumTo = ${config.merge_cell_to};
+//     var rowNum = ${config.merge_row_no};
+//     var colNumFrom = ${config.merge_cell_from};
+//     var colNumTo = ${config.merge_cell_to};
 
     done();
   }
