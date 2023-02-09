@@ -106,6 +106,10 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
+    generatedHTML += `<th class='table-header' colspan='3'>Off balance sheet items</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
     generatedHTML += "</tr>";
