@@ -109,11 +109,11 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
     // Select the table element
-    var table = d3.select("#table");
+    var table = d3.select("#looker_table");
 
     // Define the row and column numbers to be merged
-    var rowNum = 5;
-    var colNum = 3;
+    var rowNum = 3;
+    var colNum = 1;
 
     // Merge the cells
 table.selectAll("tr")
