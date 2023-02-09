@@ -87,11 +87,12 @@ looker.plugins.visualizations.add({
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='3'>COUNTERPARTY</th>`;
+    generatedHTML += `<th class='table-header' colspan='15'>ORIGINAL EXPOSURES</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header'>Code</th>`;
-    generatedHTML += `<th class='table-header'>Group or individual</th>`;
-    generatedHTML += `<th class='table-header'>Transactions where there is an exposure to underlying assets</th>`;
+    generatedHTML += `<th class='table-header' rowspan='3'>Code</th>`;
+    generatedHTML += `<th class='table-header' rowspan='3'>Group or individual</th>`;
+    generatedHTML += `<th class='table-header' rowspan='3'>Transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += "</tr>";
 
 
