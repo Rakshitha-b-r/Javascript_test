@@ -105,6 +105,18 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' colspan='2'>Of which: defaulted</th>`;
     generatedHTML += `<th class='table-header' colspan='2'>Debt instruments</th>`;
     generatedHTML += `<th class='table-header' colspan='2'>Equity instruments</th>`;
+    generatedHTML += `<th class='table-header' colspan='2'>Derivatives</th>`;
+    generatedHTML += `<th class='table-header' rowspan='3'>Off balance sheet items</th>`;
+    generatedHTML += `<th class='table-header' colspan='2'>Of which: defaulted</th>`;
+    generatedHTML += `<th class='table-header' colspan='2'>Debt instruments</th>`;
+    generatedHTML += `<th class='table-header' colspan='2'>Equity instruments</th>`;
+    generatedHTML += `<th class='table-header' colspan='2'>Derivatives</th>`;
+    generatedHTML += `<th class='table-header' rowspan='3'>Off balance sheet items</th>`;
+    generatedHTML += "</tr>";
+    generatedHTML += "<tr>";
+    generatedHTML += `<th class='table-header' colspan='1'>Loan commit-ments</th>`;
+    generatedHTML += `<th class='table-header' colspan='1'>Financial guarantees</th>`;
+    generatedHTML += `<th class='table-header' colspan='1'>Other commit-ments</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
     generatedHTML += `<th class='table-header' colspan='1'>Loan commit-ments</th>`;
