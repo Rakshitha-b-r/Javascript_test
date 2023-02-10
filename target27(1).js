@@ -86,17 +86,17 @@ looker.plugins.visualizations.add({
 
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' colspan='3'>COUNTERPARTY IDENTIFICATION</th>`;
+    generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' rowspan='4'>Code</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Type of Code</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Name</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>National Code</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Residence of the Counterparty</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Sector of the Counterparty</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>NACE Code</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Type of Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>Code</th>`;
+    generatedHTML += `<th class='table-header'>Type of Code</th>`;
+    generatedHTML += `<th class='table-header'>Name</th>`;
+    generatedHTML += `<th class='table-header'>National Code</th>`;
+    generatedHTML += `<th class='table-header'>Residence of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>Sector of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>NACE Code</th>`;
+    generatedHTML += `<th class='table-header'>Type of Counterparty</th>`;
     generatedHTML += "</tr>";
    
    
