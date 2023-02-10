@@ -26,6 +26,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          font-weight: normal;
         }
         .table-cell {
           padding: 5px;
@@ -68,6 +69,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          font-weight: normal;
         }
         .table-cell {
           padding: 5px;
