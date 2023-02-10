@@ -84,37 +84,46 @@ looker.plugins.visualizations.add({
       </style>
     `;
     
-    generatedHTML += "<table class='table'>";
-    generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' colspan='3'>COUNTERPARTY</th>`;
-    generatedHTML += `<th class='table-header' colspan='15'>ORIGINAL EXPOSURES</th>`;
-    generatedHTML += "</tr>";
-    generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' rowspan='4'>Code</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Group or individual</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Transactions where there is an exposure to underlying assets</th>`;
-    generatedHTML += `<th class='table-header' rowspan='4'>Total original exposure</th>`;
-    generatedHTML += `<th class='table-header' colspan='15'></th>`;
-    generatedHTML += "</tr>";
-    generatedHTML += "<tr>";
-    generatedHTML += `<th class='table-header' colspan='1'></th>`;
-    generatedHTML += `<th class='table-header' colspan='6'>Direct exposures</th>`;
-    generatedHTML += `<th class='table-header' colspan='6'>Indirect exposures</th>`;
-    generatedHTML += "</tr>";
-    generatedHTML += "<tr>";
-    generatedHTML += `<th class='table-header' rowspan='2'>Of which: defaulted</th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
-    generatedHTML += `<th class='table-header' colspan='3'>Off balance sheet items</th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
-    generatedHTML += "</tr>";
-    generatedHTML += "<tr>";
-    generatedHTML += "</tr>";
+    let mountains = [
+
+  { "COUNTERPARTY IDENTIFICATION": ""},
+  { Code: "", "Type of Code": "" , Name: "", "National Code": "", "Residence of the Counterparty": "", "Sector of the Counterparty": "", "NACE Code": "", "Type of Counterparty": "" },
+ 
+
+];
 
 
+
+function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+const box = document.getElementById('box');
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+box.style.width = '100px';
+      cell.appendChild(text);
+    }
+  }
+}
+
+let table = document.querySelector("table");
+let data = Object.keys(mountains[1]);
+let data1 = Object.keys(mountains[0]);
+generateTableHead(table, data1);
+generateTableHead(table, data);
+generateTable(table, mountains);
 
     // First row is the header
     generatedHTML += "<tr class='table-header'>";
