@@ -32,7 +32,6 @@ looker.plugins.visualizations.add({
       .table-body {
         display: block;
         overflow-y: scroll;
-        height: calc(100vh - 50px);
       }
       .table-cell {
         padding: 5px;
@@ -81,7 +80,6 @@ looker.plugins.visualizations.add({
       .table-body {
         display: block;
         overflow-y: scroll;
-        height: calc(100vh - 50px);
       }
       .table-cell {
         padding: 5px;
@@ -155,6 +153,7 @@ looker.plugins.visualizations.add({
 
 
     // First row is the header
+    generatedHTML += "<tbody class='table-body'>";
     generatedHTML += "<tr class='table-header'>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
@@ -169,6 +168,7 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
+    generatedHTML += "</tbody>";
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
