@@ -97,29 +97,12 @@ looker.plugins.visualizations.add({
           overflow-y: scroll;
           height: calc(100% - 50px);
         }
-        .freeze-header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: calc(100% - 17px);
-          background-color: white;
-          z-index: 1;
-          }
-        .table-container {
-          overflow-x: auto;
-          }
       </style>
     `;
-    var tableContainer = document.querySelector("table-container");
-    var header = tableContainer.querySelector("thead");
-    header.classList.add("freeze-header");
-    header.style.width = tableContainer.offsetWidth + "px";
-    tableContainer.onscroll = function () {
-      header.style.left = -this.scrollLeft + "px";
-    };
-    generatedHTML += "<div class='freeze-header'>";
+
+    generatedHTML += "<div class='table-body-wrap'>";
     generatedHTML += "<table class='table'>";
-    generatedHTML += "<thead>";
+    generatedHTML += "<thead class='table-header'>";
     generatedHTML += "<tr>";
     generatedHTML += `<th colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
