@@ -126,7 +126,7 @@ looker.plugins.visualizations.add({
     let table = document.querySelector('table');
     let header = table.querySelector('thead');
     let headerClone = header.cloneNode(true);
-    headerClone.style.position = 'fixed';
+    headerClone.style.position = 'sticky';
     headerClone.style.top = '0';
     table.parentNode.insertBefore(headerClone, table);
 
