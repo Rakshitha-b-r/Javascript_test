@@ -107,7 +107,7 @@ for (column_type of ["dimension_like", "measure_like", "table_calculations"])
         // Next columns are the data
         for(row of data)
         {
-            generatedHTML += `<td class='transpose-table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`
+            generatedHTML += `<td class='table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`
         }
         generatedHTML += '</tr>';
         i++;
