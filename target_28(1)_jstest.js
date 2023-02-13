@@ -79,7 +79,6 @@ looker.plugins.visualizations.add({
     `;
 
     // creates a <table> element and a <tbody> element
-    generatedHTML += "</table>";
       const tbl = document.createElement('table')
       const tblBody = document.createElement('tbody')
 
@@ -235,27 +234,6 @@ looker.plugins.visualizations.add({
       document.body.appendChild(tbl)
       // sets the border attribute of tbl to '2'
       tbl.setAttribute('border', '1')
-
-
-    // First row is the header
-    generatedHTML += "<tbody class='table-content'>";
-    generatedHTML += "<tr class='table-header'>";
-    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
-    }
-    generatedHTML += "</tr>";
-
-    // Next rows are the data
-    for (row of data) {
-      generatedHTML += "<tr class='table-row'>";
-      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-        generatedHTML += `<td class='table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
-      }
-      generatedHTML += "</tr>";
-    }
-    generatedHTML += "</table>";
-
-    this._container.innerHTML = generatedHTML;
 
     done();
   }
