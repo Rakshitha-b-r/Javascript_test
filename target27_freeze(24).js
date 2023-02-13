@@ -140,7 +140,7 @@ looker.plugins.visualizations.add({
     table.parentNode.insertBefore(headerClone, table);
 
     table.addEventListener('scroll', function () {
-      headerClone.scrollLeft = table.scrollLeft;
+      headerClone.scrollCenter = table.scrollCenter;
     });
     done();
   }
