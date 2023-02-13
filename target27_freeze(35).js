@@ -127,7 +127,7 @@ looker.plugins.visualizations.add({
     //let headerClone = header.cloneNode(true);
     header.style.position = 'fixed';
     header.style.top = '0';
-    table.parentNode.insertBefore(header, table);
+    //table.parentNode.insertBefore(header, table);
 
     table.addEventListener('scroll', function () {
       header.scrollCenter = table.scrollCenter;
