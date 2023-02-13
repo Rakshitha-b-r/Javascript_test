@@ -135,7 +135,7 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
     window.onscroll = function () { myFunction() }; 
-    var header = document.getElementById("myHeader");
+    var header = document.getElementById("thead");
     var sticky = header.offsetTop; 
     function myFunction() {
       if (window.pageYOffset > sticky) {
