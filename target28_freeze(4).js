@@ -29,7 +29,7 @@ looker.plugins.visualizations.add({
       }
       .table-body {
         display: block;
-        overflow-y: scroll;
+        overflow-y: auto;
       }
       .table-content {
         margin-top: 40px;
@@ -40,10 +40,12 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
       }
-      .table-div {
-        position: sticky;
+      .header-group {
+        position: fixed;
         top: 0;
-      }
+        left: 0;
+        right: 0;
+        height: 50px;
       </style>
     `;
 
@@ -93,15 +95,18 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
       }
-      .table-div {
-        position: sticky;
+      .header-group {
+        position: fixed;
         top: 0;
-      }
+        left: 0;
+        right: 0;
+        height: 50px;
       </style>
     `;
 
     generatedHTML += "<table class='table'>";
-    generatedHTML += "<div class='table-div'>";
+    generatedHTML += "<header class='header-group'>";
+    generatedHTML += "<div>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
     generatedHTML += `<th class='table-header' colspan='15'><b>ORIGINAL EXPOSURES</b></th>`;
@@ -160,6 +165,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='1'>(-) Financial guarantees</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>(-) Other commit-ments</th>`;
     generatedHTML += "</tr>";
+    generatedHTML += "</header>";
     generatedHTML += "</div>";
 
 
@@ -188,4 +194,3 @@ looker.plugins.visualizations.add({
     done();
   }
 });
-
