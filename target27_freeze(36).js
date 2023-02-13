@@ -122,15 +122,13 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
 
-    let table = document.querySelector('table');
-    let header = table.querySelector('thead');
-    //let headerClone = header.cloneNode(true);
-    header.style.position = 'fixed';
-    header.style.top = '0';
-    //table.parentNode.insertBefore(header, table);
+    // let table = document.querySelector('table');
+    // let header = table.querySelector('thead');
+    thead.style.position = 'fixed';
+    thead.style.top = '0';
 
     table.addEventListener('scroll', function () {
-      header.scrollCenter = table.scrollCenter;
+      thead.scrollCenter = table.scrollCenter;
     });
 
     done();
