@@ -99,7 +99,7 @@ looker.plugins.visualizations.add({
         }
       </style>
     `;
-    
+
     generatedHTML += "<div class='table-body-wrap'>";
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead class='table-header'>";
@@ -136,6 +136,19 @@ looker.plugins.visualizations.add({
     }
     generatedHTML += "</table>";
     generatedHTML += "</div>";
+
+    let table = document.querySelector('table');
+    let header = table.querySelector('thead');
+    let headerClone = header.cloneNode(true);
+    headerClone.style.position = 'fixed';
+    headerClone.style.top = '0';
+    headerClone.style.backgroundColor = 'white';
+    table.parentNode.insertBefore(headerClone, table);
+
+    table.addEventListener('scroll', function () {
+      headerClone.scrollLeft = table.scrollLeft;
+    });
+
 
     this._container.innerHTML = generatedHTML;
 
