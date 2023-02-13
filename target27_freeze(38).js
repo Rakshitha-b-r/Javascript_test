@@ -66,13 +66,13 @@ looker.plugins.visualizations.add({
           height: 50px;
           border: 1px solid black;
           border-collapse: collapse;
-          position : fixed;
         }
         .table-header{
           font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          position : fixed;
         }
         .thead{
           position : fixed;
