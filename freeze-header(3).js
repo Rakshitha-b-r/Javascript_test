@@ -25,10 +25,7 @@ looker.plugins.visualizations.add({
       }
       .thead {
         position: fixed;
-        z-index :1;
         top:0;
-        left: 0;
-        width: calc(100% - 17px);
       }
       .table-header{
         font-weight: normal;
@@ -45,9 +42,6 @@ looker.plugins.visualizations.add({
        .table-row {
         border: 1px solid black;
         border-collapse: collapse;
-      }
-      .table-container {
-        overflow-x: scroll;
       }
       </style>
     `;
@@ -83,10 +77,7 @@ looker.plugins.visualizations.add({
         }
         .thead {
           position: fixed;
-          z-index :1;
           top:0;
-          left: 0;
-          width: calc(100% - 17px);
         }
         .table-header{
           font-weight: normal;
@@ -103,9 +94,6 @@ looker.plugins.visualizations.add({
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
-        }
-        .table-container {
-          overflow-x: scroll;
         }
       </style>
     `;
@@ -146,13 +134,16 @@ looker.plugins.visualizations.add({
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
-    var tableContainer = document.querySelector("table-container");
-    var header = tableContainer.querySelector("thead");
-    header.classList.add("thead");
-    header.style.width = tableContainer.offsetWidth + "px";
-    tableContainer.onscroll = function () {
-      header.style.left = -this.scrollLeft + "px";
-    };
+    window.onscroll = function () { myFunction() }; 
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop; 
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("thead");
+      } else {
+        header.classList.remove("thead");
+      }
+    }
     done();
   }
 });
