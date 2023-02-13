@@ -32,15 +32,17 @@ looker.plugins.visualizations.add({
           z-index :1;
           top:0;
         }
+        .table-header{
+          font-weight: bold;
+          background-color: #eee;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
-        }
-        .table-body-wrap {
-          overflow-y: scroll;
-          height: calc(100% - 50px);
         }
       </style>
     `;
@@ -83,6 +85,12 @@ looker.plugins.visualizations.add({
           z-index :1;
           top:0;
         }
+        .table-header{
+          font-weight: bold;
+          background-color: #eee;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
@@ -93,28 +101,24 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-body-wrap {
-          overflow-y: scroll;
-          height: calc(100% - 50px);
-        }
       </style>
     `;
 
     generatedHTML += "<div class='table-body-wrap'>";
     generatedHTML += "<table class='table'>";
-    generatedHTML += "<thead class='table-header'>";
+    generatedHTML += "<thead>";
     generatedHTML += "<tr>";
-    generatedHTML += `<th colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
+    generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
-    generatedHTML += `<th>Code</th>`;
-    generatedHTML += `<th>Type of Code</th>`;
-    generatedHTML += `<th>Name</th>`;
-    generatedHTML += `<th>National Code</th>`;
-    generatedHTML += `<th>Residence of the Counterparty</th>`;
-    generatedHTML += `<th>Sector of the Counterparty</th>`;
-    generatedHTML += `<th>NACE Code</th>`;
-    generatedHTML += `<th>Type of Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>Code</th>`;
+    generatedHTML += `<th class='table-header'>Type of Code</th>`;
+    generatedHTML += `<th class='table-header'>Name</th>`;
+    generatedHTML += `<th class='table-header'>National Code</th>`;
+    generatedHTML += `<th class='table-header'>Residence of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>Sector of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>NACE Code</th>`;
+    generatedHTML += `<th class='table-header'>Type of Counterparty</th>`;
     generatedHTML += "</tr>";
 
 
@@ -143,7 +147,6 @@ looker.plugins.visualizations.add({
     let headerClone = header.cloneNode(true);
     headerClone.style.position = 'fixed';
     headerClone.style.top = '0';
-    headerClone.style.backgroundColor = 'white';
     table.parentNode.insertBefore(headerClone, table);
 
     table.addEventListener('scroll', function () {
