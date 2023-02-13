@@ -127,7 +127,10 @@ looker.plugins.visualizations.add({
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
-
+    let table = document.querySelector('table');
+    table.addEventListener('scroll', function () {
+      table.scrollLeft;
+    });
     done();
   }
 });
