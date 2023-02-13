@@ -77,6 +77,9 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .thead{
+          width :100px;
+        }
         .table-cell {
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
@@ -130,7 +133,6 @@ looker.plugins.visualizations.add({
     header.style.position = 'fixed';
     header.style.top = '0';
     header.style.width = '100px';
-    header.style.height = '50px';
     table.parentNode.insertBefore(header, table);
     table.addEventListener('scroll', function () {
       header.scrollCenter = table.scrollCenter;
