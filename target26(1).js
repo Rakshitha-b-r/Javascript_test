@@ -127,6 +127,9 @@ generatedHTML += "</tr>";
             generatedHTML += '</tr>';
         }
     }
+     generatedHTML += "</table>";
+
+    this._container.innerHTML = generatedHTML;
 
   done();
 }
