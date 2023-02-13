@@ -11,7 +11,9 @@ looker.plugins.visualizations.add({
       default: 11
     }
   },
-
+  // creates a <table> element and a <tbody> element
+    const tbl = document.createElement('table')
+    const tblBody = document.createElement('tbody')
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
     console.log(config);
@@ -23,10 +25,6 @@ looker.plugins.visualizations.add({
       this.addError({ title: "No Dimensions", message: "This chart requires dimensions." });
       return;
     }
-
-    // creates a <table> element and a <tbody> element
-      const tbl = document.createElement('table')
-      const tblBody = document.createElement('tbody')
 
       // creating all cells
       for (let i = 0; i < 7; i++) {
