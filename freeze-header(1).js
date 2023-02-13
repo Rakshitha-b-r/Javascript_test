@@ -96,7 +96,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .table-container {
-          overflow-x: auto;
+          overflow-x: scroll;
         }
       </style>
     `;
