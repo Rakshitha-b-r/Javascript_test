@@ -23,7 +23,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-header {
+        .thead {
           font-weight: bold;
           background-color: #eee;
           border: 1px solid black;
@@ -74,7 +74,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-header {
+        .thead {
           font-weight: bold;
           background-color: #eee;
           border: 1px solid black;
@@ -137,6 +137,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</table>";
     generatedHTML += "</div>";
 
+    this._container.innerHTML = generatedHTML;
     let table = document.querySelector('table');
     let header = table.querySelector('thead');
     let headerClone = header.cloneNode(true);
@@ -148,10 +149,6 @@ looker.plugins.visualizations.add({
     table.addEventListener('scroll', function () {
       headerClone.scrollLeft = table.scrollLeft;
     });
-
-
-    this._container.innerHTML = generatedHTML;
-
     done();
   }
 });
