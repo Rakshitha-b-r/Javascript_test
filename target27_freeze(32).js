@@ -23,11 +23,6 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .thead {
-          position: fixed;
-          z-index :1;
-          top:0;
-        }
         .table-header{
           font-weight: normal;
           background-color: #eee;
@@ -39,10 +34,6 @@ looker.plugins.visualizations.add({
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
-        }
-        .table-container {
-          height: 200px;
-          overflow-y: scroll;
         }
       </style>
     `;
@@ -76,11 +67,6 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .thead {
-          position: fixed;
-          z-index :1;
-          top:0;
-        }
         .table-header{
           font-weight: normal;
           background-color: #eee;
@@ -97,17 +83,8 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-container {
-          height: 200px;
-          overflow-y: scroll;
-        }
-        .table-body {
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
       </style>
     `;
-    generatedHTML += "<div class='table-container'>";
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead>";
     generatedHTML += "<tr>";
@@ -142,28 +119,20 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
-    generatedHTML += "</tbody>";
     generatedHTML += "</table>";
-    generatedHTML += "</div>";
 
     this._container.innerHTML = generatedHTML;
 
-    const header = document.getElementById("thead");
-    const body = document.getElementById("table-body");
-    body.addEventListener("scroll", function () {
-      header.style.left = -this.scrollLeft + "px";
+    let table = document.querySelector('table');
+    let header = table.querySelector('thead');
+    let headerClone = header.cloneNode(true);
+    headerClone.style.position = 'fixed';
+    headerClone.style.top = '0';
+    table.parentNode.insertBefore(headerClone, table);
+
+    table.addEventListener('scroll', function () {
+      headerClone.scrollCenter = table.scrollCenter;
     });
-
-    // let table = document.querySelector('table');
-    // let header = table.querySelector('thead');
-    // let headerClone = header.cloneNode(true);
-    // headerClone.style.position = 'fixed';
-    // headerClone.style.top = '0';
-    // table.parentNode.insertBefore(headerClone, table);
-
-    // table.addEventListener('scroll', function () {
-    //   headerClone.scrollCenter = table.scrollCenter;
-    // });
 
     done();
   }
