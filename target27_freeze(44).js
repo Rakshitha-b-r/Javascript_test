@@ -78,7 +78,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          width :500px;
+          width :100%;
         }
         .table-cell {
           border-bottom: 1px solid #ccc;
@@ -88,6 +88,7 @@ looker.plugins.visualizations.add({
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
+          width :100%;
         }
       </style>
     `;
@@ -132,7 +133,7 @@ looker.plugins.visualizations.add({
     let header = table.querySelector('thead');
     header.style.position = 'fixed';
     header.style.top = '0';
-    header.style.width = '500px';
+    header.style.width = '100%';
     table.parentNode.insertBefore(header, table);
     table.addEventListener('scroll', function () {
       header.scrollCenter = table.scrollCenter;
