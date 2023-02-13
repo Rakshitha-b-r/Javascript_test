@@ -14,27 +14,7 @@ looker.plugins.visualizations.add({
   // Set up the initial state of the visualization
   create: function (element, config) {
     console.log(config);
-    // Insert a <style> tag with some styles we'll use later.
-    element.innerHTML = `
-      <style>
-      .table {
-        font-size: ${config.font_size}px;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-header {
-        background-color: #eee;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-cell {
-        padding: 5px;
-        border-bottom: 1px solid #ccc;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      </style>
-    `;
+
 
     // Create a container element to let us center the text.
     this._container = element.appendChild(document.createElement("div"));
@@ -52,31 +32,6 @@ looker.plugins.visualizations.add({
       this.addError({ title: "No Dimensions", message: "This chart requires dimensions." });
       return;
     }
-
-    /* Code to generate table
-     * In keeping with the spirit of this little visualization plugin,
-     * it's done in a quick and dirty way: piece together HTML strings.
-     */
-    var generatedHTML = `
-      <style>
-      .table {
-        font-size: ${config.font_size}px;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-header {
-        background-color: #eee;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-cell {
-        padding: 5px;
-        border-bottom: 1px solid #ccc;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      </style>
-    `;
 
     // creates a <table> element and a <tbody> element
       const tbl = document.createElement('table')
