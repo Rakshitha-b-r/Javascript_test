@@ -96,7 +96,6 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-    generatedHTML += "<div class='table-body-wrap'>";
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead>";
     generatedHTML += "<tr>";
@@ -131,7 +130,6 @@ looker.plugins.visualizations.add({
       generatedHTML += "</tr>";
     }
     generatedHTML += "</table>";
-    generatedHTML += "</div>";
 
     this._container.innerHTML = generatedHTML;
     let table = document.querySelector('table');
