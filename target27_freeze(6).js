@@ -29,6 +29,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: fixed;
           z-index :1;
+          top:0;
         }
         .table-cell {
           padding: 5px;
@@ -74,6 +75,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: fixed;
           z-index :1;
+          top:0;
         }
         .table-cell {
           padding: 5px;
@@ -103,7 +105,6 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th>NACE Code</th>`;
     generatedHTML += `<th>Type of Counterparty</th>`;
     generatedHTML += "</tr>";
-    generatedHTML += "</thead>";
 
 
     // First row is the header
@@ -112,6 +113,7 @@ looker.plugins.visualizations.add({
       generatedHTML += `<th>${field.label_short}</th>`;
     }
     generatedHTML += "</tr>";
+    generatedHTML += "</thead>";
 
     // Next rows are the data
     for (row of data) {
