@@ -33,6 +33,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          width: 100%;
         }
         .table-cell {
           padding: 5px;
@@ -82,6 +83,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          width: 100%;
         }
         .table-cell {
           padding: 5px;
