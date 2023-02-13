@@ -33,7 +33,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          width: 100%;
+          width: 50%;
         }
         .table-cell {
           padding: 5px;
@@ -83,7 +83,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          width: 100%;
+          width: 50%;
         }
         .table-cell {
           padding: 5px;
@@ -139,7 +139,7 @@ looker.plugins.visualizations.add({
     let headerClone = header.cloneNode(true);
     headerClone.style.position = 'fixed';
     headerClone.style.top = '0';
-    headerClone.style.width = '100%';
+    headerClone.style.width = '50%';
     table.parentNode.insertBefore(headerClone, table);
 
     table.addEventListener('scroll', function () {
