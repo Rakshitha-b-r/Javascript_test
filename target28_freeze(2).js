@@ -31,7 +31,7 @@ looker.plugins.visualizations.add({
       }
       .table-body {
         display: block;
-        overflow-y: scroll;
+        overflow-y: auto;
       }
       .table-content {
         margin-top: 40px;
