@@ -26,8 +26,6 @@ looker.plugins.visualizations.add({
         background-color: #eee;
         border: 1px solid black;
         border-collapse: collapse;
-        position: fixed;
-        top: 0;
       }
       .table-body {
         display: block;
@@ -81,8 +79,6 @@ looker.plugins.visualizations.add({
         background-color: #eee;
         border: 1px solid black;
         border-collapse: collapse;
-        position: fixed;
-        top: 0;
       }
       .table-body {
         display: block;
