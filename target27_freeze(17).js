@@ -24,16 +24,12 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead {
-          font-weight: bold;
-          background-color: #eee;
-          border: 1px solid black;
-          border-collapse: collapse;
           position: fixed;
           z-index :1;
           top:0;
         }
         .table-header{
-          font-weight: bold;
+          font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
@@ -77,16 +73,12 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead {
-          font-weight: bold;
-          background-color: #eee;
-          border: 1px solid black;
-          border-collapse: collapse;
           position: fixed;
           z-index :1;
           top:0;
         }
         .table-header{
-          font-weight: bold;
+          font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
@@ -125,7 +117,7 @@ looker.plugins.visualizations.add({
     // First row is the header
     generatedHTML += "<tr>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th>${field.label_short}</th>`;
+      generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
     }
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
