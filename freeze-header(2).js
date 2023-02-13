@@ -17,29 +17,38 @@ looker.plugins.visualizations.add({
     // Insert a <style> tag with some styles we'll use later.
     element.innerHTML = `
       <style>
-        .table {
-          font-size: ${config.font_size}px;
-          height: 50px;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-        .thead {
-          position: fixed;
-          z-index :1;
-          top:0;
-        }
-        .table-header{
-          font-weight: normal;
-          background-color: #eee;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-        .table-cell {
-          padding: 5px;
-          border-bottom: 1px solid #ccc;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
+      .table {
+        font-size: ${config.font_size}px;
+        height: 50px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .thead {
+        position: fixed;
+        z-index :1;
+        top:0;
+        left: 0;
+        width: calc(100% - 17px);
+      }
+      .table-header{
+        font-weight: normal;
+        background-color: #eee;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .table-cell {
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+       .table-row {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .table-container {
+        overflow-x: scroll;
+      }
       </style>
     `;
 
