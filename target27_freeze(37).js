@@ -66,12 +66,17 @@ looker.plugins.visualizations.add({
           height: 50px;
           border: 1px solid black;
           border-collapse: collapse;
+          position : fixed;
         }
         .table-header{
           font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+        }
+        .thead{
+          position : fixed;
+          top : 0
         }
         .table-cell {
           padding: 5px;
@@ -124,12 +129,12 @@ looker.plugins.visualizations.add({
 
     // let table = document.querySelector('table');
     // let header = table.querySelector('thead');
-    thead.style.position = 'fixed';
-    thead.style.top = '0';
+    // header.style.position = 'fixed';
+    // header.style.top = '0';
 
-    table.addEventListener('scroll', function () {
-      thead.scrollCenter = table.scrollCenter;
-    });
+    // table.addEventListener('scroll', function () {
+    //   header.scrollCenter = table.scrollCenter;
+    // });
 
     done();
   }
