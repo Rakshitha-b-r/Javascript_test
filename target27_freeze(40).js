@@ -125,7 +125,7 @@ looker.plugins.visualizations.add({
     let header = table.querySelector('thead');
     header.style.position = 'fixed';
     header.style.top = '0';
-
+    table.parentNode.insertBefore(header, table);
     table.addEventListener('scroll', function () {
       header.scrollCenter = table.scrollCenter;
     });
