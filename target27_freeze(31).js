@@ -101,6 +101,10 @@ looker.plugins.visualizations.add({
           height: 200px;
           overflow-y: scroll;
         }
+        .table-body {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
       </style>
     `;
     generatedHTML += "<div class='table-container'>";
@@ -122,7 +126,7 @@ looker.plugins.visualizations.add({
 
 
     // First row is the header
-    generatedHTML += "<tbody>";
+    generatedHTML += "<tbody class='table-body'>";
     generatedHTML += "<tr>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
@@ -145,7 +149,7 @@ looker.plugins.visualizations.add({
     this._container.innerHTML = generatedHTML;
 
     const header = document.getElementById("thead");
-    const body = document.getElementById("tbody");
+    const body = document.getElementById("table-body");
     body.addEventListener("scroll", function () {
       header.style.left = -this.scrollLeft + "px";
     });
