@@ -137,6 +137,7 @@ looker.plugins.visualizations.add({
     let headerClone = header.cloneNode(true);
     headerClone.style.position = 'fixed';
     headerClone.style.top = '0';
+    headerClone.style.z-index = '1';
     table.parentNode.insertBefore(headerClone, table);
 
     table.addEventListener('scroll', function () {
