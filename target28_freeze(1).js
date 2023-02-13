@@ -17,25 +17,31 @@ looker.plugins.visualizations.add({
     // Insert a <style> tag with some styles we'll use later.
     element.innerHTML = `
       <style>
-        .table {
-          font-size: ${config.font_size}px;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-        .table-header {
-          background-color: #eee;
-          border: 1px solid black;
-          border-collapse: collapse;
-          font-weight: normal;
-          position: sticky; 
-          top: 0;
-        }
-        .table-cell {
-          padding: 5px;
-          border-bottom: 1px solid #ccc;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
+      .table {
+        font-size: ${config.font_size}px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .table-header {
+        background-color: #eee;
+        border: 1px solid black;
+        border-collapse: collapse;
+        position: sticky;
+        top: 0;
+      }
+      .table-body {
+        display: block;
+        overflow-y: scroll;
+      }
+      .table-content {
+        margin-top: 40px;
+      }
+      .table-cell {
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
       </style>
     `;
 
@@ -62,29 +68,31 @@ looker.plugins.visualizations.add({
      */
     var generatedHTML = `
       <style>
-        .table {
-          font-size: ${config.font_size}px;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-        .table-header {
-          background-color: #eee;
-          border: 1px solid black;
-          border-collapse: collapse;
-          font-weight: normal;
-          position: sticky;
-          top: 0;
-        }
-        .table-cell {
-          padding: 5px;
-          border-bottom: 1px solid #ccc;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-         .table-row {
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
+      .table {
+        font-size: ${config.font_size}px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .table-header {
+        background-color: #eee;
+        border: 1px solid black;
+        border-collapse: collapse;
+        position: sticky;
+        top: 0;
+      }
+      .table-body {
+        display: block;
+        overflow-y: auto;
+      }
+      .table-content {
+        margin-top: 40px;
+      }
+      .table-cell {
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
       </style>
     `;
 
@@ -151,6 +159,8 @@ looker.plugins.visualizations.add({
 
 
     // First row is the header
+    //generatedHTML += "<tbody class='table-content'>";
+    generatedHTML += "<tbody class='table-body'>";
     generatedHTML += "<tr class='table-header'>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
@@ -165,6 +175,7 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
+    generatedHTML += "</tbody>";
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
