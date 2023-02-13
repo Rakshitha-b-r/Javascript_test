@@ -84,11 +84,11 @@ updateAsync: function (data, element, config, queryResponse, details, done) {
 generatedHTML += "<table class='table'>";
 generatedHTML += "<tr class='table-header'>";
 generatedHTML += `<th class='table-header' rowspan='2' colspan='2' > </th>`;
-generatedHTML += `<th class='table-header' rowspan='1'>Applicable limit</th>`;
+generatedHTML += `<th class='table-header' rowspan='1' colspan='9'>Applicable limit</th>`;
 generatedHTML += "</tr>";
 
 generatedHTML += "<tr class='table-header'>";
-generatedHTML += `<th class='table-header'> 010 </th>`;
+generatedHTML += `<th class='table-header' colspan='9'> 010 </th>`;
 generatedHTML += "</tr>";
 
 const header=['Non institutions','Institutions','Institutions in %','Globally Systemic Important Institutions (G-SIIs)'];
