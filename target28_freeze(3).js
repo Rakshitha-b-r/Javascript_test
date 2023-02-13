@@ -26,12 +26,12 @@ looker.plugins.visualizations.add({
         background-color: #eee;
         border: 1px solid black;
         border-collapse: collapse;
-        position: sticky;
+        position: fixed;
         top: 0;
       }
       .table-body {
         display: block;
-        overflow-y: auto;
+        overflow-y: scroll;
       }
       .table-content {
         margin-top: 40px;
@@ -41,6 +41,10 @@ looker.plugins.visualizations.add({
         border-bottom: 1px solid #ccc;
         border: 1px solid black;
         border-collapse: collapse;
+      }
+      .table-div {
+        position: sticky;
+        top: 0;
       }
       </style>
     `;
@@ -77,7 +81,7 @@ looker.plugins.visualizations.add({
         background-color: #eee;
         border: 1px solid black;
         border-collapse: collapse;
-        position: sticky;
+        position: fixed;
         top: 0;
       }
       .table-body {
@@ -93,10 +97,15 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
       }
+      .table-div {
+        position: sticky;
+        top: 0;
+      }
       </style>
     `;
 
     generatedHTML += "<table class='table'>";
+    generatedHTML += "<div class='table-div'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
     generatedHTML += `<th class='table-header' colspan='15'><b>ORIGINAL EXPOSURES</b></th>`;
@@ -155,7 +164,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='1'>(-) Financial guarantees</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>(-) Other commit-ments</th>`;
     generatedHTML += "</tr>";
-
+    generatedHTML += "</div>";
 
 
     // First row is the header
