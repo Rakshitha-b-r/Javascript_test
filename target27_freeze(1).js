@@ -29,6 +29,8 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: fixed;
           top: 0;
+          width: 100%;
+          z-index :1;
         }
         .table-cell {
           padding: 5px;
@@ -74,6 +76,8 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: fixed;
           top: 0;
+          width: 100%;
+          z-index :1;
         }
         .table-cell {
           padding: 5px;
