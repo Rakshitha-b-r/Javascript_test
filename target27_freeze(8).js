@@ -19,6 +19,7 @@ looker.plugins.visualizations.add({
       <style>
         .table {
           font-size: ${config.font_size}px;
+          height: 50px;
           border: 1px solid black;
           border-collapse: collapse;
         }
@@ -28,6 +29,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: fixed;
+          z-index :1;
           top:0;
         }
         .table-cell {
@@ -35,6 +37,10 @@ looker.plugins.visualizations.add({
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+        }
+        .table-body-wrap {
+          overflow-y: scroll;
+          height: calc(100% - 50px);
         }
       </style>
     `;
@@ -64,6 +70,7 @@ looker.plugins.visualizations.add({
       <style>
         .table {
           font-size: ${config.font_size}px;
+          height: 50px;
           border: 1px solid black;
           border-collapse: collapse;
         }
@@ -73,6 +80,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: fixed;
+          z-index :1;
           top:0;
         }
         .table-cell {
@@ -85,9 +93,14 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .table-body-wrap {
+          overflow-y: scroll;
+          height: calc(100% - 50px);
+        }
       </style>
     `;
 
+    generatedHTML += "<div class='table-body-wrap'>";
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead class='table-header'>";
     generatedHTML += "<tr>";
@@ -122,6 +135,7 @@ looker.plugins.visualizations.add({
       generatedHTML += "</tr>";
     }
     generatedHTML += "</table>";
+    generatedHTML += "</div>";
 
     this._container.innerHTML = generatedHTML;
 
