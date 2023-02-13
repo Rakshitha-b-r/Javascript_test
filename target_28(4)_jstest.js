@@ -179,7 +179,7 @@ looker.plugins.visualizations.add({
       // appends <table> into <body>
       document.body.appendChild(tbl)
       // sets the border attribute of tbl to '2'
-      tbl.setAttribute('border', '0')
+      tbl.setAttribute('border', '2')
 
     done();
   }
