@@ -40,6 +40,10 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .table-container {
+          height: 200px;
+          overflow-y: scroll;
+        }
       </style>
     `;
 
@@ -93,9 +97,13 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .table-container {
+          height: 200px;
+          overflow-y: scroll;
+        }
       </style>
     `;
-
+    generatedHTML += "<div class='table-container'>";
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead>";
     generatedHTML += "<tr>";
@@ -114,6 +122,7 @@ looker.plugins.visualizations.add({
 
 
     // First row is the header
+    generatedHTML += "<tbody>";
     generatedHTML += "<tr>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
@@ -129,42 +138,29 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
+    generatedHTML += "</tbody>";
     generatedHTML += "</table>";
+    generatedHTML += "</div>";
 
     this._container.innerHTML = generatedHTML;
 
-    // Get the header and column cells
-    var headerCells = document.querySelectorAll("thead");
-    var columnCells = document.querySelectorAll("table-row");
-
-    let table = document.querySelector('table');
-    let header = table.querySelector('thead');
-    let headerClone = header.cloneNode(true);
-    headerClone.style.position = 'fixed';
-    headerClone.style.top = '0';
-    table.parentNode.insertBefore(headerClone, table);
-
-    table.addEventListener('scroll', function () {
-      headerClone.scrollCenter = table.scrollCenter;
+    const header = document.getElementById("thead");
+    const body = document.getElementById("tbody");
+    body.addEventListener("scroll", function () {
+      header.style.left = -this.scrollLeft + "px";
     });
 
-     // Get the maximum width for each column
-     var maxWidths = [];
-     for (var i = 0; i < headerCells.length; i++) {
-       maxWidths[i] = headerCells[i].offsetWidth;
-       for (var j = 0; j < columnCells.length; j++) {
-         maxWidths[i] = Math.max(maxWidths[i], columnCells[j].offsetWidth);
-       }
-     }
- 
-     // Set the width of each header and column cell to the maximum width
-     for (var i = 0; i < headerCells.length; i++) {
-       headerCells[i].style.width = maxWidths[i] + "px";
-       for (var j = 0; j < columnCells.length; j++) {
-         columnCells[j].style.width = maxWidths[i] + "px";
-       }
-     }
- 
+    // let table = document.querySelector('table');
+    // let header = table.querySelector('thead');
+    // let headerClone = header.cloneNode(true);
+    // headerClone.style.position = 'fixed';
+    // headerClone.style.top = '0';
+    // table.parentNode.insertBefore(headerClone, table);
+
+    // table.addEventListener('scroll', function () {
+    //   headerClone.scrollCenter = table.scrollCenter;
+    // });
+
     done();
   }
 });
