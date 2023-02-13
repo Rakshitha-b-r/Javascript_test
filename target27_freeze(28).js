@@ -24,8 +24,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead {
-          position: sticky;
-          position: -webkit-sticky;
+          position: fixed;
           z-index :1;
           top:0;
         }
@@ -37,11 +36,10 @@ looker.plugins.visualizations.add({
         }
         .table-cell {
           padding: 5px;
-          position: sticky;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
-        }     
+        }
       </style>
     `;
 
@@ -68,31 +66,29 @@ looker.plugins.visualizations.add({
      */
     var generatedHTML = `
       <style>
-      .table {
-        font-size: ${config.font_size}px;
-        height: 50px;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .thead {
-        position: sticky;
-        position: -webkit-sticky;
-        z-index :1;
-        top:0;
-      }
-      .table-header{
-        font-weight: normal;
-        background-color: #eee;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-cell {
-        padding: 5px;
-        position: sticky;
-        border-bottom: 1px solid #ccc;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }     
+        .table {
+          font-size: ${config.font_size}px;
+          height: 50px;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        .thead {
+          position: fixed;
+          z-index :1;
+          top:0;
+        }
+        .table-header{
+          font-weight: normal;
+          background-color: #eee;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        .table-cell {
+          padding: 5px;
+          border-bottom: 1px solid #ccc;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
@@ -136,16 +132,38 @@ looker.plugins.visualizations.add({
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
-    // let table = document.querySelector('table');
-    // let header = table.querySelector('thead');
-    // let headerClone = header.cloneNode(true);
-    // headerClone.style.position = 'fixed';
-    // headerClone.style.top = '0';
-    // table.parentNode.insertBefore(headerClone, table);
 
-    // table.addEventListener('scroll', function () {
-    //   headerClone.scrollCenter = table.scrollCenter;
-    // });
+    // Get the header and column cells
+    var headerCells = document.querySelectorAll("thead");
+    var columnCells = document.querySelectorAll("table-row");
+
+    // Get the maximum width for each column
+    var maxWidths = [];
+    for (var i = 0; i < headerCells.length; i++) {
+      maxWidths[i] = headerCells[i].offsetWidth;
+      for (var j = 0; j < columnCells.length; j++) {
+        maxWidths[i] = Math.max(maxWidths[i], columnCells[j].offsetWidth);
+      }
+    }
+
+    // Set the width of each header and column cell to the maximum width
+    for (var i = 0; i < headerCells.length; i++) {
+      headerCells[i].style.width = maxWidths[i] + "px";
+      for (var j = 0; j < columnCells.length; j++) {
+        columnCells[j].style.width = maxWidths[i] + "px";
+      }
+    }
+
+    let table = document.querySelector('table');
+    let header = table.querySelector('thead');
+    let headerClone = header.cloneNode(true);
+    headerClone.style.position = 'fixed';
+    headerClone.style.top = '0';
+    table.parentNode.insertBefore(headerClone, table);
+
+    table.addEventListener('scroll', function () {
+      headerClone.scrollCenter = table.scrollCenter;
+    });
     done();
   }
 });
