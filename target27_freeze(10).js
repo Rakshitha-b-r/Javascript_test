@@ -42,17 +42,6 @@ looker.plugins.visualizations.add({
           overflow-y: scroll;
           height: calc(100% - 50px);
         }
-         .freeze-header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: calc(100% - 17px);
-          background-color: white;
-          z-index: 1;
-          }
-        .table-container {
-          overflow-x: auto;
-          }
       </style>
     `;
 
@@ -121,7 +110,7 @@ looker.plugins.visualizations.add({
           }
       </style>
     `;
-    var tableContainer = document.querySelector(".table-container");
+    var tableContainer = document.querySelector("table-container");
     var header = tableContainer.querySelector("thead");
     header.classList.add("freeze-header");
     header.style.width = tableContainer.offsetWidth + "px";
