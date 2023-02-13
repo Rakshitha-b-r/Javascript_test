@@ -89,10 +89,11 @@ looker.plugins.visualizations.add({
     `;
 
     generatedHTML += "<table class='table'>";
-    generatedHTML += "<tr class='table-header'>";
+    generatedHTML += "<thead class='table-header'>";
+    generatedHTML += "<tr>";
     generatedHTML += `<th colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
-    generatedHTML += "<tr class='table-header'>";
+    generatedHTML += "<tr>";
     generatedHTML += `<th>Code</th>`;
     generatedHTML += `<th>Type of Code</th>`;
     generatedHTML += `<th>Name</th>`;
@@ -102,10 +103,11 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th>NACE Code</th>`;
     generatedHTML += `<th>Type of Counterparty</th>`;
     generatedHTML += "</tr>";
+    generatedHTML += "</thead>";
 
 
     // First row is the header
-    generatedHTML += "<tr class='table-header'>";
+    generatedHTML += "<tr>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th>${field.label_short}</th>`;
     }
