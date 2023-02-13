@@ -137,23 +137,6 @@ looker.plugins.visualizations.add({
     var headerCells = document.querySelectorAll("thead");
     var columnCells = document.querySelectorAll("table-row");
 
-    // Get the maximum width for each column
-    var maxWidths = [];
-    for (var i = 0; i < headerCells.length; i++) {
-      maxWidths[i] = headerCells[i].offsetWidth;
-      for (var j = 0; j < columnCells.length; j++) {
-        maxWidths[i] = Math.max(maxWidths[i], columnCells[j].offsetWidth);
-      }
-    }
-
-    // Set the width of each header and column cell to the maximum width
-    for (var i = 0; i < headerCells.length; i++) {
-      headerCells[i].style.width = maxWidths[i] + "px";
-      for (var j = 0; j < columnCells.length; j++) {
-        columnCells[j].style.width = maxWidths[i] + "px";
-      }
-    }
-
     let table = document.querySelector('table');
     let header = table.querySelector('thead');
     let headerClone = header.cloneNode(true);
@@ -164,6 +147,24 @@ looker.plugins.visualizations.add({
     table.addEventListener('scroll', function () {
       headerClone.scrollCenter = table.scrollCenter;
     });
+
+     // Get the maximum width for each column
+     var maxWidths = [];
+     for (var i = 0; i < headerCells.length; i++) {
+       maxWidths[i] = headerCells[i].offsetWidth;
+       for (var j = 0; j < columnCells.length; j++) {
+         maxWidths[i] = Math.max(maxWidths[i], columnCells[j].offsetWidth);
+       }
+     }
+ 
+     // Set the width of each header and column cell to the maximum width
+     for (var i = 0; i < headerCells.length; i++) {
+       headerCells[i].style.width = maxWidths[i] + "px";
+       for (var j = 0; j < columnCells.length; j++) {
+         columnCells[j].style.width = maxWidths[i] + "px";
+       }
+     }
+ 
     done();
   }
 });
