@@ -24,7 +24,8 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead {
-          position: fixed;
+          position: sticky;
+          position: -webkit-sticky;
           z-index :1;
           top:0;
         }
@@ -36,10 +37,11 @@ looker.plugins.visualizations.add({
         }
         .table-cell {
           padding: 5px;
+          position: sticky;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
-        }
+        }     
       </style>
     `;
 
@@ -66,29 +68,31 @@ looker.plugins.visualizations.add({
      */
     var generatedHTML = `
       <style>
-        .table {
-          font-size: ${config.font_size}px;
-          height: 50px;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-        .thead {
-          position: fixed;
-          z-index :1;
-          top:0;
-        }
-        .table-header{
-          font-weight: normal;
-          background-color: #eee;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-        .table-cell {
-          padding: 5px;
-          border-bottom: 1px solid #ccc;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
+      .table {
+        font-size: ${config.font_size}px;
+        height: 50px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .thead {
+        position: sticky;
+        position: -webkit-sticky;
+        z-index :1;
+        top:0;
+      }
+      .table-header{
+        font-weight: normal;
+        background-color: #eee;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .table-cell {
+        padding: 5px;
+        position: sticky;
+        border-bottom: 1px solid #ccc;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }     
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
