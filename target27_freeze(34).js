@@ -103,7 +103,6 @@ looker.plugins.visualizations.add({
 
 
     // First row is the header
-    generatedHTML += "<tbody class='table-body'>";
     generatedHTML += "<tr>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
@@ -125,13 +124,13 @@ looker.plugins.visualizations.add({
 
     let table = document.querySelector('table');
     let header = table.querySelector('thead');
-    let headerClone = header.cloneNode(true);
-    headerClone.style.position = 'sticky';
-    headerClone.style.top = '0';
-    table.parentNode.insertBefore(headerClone, table);
+    //let headerClone = header.cloneNode(true);
+    header.style.position = 'fixed';
+    header.style.top = '0';
+    table.parentNode.insertBefore(header, table);
 
     table.addEventListener('scroll', function () {
-      headerClone.scrollCenter = table.scrollCenter;
+      header.scrollCenter = table.scrollCenter;
     });
 
     done();
