@@ -42,6 +42,11 @@ looker.plugins.visualizations.add({
           overflow-y: scroll;
           height: calc(100% - 50px);
         }
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          }
       </style>
     `;
 
@@ -97,9 +102,24 @@ looker.plugins.visualizations.add({
           overflow-y: scroll;
           height: calc(100% - 50px);
         }
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          }
       </style>
     `;
 
+    window.onscroll = function () { myFunction() };
+    var header = document.getElementById("table-header");
+    var sticky = header.offsetTop;
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
     generatedHTML += "<div class='table-body-wrap'>";
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead class='table-header'>";
