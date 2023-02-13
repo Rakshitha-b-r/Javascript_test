@@ -11,15 +11,6 @@ looker.plugins.visualizations.add({
       default: 11
     }
   },
-  // Set up the initial state of the visualization
-  create: function (element, config) {
-    console.log(config);
-
-
-    // Create a container element to let us center the text.
-    this._container = element.appendChild(document.createElement("div"));
-
-  },
 
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
@@ -188,7 +179,7 @@ looker.plugins.visualizations.add({
       // appends <table> into <body>
       document.body.appendChild(tbl)
       // sets the border attribute of tbl to '2'
-      tbl.setAttribute('border', '1')
+      tbl.setAttribute('border', '0')
 
     done();
   }
