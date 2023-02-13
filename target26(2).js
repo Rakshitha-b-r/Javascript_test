@@ -94,13 +94,13 @@ generatedHTML += "</tr>";
 const header=['Non institutions','Institutions','Institutions in %','Globally Systemic Important Institutions (G-SIIs)'];
 
 // Loop through the different types of column types looker exposes
+  let i=0;
 for (column_type of ["dimension_like", "measure_like", "table_calculations"])
 {
 
     // Look through each field (i.e. row of data)
     for (field of queryResponse.fields[column_type])
     {
-        let i=0;
         // First column is the label
         generatedHTML += `<tr><th class='table-header'>${field.label_short}</th>`;
         generatedHTML += `<th class='table-header'>${header[i]}</th>`;
