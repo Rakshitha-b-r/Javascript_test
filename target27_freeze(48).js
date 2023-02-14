@@ -141,7 +141,8 @@ looker.plugins.visualizations.add({
     // });
 
     let table = document.querySelector('table');
-    let clonedHeader = table.cloneNode(true);
+    let header = table.querySelector('thead');
+    let clonedHeader = header.cloneNode(true);
     clonedHeader.id = "clonedHeaderId";
     clonedHeader.style.position = "fixed";
     clonedHeader.style.top = "0";
@@ -149,18 +150,19 @@ looker.plugins.visualizations.add({
     clonedHeader.style.zIndex = "100";
     clonedHeader.style.borderCollapse = "collapse";
 
-    let clonedHeaderTable = clonedHeader.getElementsByTagName("table")[1];
+    let clonedHeaderTable = clonedHeader.getElementsByTagName("table")[0];
     clonedHeaderTable.style.width = table.offsetWidth + "px";
     clonedHeaderTable.style.margin = "0";
 
+    let originalHeaderCells = header.getElementsByTagName("th");
     let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("th");
-    for (let i = 0; i < clonedHeaderCells.length; i++) {
-      clonedHeaderCells[i].style.width = table.getElementsByTagName("th")[i].offsetWidth + "px";
+    for (let i = 0; i < originalHeaderCells.length; i++) {
+      clonedHeaderCells[i].style.width = originalHeaderCells[i].offsetWidth + "px";
     }
-
+    
     table.parentNode.insertBefore(clonedHeader, table);
     table.addEventListener('scroll', function () {
-      clonedHeader.scrollCenter = table.scrollCenter;
+      clonedHeader.scrollLeft = table.scrollLeft;
     });
   
 
