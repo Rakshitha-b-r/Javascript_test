@@ -68,7 +68,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-    
+    generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
