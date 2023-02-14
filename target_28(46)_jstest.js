@@ -27,7 +27,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
      // Create a container element to let us center the text.
-  this._container = element.appendChild(document.createElement("div"));
+    this._container = element.appendChild(document.createElement("div"));
     var table =  generateTableHeader();
     element.appendChild(table);
     //element.innerHTML=table;
@@ -49,40 +49,40 @@ looker.plugins.visualizations.add({
     // Remove any previous data from the table
 
     // Create a new table
-    // var table = document.createElement('table');
-    // table.id = "table";
-    // table.classList.add('table');
+    var table = document.createElement('table');
+    table.id = "table";
+    table.classList.add('table');
     
-    // // Create the table header
-    // var headerRow = document.createElement('tr');
-    // headerRow.classList.add('table-header');
-    // for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-    //   var headerCell = document.createElement('th');
-    //   headerCell.innerHTML = field.label_short;
-    //   headerRow.appendChild(headerCell);
-    // }
-    // table.appendChild(headerRow);
+    // Create the table header
+    var headerRow = document.createElement('tr');
+    headerRow.classList.add('table-header');
+    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+      var headerCell = document.createElement('th');
+      headerCell.innerHTML = field.label_short;
+      headerRow.appendChild(headerCell);
+    }
+    table.appendChild(headerRow);
 
-    // // Create the table body
-    // var tableBody = document.createElement('tbody');
-    // tableBody.classList.add('table-body');
+    // Create the table body
+    var tableBody = document.createElement('tbody');
+    tableBody.classList.add('table-body');
     
-    // // Loop through the data
-    // for (row of data) {
-    //   var tableRow = document.createElement('tr');
-    //   tableRow.classList.add('table-row');
-    //   for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-    //     var tableCell = document.createElement('td');
-    //     tableCell.innerHTML = LookerCharts.Utils.htmlForCell(row[field.name]);
-    //     tableRow.appendChild(tableCell);
-    //   }
-    //   tableBody.appendChild(tableRow);
-    // }
+    // Loop through the data
+    for (row of data) {
+      var tableRow = document.createElement('tr');
+      tableRow.classList.add('table-row');
+      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+        var tableCell = document.createElement('td');
+        tableCell.innerHTML = LookerCharts.Utils.htmlForCell(row[field.name]);
+        tableRow.appendChild(tableCell);
+      }
+      tableBody.appendChild(tableRow);
+    }
 
-    // table.appendChild(tableBody);
-    // element.innerHTML = '';
-    // element.appendChild(table);
-    //element.innerHTML+=table.outerHTML;
+    table.appendChild(tableBody);
+    element.innerHTML = '';
+    element.appendChild(table);
+    element.innerHTML+=table.outerHTML;
     done();
   }
 });
