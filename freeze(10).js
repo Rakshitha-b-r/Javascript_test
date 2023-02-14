@@ -103,8 +103,8 @@ looker.plugins.visualizations.add({
     `;
 
     generatedHTML += "<div class='table-div'>";
-    generatedHTML += "<table class='table'>";
-    generatedHTML += "<thead>";
+    generatedHTML += "<table class='table' id='looker_table'>";
+    generatedHTML += "<thead id='thead'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
