@@ -66,6 +66,7 @@ looker.plugins.visualizations.add({
 
     table.appendChild(tableBody);
     element.appendChild(table);
+    this._container.innerHTML = element;
     done();
   }
 
