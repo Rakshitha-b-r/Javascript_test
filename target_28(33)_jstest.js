@@ -15,7 +15,8 @@ looker.plugins.visualizations.add({
   create: function (element, config) {
     console.log(config);
     var table =  generateTableHeader();
-    element.innerHTML=table;
+    element.appendChild(table);
+    //element.innerHTML=table;
 
     //this._container.innerHTML = table;
   },
