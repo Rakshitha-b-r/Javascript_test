@@ -16,20 +16,6 @@ looker.plugins.visualizations.add({
     console.log(config);
     var table =  generateTableHeader();
     element.appendChild(table);
-    // generatedHTML += "<tr >";
-    // for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-    //   generatedHTML += `<th>${field.label_short}</th>`;
-    // }
-    // generatedHTML += "</tr>";
-
-    // // Next rows are the data
-    // for (row of data) {
-    //   generatedHTML += "<tr class='table-row'>";
-    //   for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-    //     generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
-    //   }
-    //   generatedHTML += "</tr>";
-    //}
 
     this._container.innerHTML = table;
   },
@@ -84,6 +70,23 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
+    generatedHTML += "<table>";
+    generatedHTML += "<tr >";
+    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+      generatedHTML += `<th>${field.label_short}</th>`;
+    }
+    generatedHTML += "</tr>";
+
+    // Next rows are the data
+    for (row of data) {
+      generatedHTML += "<tr class='table-row'>";
+      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+        generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
+      }
+      generatedHTML += "</tr>";
+      generatedHTML += "</table>";
+    }
+    this._container.innerHTML += generatedHTML;
     done();
   }
 });
@@ -239,10 +242,12 @@ function generateTableHeader() {
     tblBody.appendChild(row)
   }
 
+
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody)
   // appends <table> into <body>
   document.body.appendChild(tbl)
   // sets the border attribute of tbl to '2'
   tbl.setAttribute('border', '1')
+
 }
