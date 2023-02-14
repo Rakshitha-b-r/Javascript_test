@@ -22,6 +22,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           top :0;
           z-index : 1;
+          align : top;
         }
       </style>
     `;
@@ -243,5 +244,7 @@ function generateTableHeader() {
   // appends <table> into <body>
   document.body.appendChild(tbl)
   // sets the border attribute of tbl to '2'
-  tbl.setAttribute('border', '1')
+  //tbl.setAttribute('border', '1')
+  // Pos=new VBox()
+  // tbl.setAlignment()
 }
