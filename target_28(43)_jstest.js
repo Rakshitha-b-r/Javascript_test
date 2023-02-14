@@ -14,18 +14,18 @@ looker.plugins.visualizations.add({
   // Set up the initial state of the visualization
   create: function (element, config) {
     console.log(config);
-    // element.innerHTML = `
-    //   <style>
-    //     #table {
-    //       font-size: ${config.font_size}px;
-    //       border: 1px solid black;
-    //       border-collapse: collapse;
-    //       top :0;
-    //       z-index : 1;
-    //       align : top;
-    //     }
-    //   </style>
-    // `;
+    element.innerHTML = `
+      <style>
+        #table {
+          font-size: ${config.font_size}px;
+          border: 1px solid black;
+          border-collapse: collapse;
+          top :0;
+          z-index : 1;
+          valign : top;
+        }
+      </style>
+    `;
      // Create a container element to let us center the text.
   this._container = element.appendChild(document.createElement("div"));
     var table =  generateTableHeader();
@@ -244,7 +244,6 @@ function generateTableHeader() {
   // appends <table> into <body>
   document.body.appendChild(tbl)
   // sets the border attribute of tbl to '2'
-  tbl.setAttribute('border', '2')
-  // Pos=new VBox()
-  // tbl.setAlignment()
+  tbl.setAttribute('border', '1')
+  tbl.getViewport().setViewAlignment(0.0f, 0.0f); // set the vertical alignment of the viewport to TOP
 }
