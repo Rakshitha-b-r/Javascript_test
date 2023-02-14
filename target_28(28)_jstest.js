@@ -69,7 +69,7 @@ looker.plugins.visualizations.add({
     // element.innerHTML=table.outerHTML;
     done();
   }
-
+});
 
 function generateTableHeader() {
   // creates a <table> element and a <tbody> element
