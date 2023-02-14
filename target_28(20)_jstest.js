@@ -17,7 +17,7 @@ looker.plugins.visualizations.add({
     var table =  generateTableHeader(data);
     element.appendChild(table);
 
-    this._container.innerHTML = table;
+    //this._container.innerHTML = table;
   },
 
   // Render in response to the data or settings changing
@@ -70,23 +70,23 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-    generatedHTML += "<table>";
-    generatedHTML += "<tr >";
-    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th>${field.label_short}</th>`;
-    }
-    generatedHTML += "</tr>";
+    // generatedHTML += "<table>";
+    // generatedHTML += "<tr >";
+    // for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+    //   generatedHTML += `<th>${field.label_short}</th>`;
+    // }
+    // generatedHTML += "</tr>";
 
-    // Next rows are the data
-    for (row of data) {
-      generatedHTML += "<tr class='table-row'>";
-      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-        generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
-      }
-      generatedHTML += "</tr>";
-      generatedHTML += "</table>";
-    }
-    this._container.innerHTML += generatedHTML;
+    // // Next rows are the data
+    // for (row of data) {
+    //   generatedHTML += "<tr class='table-row'>";
+    //   for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+    //     generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
+    //   }
+    //   generatedHTML += "</tr>";
+    //   generatedHTML += "</table>";
+    // }
+    // this._container.innerHTML += generatedHTML;
     done();
   }
 });
