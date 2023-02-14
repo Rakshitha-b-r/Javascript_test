@@ -14,7 +14,7 @@ looker.plugins.visualizations.add({
   // Set up the initial state of the visualization
   create: function (data,element, config,queryResponse) {
     console.log(config);
-    var table =  generateTableHeader();
+    var table =  generateTableHeader(data);
     element.appendChild(table);
 
     this._container.innerHTML = table;
@@ -91,7 +91,7 @@ looker.plugins.visualizations.add({
   }
 });
 
-function generateTableHeader() {
+function generateTableHeader(data) {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement('table')
   const tblBody = document.createElement('tbody')
@@ -241,7 +241,24 @@ function generateTableHeader() {
     // add the row to the end of the table body
     tblBody.appendChild(row)
   }
+    data.forEach(rowData => {
+    // creates a table row
+    const row = document.createElement('tr');
 
+    // loop through each cell in the row
+    rowData.forEach(cellData => {
+      // Create a <td> element and a text node, make the text
+      // node the contents of the <td>, and put the <td> at
+      // the end of the table row
+      const cell = document.createElement('td');
+      const cellText = document.createTextNode(cellData);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+    });
+
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+  });
 
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody)
