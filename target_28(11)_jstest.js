@@ -107,7 +107,7 @@ looker.plugins.visualizations.add({
     
     generatedHTML = generateTableHeader();
     this._container.innerHTML = generatedHTML;
-
+    break
     done();
   }
 });
