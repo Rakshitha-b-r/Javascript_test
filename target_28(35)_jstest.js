@@ -33,7 +33,6 @@ looker.plugins.visualizations.add({
     }
 
     // Remove any previous data from the table
-    //element.innerHTML = '';
 
     // Create a new table
     var table = document.createElement('table');
@@ -66,6 +65,7 @@ looker.plugins.visualizations.add({
     }
 
     table.appendChild(tableBody);
+    element.innerHTML = '';
     element.appendChild(table);
     //element.innerHTML+=table.outerHTML;
     done();
