@@ -154,8 +154,8 @@ looker.plugins.visualizations.add({
     clonedHeaderTable.style.width = table.offsetWidth + "px";
     clonedHeaderTable.style.margin = "0";
 
-    let originalHeaderCells = header.getElementsByTagName("th");
-    let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("th");
+    let originalHeaderCells = header.getElementsByTagName("thead");
+    let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("thead");
     for (let i = 0; i < originalHeaderCells.length; i++) {
       clonedHeaderCells[i].style.width = originalHeaderCells[i].offsetWidth + "px";
     }
