@@ -245,5 +245,6 @@ function generateTableHeader() {
   document.body.appendChild(tbl)
   // sets the border attribute of tbl to '2'
   tbl.setAttribute('border', '1')
-  tbl.getViewport().setViewAlignment(0.0f, 0.0f); // set the vertical alignment of the viewport to TOP
+  JScrollPane scrollPane = new JScrollPane(tbl); // wrap the table in a JScrollPane
+  scrollPane.getViewport().setViewAlignment(0.0f, 0.0f); // set the vertical alignment of the viewport to TOP
 }
