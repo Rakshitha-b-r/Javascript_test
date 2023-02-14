@@ -149,7 +149,7 @@ looker.plugins.visualizations.add({
     clonedHeader.style.zIndex = "100";
     clonedHeader.style.borderCollapse = "collapse";
 
-    let clonedHeaderTable = clonedHeader.getElementsByTagName("table")[0];
+    let clonedHeaderTable = clonedHeader.getElementsByTagName("table")[1];
     clonedHeaderTable.style.width = table.offsetWidth + "px";
     clonedHeaderTable.style.margin = "0";
 
