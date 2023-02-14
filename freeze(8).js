@@ -141,8 +141,8 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
 
-    let header=document.getElementById("thead");
     let table=document.getElementById("table");
+    let header=table.getElementById("thead");
     let headerClone = header.cloneNode(true);
     headerClone.classList.add("fixed");
     headerClone.style.position = "fixed";
