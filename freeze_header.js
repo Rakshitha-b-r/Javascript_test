@@ -150,15 +150,15 @@ looker.plugins.visualizations.add({
     clonedHeader.style.zIndex = "100";
     clonedHeader.style.borderCollapse = "collapse";
 
-    let clonedHeaderTable = table.getElementsByTagName("table")[0];
-    clonedHeaderTable.style.width = table.offsetWidth + "px";
-    clonedHeaderTable.style.margin = "0";
+    // let clonedHeaderTable = table.getElementsByTagName("table")[0];
+    // clonedHeaderTable.style.width = table.offsetWidth + "px";
+    // clonedHeaderTable.style.margin = "0";
 
-    let originalHeaderCells = header.getElementsByTagName("th");
-    let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("th");
-    for (let i = 0; i < originalHeaderCells.length; i++) {
-      clonedHeaderCells[i].style.width = originalHeaderCells[i].offsetWidth + "px";
-    }
+    // let originalHeaderCells = header.getElementsByTagName("th");
+    // let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("th");
+    // for (let i = 0; i < originalHeaderCells.length; i++) {
+    //   clonedHeaderCells[i].style.width = originalHeaderCells[i].offsetWidth + "px";
+    // }
     
     table.parentNode.insertBefore(clonedHeader, table);
     table.addEventListener('scroll', function () {
