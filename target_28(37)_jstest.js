@@ -47,7 +47,7 @@ looker.plugins.visualizations.add({
 
     // Create a new table
     var table = document.createElement('table');
-    tbl.id = "table";
+    table.id = "table";
     table.classList.add('table');
     
     // Create the table header
