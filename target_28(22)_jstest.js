@@ -20,7 +20,6 @@ looker.plugins.visualizations.add({
     //this._container.innerHTML = table;
   },
 
-  // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
     console.log(config);
     // Clear any errors from previous updates
@@ -32,64 +31,44 @@ looker.plugins.visualizations.add({
       return;
     }
 
-    /* Code to generate table
-     * In keeping with the spirit of this little visualization plugin,
-     * it's done in a quick and dirty way: piece together HTML strings.
-     */
-    var generatedHTML = `
-      <style>
-      .table {
-        font-size: ${config.font_size}px;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-header {
-        background-color: #eee;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-body {
-        display: block;
-        overflow-y: auto;
-      }
-      .table-content {
-        margin-top: 40px;
-      }
-      .table-cell {
-        padding: 5px;
-        border-bottom: 1px solid #ccc;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .header-group {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 50px;
-      </style>
-    `;
+    // Remove any previous data from the table
+    element.innerHTML = '';
 
-    // generatedHTML += "<table>";
-    // generatedHTML += "<tr >";
-    // for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-    //   generatedHTML += `<th>${field.label_short}</th>`;
-    // }
-    // generatedHTML += "</tr>";
+    // Create a new table
+    var table = document.createElement('table');
+    table.classList.add('table');
+    
+    // Create the table header
+    var headerRow = document.createElement('tr');
+    headerRow.classList.add('table-header');
+    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+      var headerCell = document.createElement('th');
+      headerCell.innerHTML = field.label_short;
+      headerRow.appendChild(headerCell);
+    }
+    table.appendChild(headerRow);
 
-    // // Next rows are the data
-    // for (row of data) {
-    //   generatedHTML += "<tr class='table-row'>";
-    //   for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-    //     generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
-    //   }
-    //   generatedHTML += "</tr>";
-    //   generatedHTML += "</table>";
-    // }
-    // this._container.innerHTML += generatedHTML;
+    // Create the table body
+    var tableBody = document.createElement('tbody');
+    tableBody.classList.add('table-body');
+    
+    // Loop through the data
+    for (row of data) {
+      var tableRow = document.createElement('tr');
+      tableRow.classList.add('table-row');
+      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+        var tableCell = document.createElement('td');
+        tableCell.innerHTML = LookerCharts.Utils.htmlForCell(row[field.name]);
+        tableRow.appendChild(tableCell);
+      }
+      tableBody.appendChild(tableRow);
+    }
+
+    table.appendChild(tableBody);
+    element.appendChild(table);
     done();
   }
-});
+
 
 function generateTableHeader() {
   // creates a <table> element and a <tbody> element
