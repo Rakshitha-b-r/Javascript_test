@@ -32,7 +32,7 @@ looker.plugins.visualizations.add({
     }
 
     // Remove any previous data from the table
-    element.innerHTML = '';
+    //element.innerHTML = '';
 
     // Create a new table
     var table = document.createElement('table');
@@ -227,5 +227,5 @@ function generateTableHeader() {
   // appends <table> into <body>
   document.body.appendChild(tbl)
   // sets the border attribute of tbl to '2'
-
+  tbl.setAttribute('border', '1')
 }
