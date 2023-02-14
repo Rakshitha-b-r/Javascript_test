@@ -21,25 +21,30 @@ looker.plugins.visualizations.add({
           font-size: ${config.font_size}px;
           border: 1px solid black;
           border-collapse: collapse;
-          display: block;
-          overflow-x: auto;
         }
         .table-header {
           font-weight: bold;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          position: -webkit-sticky;
-          position: sticky;
-          top: 0;
-          z-index: 1;
         }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
-        } 
+        }
+        .thead{
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+         .table-row {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        .table-div{
+          overflow-y: scroll;
+        }
       </style>
     `;
 
@@ -67,18 +72,15 @@ looker.plugins.visualizations.add({
     var generatedHTML = `
       <style>
         .table {
-          display: block;
-          overflow-x: auto;
           font-size: ${config.font_size}px;
           border: 1px solid black;
           border-collapse: collapse;
         }
         .table-header {
-          position: -webkit-sticky;
-          position: sticky;
-          top: 0;
+          font-weight: bold;
           background-color: #eee;
-          z-index: 1;
+          border: 1px solid black;
+          border-collapse: collapse;
         }
         .table-cell {
           padding: 5px;
@@ -86,14 +88,23 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .thead{
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .table-div{
+          overflow-y: scroll;
+        }
       </style>
     `;
 
+    generatedHTML += "<div class='table-div'>";
     generatedHTML += "<table class='table'>";
+    generatedHTML += "<thead>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
@@ -107,14 +118,15 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header'>NACE Code</th>`;
     generatedHTML += `<th class='table-header'>Type of Counterparty</th>`;
     generatedHTML += "</tr>";
-   
-   
+
+
     // First row is the header
     generatedHTML += "<tr class='table-header'>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
     }
     generatedHTML += "</tr>";
+    generatedHTML += "</thead>";
 
     // Next rows are the data
     for (row of data) {
@@ -125,12 +137,17 @@ looker.plugins.visualizations.add({
       generatedHTML += "</tr>";
     }
     generatedHTML += "</table>";
+    generatedHTML += "</div>";
 
     this._container.innerHTML = generatedHTML;
+
     let table = document.querySelector('table');
     table.addEventListener('scroll', function () {
       table.scrollLeft;
     });
+    document.getElementById("thead").classList.add("sticky");
+    document.getElementById("thead").style.position = "sticky";
+    document.getElementById("thead").style.top = "0";
     done();
   }
 });
