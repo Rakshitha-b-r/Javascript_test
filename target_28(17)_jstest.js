@@ -29,9 +29,9 @@ looker.plugins.visualizations.add({
     //     generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
     //   }
     //   generatedHTML += "</tr>";
-    }
+    //}
 
-    this._container.innerHTML = generatedHTML;
+    this._container.innerHTML = table;
   },
 
   // Render in response to the data or settings changing
