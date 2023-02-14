@@ -141,8 +141,8 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
 
-    document.getElementById("thead").classList.add("freeze");
-    document.getElementById("thead").style.position = "freeze";
+    document.getElementById("thead").classList.add("fixed");
+    document.getElementById("thead").style.position = "fixed";
     document.getElementById("thead").style.top = "0";
 
     document.getElementById("table").addEventListener('scroll', function () {
