@@ -145,7 +145,7 @@ looker.plugins.visualizations.add({
     document.getElementById("thead").style.position = "freeze";
     document.getElementById("thead").style.top = "0";
 
-    table.addEventListener('scroll', function () {
+    document.getElementById("table").addEventListener('scroll', function () {
       document.getElementById("thead").scrollCenter = document.getElementById("table").scrollCenter;
     });
 
