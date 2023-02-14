@@ -14,20 +14,21 @@ looker.plugins.visualizations.add({
   // Set up the initial state of the visualization
   create: function (data,element, config,queryResponse) {
     console.log(config);
-    var generatedHTML =  generateTableHeader();
-    generatedHTML += "<tr >";
-    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th>${field.label_short}</th>`;
-    }
-    generatedHTML += "</tr>";
+    var table =  generateTableHeader();
+    element.appendChild(table);
+    // generatedHTML += "<tr >";
+    // for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+    //   generatedHTML += `<th>${field.label_short}</th>`;
+    // }
+    // generatedHTML += "</tr>";
 
-    // Next rows are the data
-    for (row of data) {
-      generatedHTML += "<tr class='table-row'>";
-      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-        generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
-      }
-      generatedHTML += "</tr>";
+    // // Next rows are the data
+    // for (row of data) {
+    //   generatedHTML += "<tr class='table-row'>";
+    //   for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+    //     generatedHTML += `<td>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`;
+    //   }
+    //   generatedHTML += "</tr>";
     }
 
     this._container.innerHTML = generatedHTML;
