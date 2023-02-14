@@ -66,7 +66,7 @@ looker.plugins.visualizations.add({
 
     table.appendChild(tableBody);
     element.appendChild(table);
-    element.innerHTML=table.outerHTML;
+    element.innerHTML+=table.outerHTML;
     done();
   }
 });
@@ -227,6 +227,5 @@ function generateTableHeader() {
   // appends <table> into <body>
   document.body.appendChild(tbl)
   // sets the border attribute of tbl to '2'
-  tbl.setAttribute('border', '1')
 
 }
