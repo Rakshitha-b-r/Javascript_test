@@ -20,6 +20,8 @@ looker.plugins.visualizations.add({
           font-size: ${config.font_size}px;
           border: 1px solid black;
           border-collapse: collapse;
+          top :0;
+          z-index : 1;
         }
       </style>
     `;
