@@ -129,16 +129,40 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
 
+    // let table = document.querySelector('table');
+    // let header = table.querySelector('thead');
+    // let headerClone = header.cloneNode(true);
+    // headerClone.style.position = 'fixed';
+    // headerClone.style.top = '0';
+    // headerClone.style.width = '100%';
+    // table.parentNode.insertBefore(headerClone, table);
+    // table.addEventListener('scroll', function () {
+    //   header.scrollCenter = table.scrollCenter;
+    // });
+
     let table = document.querySelector('table');
-    let header = table.querySelector('thead');
-    let headerClone = header.cloneNode(true);
-    headerClone.style.position = 'fixed';
-    headerClone.style.top = '0';
-    headerClone.style.width = '100%';
-    table.parentNode.insertBefore(headerClone, table);
+    let clonedHeader = table.cloneNode(true);
+    clonedHeader.id = "clonedHeaderId";
+    clonedHeader.style.position = "fixed";
+    clonedHeader.style.top = "0";
+    clonedHeader.style.backgroundColor = "white";
+    clonedHeader.style.zIndex = "100";
+    clonedHeader.style.borderCollapse = "collapse";
+
+    let clonedHeaderTable = clonedHeader.getElementsByTagName("table")[0];
+    clonedHeaderTable.style.width = table.offsetWidth + "px";
+    clonedHeaderTable.style.margin = "0";
+
+    let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("th");
+    for (let i = 0; i < clonedHeaderCells.length; i++) {
+      clonedHeaderCells[i].style.width = table.getElementsByTagName("th")[i].offsetWidth + "px";
+    }
+
+    table.parentNode.insertBefore(clonedHeader, table);
     table.addEventListener('scroll', function () {
-      header.scrollCenter = table.scrollCenter;
+      clonedHeader.scrollCenter = table.scrollCenter;
     });
+  
 
     done();
   }
