@@ -51,7 +51,8 @@ looker.plugins.visualizations.add({
 
     // // Create a container element to let us center the text.
     // this._container = element.appendChild(document.createElement("div"));
-
+    var generatedHTML =  generateTableHeader();
+    this._container.innerHTML = generatedHTML;
   },
 
   // Render in response to the data or settings changing
@@ -105,9 +106,8 @@ looker.plugins.visualizations.add({
     `;
 
     
-    generatedHTML = generateTableHeader();
-    this._container.innerHTML = generatedHTML;
-    break
+    // generatedHTML = generateTableHeader();
+    // this._container.innerHTML = generatedHTML;
     done();
   }
 });
