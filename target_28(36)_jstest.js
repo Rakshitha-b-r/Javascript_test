@@ -14,6 +14,17 @@ looker.plugins.visualizations.add({
   // Set up the initial state of the visualization
   create: function (element, config) {
     console.log(config);
+    element.innerHTML = `
+      <style>
+        #table {
+          font-size: ${config.font_size}px;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+      </style>
+    `;
+     // Create a container element to let us center the text.
+  this._container = element.appendChild(document.createElement("div"));
     var table =  generateTableHeader();
     element.appendChild(table);
     //element.innerHTML=table;
@@ -36,6 +47,7 @@ looker.plugins.visualizations.add({
 
     // Create a new table
     var table = document.createElement('table');
+    tbl.id = "table";
     table.classList.add('table');
     
     // Create the table header
@@ -75,6 +87,7 @@ looker.plugins.visualizations.add({
 function generateTableHeader() {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement('table')
+  tbl.id = "table";
   const tblBody = document.createElement('tbody')
 
   // creating all cells
