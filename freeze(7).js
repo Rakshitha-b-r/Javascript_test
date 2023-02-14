@@ -141,12 +141,16 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
 
-    document.getElementById("thead").classList.add("fixed");
-    document.getElementById("thead").style.position = "fixed";
-    document.getElementById("thead").style.top = "0";
+    let header=document.getElementById("thead");
+    let table=document.getElementById("table");
+    let headerClone = header.cloneNode(true);
+    headerClone.classList.add("fixed");
+    headerClone.style.position = "fixed";
+    headerClone.style.top = "0";
+    table.parentNode.insertBefore(headerClone, table);
 
-    document.getElementById("table").addEventListener('scroll', function () {
-      document.getElementById("thead").scrollCenter = document.getElementById("table").scrollCenter;
+    table.addEventListener('scroll', function () {
+      headerClone.scrollCenter = table.scrollCenter;
     });
 
     done();
