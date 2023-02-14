@@ -32,7 +32,57 @@ looker.plugins.visualizations.add({
     //this._container.innerHTML = table;
   },
 
-  
+  updateAsync: function (data, element, config, queryResponse, details, done) {
+    console.log(config);
+    // Clear any errors from previous updates
+    this.clearErrors();
+
+    // Throw some errors and exit if the shape of the data isn't what this chart needs
+    if (queryResponse.fields.dimensions.length == 0) {
+      this.addError({ title: "No Dimensions", message: "This chart requires dimensions." });
+      return;
+    }
+
+    // Remove any previous data from the table
+
+    // Create a new table
+    // var table = document.createElement('table');
+    // table.id = "table";
+    // table.classList.add('table');
+    
+    // // Create the table header
+    // var headerRow = document.createElement('tr');
+    // headerRow.classList.add('table-header');
+    // for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+    //   var headerCell = document.createElement('th');
+    //   headerCell.innerHTML = field.label_short;
+    //   headerRow.appendChild(headerCell);
+    // }
+    // table.appendChild(headerRow);
+
+    // // Create the table body
+    // var tableBody = document.createElement('tbody');
+    // tableBody.classList.add('table-body');
+    
+    // // Loop through the data
+    // for (row of data) {
+    //   var tableRow = document.createElement('tr');
+    //   tableRow.classList.add('table-row');
+    //   for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
+    //     var tableCell = document.createElement('td');
+    //     tableCell.innerHTML = LookerCharts.Utils.htmlForCell(row[field.name]);
+    //     tableRow.appendChild(tableCell);
+    //   }
+    //   tableBody.appendChild(tableRow);
+    // }
+
+    // table.appendChild(tableBody);
+    // element.innerHTML = '';
+    // element.appendChild(table);
+    //element.innerHTML+=table.outerHTML;
+    done();
+  }
+});
 
 function generateTableHeader() {
   // creates a <table> element and a <tbody> element
@@ -185,58 +235,6 @@ function generateTableHeader() {
     // add the row to the end of the table body
     tblBody.appendChild(row)
   }
-
-  updateAsync: function (data, element, config, queryResponse, details, done) {
-    console.log(config);
-    // Clear any errors from previous updates
-    this.clearErrors();
-
-    // Throw some errors and exit if the shape of the data isn't what this chart needs
-    if (queryResponse.fields.dimensions.length == 0) {
-      this.addError({ title: "No Dimensions", message: "This chart requires dimensions." });
-      return;
-    }
-
-    // Remove any previous data from the table
-
-    // Create a new table
-    // var table = document.createElement('table');
-    // table.id = "table";
-    // table.classList.add('table');
-    
-    // Create the table header
-    var headerRow = document.createElement('tr');
-    headerRow.classList.add('table-header');
-    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      var headerCell = document.createElement('th');
-      headerCell.innerHTML = field.label_short;
-      headerRow.appendChild(headerCell);
-    }
-    table.appendChild(headerRow);
-
-    // // Create the table body
-    // var tableBody = document.createElement('tbody');
-    // tableBody.classList.add('table-body');
-    
-    // Loop through the data
-    for (row of data) {
-      var tableRow = document.createElement('tr');
-      tableRow.classList.add('table-row');
-      for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-        var tableCell = document.createElement('td');
-        tableCell.innerHTML = LookerCharts.Utils.htmlForCell(row[field.name]);
-        tableRow.appendChild(tableCell);
-      }
-      tableBody.appendChild(tableRow);
-    }
-
-    // table.appendChild(tableBody);
-    // element.innerHTML = '';
-    // element.appendChild(table);
-    //element.innerHTML+=table.outerHTML;
-    done();
-  }
-});
 
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody)
