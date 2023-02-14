@@ -140,11 +140,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</div>";
 
     this._container.innerHTML = generatedHTML;
-
-    let table = document.querySelector('table');
-    table.addEventListener('scroll', function () {
-      table.scrollLeft;
-    });
+    
     document.getElementById("thead").classList.add("sticky");
     document.getElementById("thead").style.position = "sticky";
     document.getElementById("thead").style.top = "0";
