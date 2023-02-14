@@ -14,43 +14,43 @@ looker.plugins.visualizations.add({
   // Set up the initial state of the visualization
   create: function (element, config) {
     console.log(config);
-    // Insert a <style> tag with some styles we'll use later.
-    element.innerHTML = `
-      <style>
-      .table {
-        font-size: ${config.font_size}px;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-header {
-        background-color: #eee;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-body {
-        display: block;
-        overflow-y: auto;
-      }
-      .table-content {
-        margin-top: 40px;
-      }
-      .table-cell {
-        padding: 5px;
-        border-bottom: 1px solid #ccc;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .header-group {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 50px;
-      </style>
-    `;
+    // // Insert a <style> tag with some styles we'll use later.
+    // element.innerHTML = `
+    //   <style>
+    //   .table {
+    //     font-size: ${config.font_size}px;
+    //     border: 1px solid black;
+    //     border-collapse: collapse;
+    //   }
+    //   .table-header {
+    //     background-color: #eee;
+    //     border: 1px solid black;
+    //     border-collapse: collapse;
+    //   }
+    //   .table-body {
+    //     display: block;
+    //     overflow-y: auto;
+    //   }
+    //   .table-content {
+    //     margin-top: 40px;
+    //   }
+    //   .table-cell {
+    //     padding: 5px;
+    //     border-bottom: 1px solid #ccc;
+    //     border: 1px solid black;
+    //     border-collapse: collapse;
+    //   }
+    //   .header-group {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     height: 50px;
+    //   </style>
+    // `;
 
-    // Create a container element to let us center the text.
-    this._container = element.appendChild(document.createElement("div"));
+    // // Create a container element to let us center the text.
+    // this._container = element.appendChild(document.createElement("div"));
 
   },
 
