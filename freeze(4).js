@@ -140,9 +140,9 @@ looker.plugins.visualizations.add({
     generatedHTML += "</div>";
 
     this._container.innerHTML = generatedHTML;
-    
-    document.getElementById("thead").classList.add("sticky");
-    document.getElementById("thead").style.position = "sticky";
+
+    document.getElementById("thead").classList.add("freeze");
+    document.getElementById("thead").style.position = "freeze";
     document.getElementById("thead").style.top = "0";
     done();
   }
