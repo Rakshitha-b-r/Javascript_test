@@ -69,8 +69,6 @@ looker.plugins.visualizations.add({
         border-collapse: collapse;
         font-weight: normal;
         position: absolute;
-        width: 70px;
-        height: 15px;
         font-family: 'Verdana';
         font-size: 11px;
         align-items: center;
@@ -92,11 +90,11 @@ looker.plugins.visualizations.add({
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' rowspan='2' colspan='2' > </th>`;
-    generatedHTML += `<th class='table-header' rowspan='1' colspan='9' style="text-align:center"><b>Applicable limit</b></th>`;
+    generatedHTML += `<th class='table-header' rowspan='1' colspan='9'><b>Applicable limit</b></th>`;
     generatedHTML += "</tr>";
 
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' colspan='9' style="font-size: 11px;"> 010 </th>`;
+    generatedHTML += `<th class='table-header' colspan='9'> 010 </th>`;
     generatedHTML += "</tr>";
 
     const header = ['Non institutions', 'Institutions', 'Institutions in %', 'Globally Systemic Important Institutions (G-SIIs)'];
