@@ -23,7 +23,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .thead{
+        .table-header{
           font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
@@ -70,7 +70,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .thead{
+        .table-header{
           font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
@@ -93,29 +93,29 @@ looker.plugins.visualizations.add({
     `;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tbody>";
-    generatedHTML += "<thead>";
+    //generatedHTML += "<thead>";
     generatedHTML += "<tr>";
-    generatedHTML += `<th colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
+    generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
-    generatedHTML += `<th>Code</th>`;
-    generatedHTML += `<th>Type of Code</th>`;
-    generatedHTML += `<th>Name</th>`;
-    generatedHTML += `<th>National Code</th>`;
-    generatedHTML += `<th>Residence of the Counterparty</th>`;
-    generatedHTML += `<th>Sector of the Counterparty</th>`;
-    generatedHTML += `<th>NACE Code</th>`;
-    generatedHTML += `<th>Type of Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>Code</th>`;
+    generatedHTML += `<th class='table-header'>Type of Code</th>`;
+    generatedHTML += `<th class='table-header'>Name</th>`;
+    generatedHTML += `<th class='table-header'>National Code</th>`;
+    generatedHTML += `<th class='table-header'>Residence of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>Sector of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header'>NACE Code</th>`;
+    generatedHTML += `<th class='table-header'>Type of Counterparty</th>`;
     generatedHTML += "</tr>";
 
 
     // First row is the header
     generatedHTML += "<tr>";
     for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th>${field.label_short}</th>`;
+      generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
     }
     generatedHTML += "</tr>";
-    generatedHTML += "</thead>";
+    //generatedHTML += "</thead>";
 
     // Next rows are the data
     for (row of data) {
