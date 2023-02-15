@@ -53,8 +53,6 @@ looker.plugins.visualizations.add({
         table.id = "data_table";
         table.classList.add('table');
 
-        // Create the table body
-        var tableBody = document.createElement('tbody');
 
         // Create the table header
         var headerRow = document.createElement('tr');
@@ -67,7 +65,9 @@ looker.plugins.visualizations.add({
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
         }
-        //tableBody.appendChild(headerRow);
+        // Create the table body
+        var tableBody = document.createElement('tbody');
+        tableBody.appendChild(headerRow);
 
 
         // Loop through the data
