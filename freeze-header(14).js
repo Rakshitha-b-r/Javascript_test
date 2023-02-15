@@ -42,13 +42,6 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-
-        /* Add styles for the first column of the header */
-        .table-header th:first-child {
-          position: sticky;
-          left: 0;
-          z-index: 3;
-        }
       </style>
     `;
 
@@ -89,14 +82,7 @@ looker.plugins.visualizations.add({
           position: sticky;
           top: 50px; 
           z-index: 3;
-        }   
-
-/* Add styles for the first column of the header */
-        .table-header th:first-child {
-          position: sticky;
-          left: 0;
-          z-index: 3;
-        }   
+        }     
         .thead{
           position: sticky;
           z-index: 7;
