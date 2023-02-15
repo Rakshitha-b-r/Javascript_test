@@ -30,7 +30,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: sticky;
           top: 0; 
-          height: 5px;
+          height: 15px;
           z-index: 3;
         } 
         .thead{
@@ -81,7 +81,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: sticky;
-          height: 5px;
+          height: 15px;
           top: 0; 
           z-index: 3;
         }     
