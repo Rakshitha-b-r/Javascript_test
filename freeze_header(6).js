@@ -139,16 +139,16 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
 
-    let table = document.querySelector('table');
-    let header = table.querySelector('thead');
-    let headerClone = header.cloneNode(true);
-    headerClone.style.position = 'fixed';
-    headerClone.style.top = '0';
-    headerClone.style.width = '100%';
-    table.parentNode.insertBefore(headerClone, table);
-    table.addEventListener('scroll', function () {
-      header.scrollCenter = table.scrollCenter;
-    });
+    // let table = document.querySelector('table');
+    // let header = table.querySelector('thead');
+    // let headerClone = header.cloneNode(true);
+    // headerClone.style.position = 'fixed';
+    // headerClone.style.top = '0';
+    // headerClone.style.width = '100%';
+    // table.parentNode.insertBefore(headerClone, table);
+    // table.addEventListener('scroll', function () {
+    //   header.scrollCenter = table.scrollCenter;
+    // });
 
     // let table = document.querySelector('table');
     // let header = table.querySelector('thead');
