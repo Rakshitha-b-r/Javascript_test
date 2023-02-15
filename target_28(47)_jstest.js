@@ -50,7 +50,7 @@ looker.plugins.visualizations.add({
 
     // Create a new table
     var table = document.createElement('table');
-    table.id = "table";
+    table.id = "data_table";
     table.classList.add('table');
     
     // Create the table header
@@ -91,6 +91,8 @@ function generateTableHeader() {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement('table')
   tbl.id = "table";
+  tbl.style.position="absolute";
+  tbl.style.top="0px";
   const tblBody = document.createElement('tbody')
 
   // creating all cells
