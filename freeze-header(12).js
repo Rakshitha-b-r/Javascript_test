@@ -23,16 +23,17 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-header{
+        .table-header {
           font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          position: fixed;
-          z-index: 7;
-        }  
+          position: sticky;
+          top: 50px; 
+          z-index: 1;
+        } 
         .thead{
-          position: fixed;
+          position: sticky;
           z-index: 7;
         }     
         .table-cell {
@@ -40,6 +41,17 @@ looker.plugins.visualizations.add({
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+        }
+        .table-header:nth-child(2),
+        .table-header:nth-child(3) {
+          background-color: #ccc;
+        }
+
+        /* Add styles for the first column of the header */
+        .table-header th:first-child {
+          position: sticky;
+          left: 0;
+          z-index: 2;
         }
       </style>
     `;
@@ -73,16 +85,28 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-header{
+        .table-header {
           font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          position: fixed;
-          z-index: 7;
-        }      
+          position: sticky;
+          top: 50px; 
+          z-index: 1;
+        }   
+        .table-header:nth-child(2),
+        .table-header:nth-child(3) {
+          background-color: #ccc;
+        }
+
+/* Add styles for the first column of the header */
+        .table-header th:first-child {
+          position: sticky;
+          left: 0;
+          z-index: 2;
+        }   
         .thead{
-          position: fixed;
+          position: sticky;
           z-index: 7;
         }
         .table-cell {
