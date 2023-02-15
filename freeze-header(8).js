@@ -30,12 +30,12 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: sticky;
           top: 0;
-          z-index: 1;
+          z-index: 7;
         }  
         .thead{
           position: sticky;
           top: 0;
-          z-index: 1;
+          z-index: 7;
         }     
         .table-cell {
           padding: 5px;
@@ -84,7 +84,7 @@ looker.plugins.visualizations.add({
         .thead{
           position: sticky;
           top: 0;
-          z-index: 1;
+          z-index: 7;
         }
         .table-cell {
           border-bottom: 1px solid #ccc;
