@@ -29,12 +29,10 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: fixed;
-          top: 0;
           z-index: 7;
         }  
         .thead{
           position: sticky;
-          top: 0;
           z-index: 7;
         }     
         .table-cell {
@@ -83,7 +81,6 @@ looker.plugins.visualizations.add({
         }      
         .thead{
           position: fixed;
-          top: 0;
           z-index: 7;
         }
         .table-cell {
