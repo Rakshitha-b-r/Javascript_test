@@ -28,13 +28,10 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          position: sticky;
-          top: 0; 
-          height: 50px;
-          z-index: 3;
         } 
         .thead{
           position: sticky;
+          top: 0; 
           z-index: 3;
         }     
         .table-cell {
@@ -80,14 +77,11 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          position: sticky;
-          height: 50px;
-          top: 0; 
-          z-index: 3;
         }     
         .thead{
           position: sticky;
-          z-index: 7;
+          top: 0; 
+          z-index: 3;
         }
         .table-cell {
           border-bottom: 1px solid #ccc;
@@ -103,7 +97,7 @@ looker.plugins.visualizations.add({
     `;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tbody>";
-    generatedHTML += "<thead>";
+    generatedHTML += "<thead class='table-header'>";
     generatedHTML += "<tr>";
     generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
