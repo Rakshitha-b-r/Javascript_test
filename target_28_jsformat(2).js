@@ -57,9 +57,9 @@ looker.plugins.visualizations.add({
             headerCell.style.border = "1px solid black";
             headerCell.style.borderCollapse = "collapse";
             headerCell.style.backgroundColor = "#eee";
-            headerCell.style.position = "fixed";
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
+            headerRow.style.position = "sticky";
         }
         tableBody.appendChild(headerRow);
 
