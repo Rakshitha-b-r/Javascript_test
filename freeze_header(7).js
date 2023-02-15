@@ -42,6 +42,7 @@ looker.plugins.visualizations.add({
         table thead tr {
           position: fixed;
           top: 0;
+          z-index :"100";
         }
       </style>
     `;
@@ -97,6 +98,7 @@ looker.plugins.visualizations.add({
         table thead tr {
           position: fixed;
           top: 0;
+          z-index :"100";
         }
       </style>
     `;
