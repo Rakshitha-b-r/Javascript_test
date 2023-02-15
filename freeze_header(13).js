@@ -39,12 +39,6 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        table thead tr {
-          position: fixed;
-          top: 0;
-          left: 100px;
-          z-index :1;
-        }
       </style>
     `;
 
@@ -97,17 +91,11 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           width :100%;
         }
-        table thead tr {
-          position: fixed;
-          top: 0;
-          left: 100px;
-          z-index :1;
-        }
       </style>
     `;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tbody>";
-    generatedHTML += "<thead>";
+    //generatedHTML += "<thead>";
     generatedHTML += "<tr>";
     generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
@@ -129,7 +117,7 @@ looker.plugins.visualizations.add({
       generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
     }
     generatedHTML += "</tr>";
-    generatedHTML += "</thead>";
+    //generatedHTML += "</thead>";
 
     // Next rows are the data
     for (row of data) {
