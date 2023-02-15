@@ -14,6 +14,16 @@ looker.plugins.visualizations.add({
     // Set up the initial state of the visualization
     create: function (element, config) {
         console.log(config);
+        element.innerHTML = `
+      <style>
+        #table {
+          font-size: ${config.font_size}px;
+          border: 1px solid black;
+          border-collapse: collapse;
+          top :0;
+        }
+      </style>
+    `;
         // Create a container element to let us center the text.
         this._container = element.appendChild(document.createElement("div"));
         var table = generateTableHeader();
@@ -41,8 +51,7 @@ looker.plugins.visualizations.add({
         table.id = "data_table";
         table.classList.add('table');
         var tableBody = document.createElement('tbody');
-        tableBody.style.position = "sticky";
-        //tableBody.style.top = "0px";
+
 
         // Create the table header
         var headerRow = document.createElement('tr');
@@ -93,7 +102,6 @@ function generateTableHeader() {
     for (let i = 0; i < 7; i++) {
         // creates a table row
         const row = document.createElement('tr')
-        // row.style.backgroundColor = "#eee";
 
         for (let j = 0; j < 35; j++) {
             // Create a <td> element and a text node, make the text
@@ -243,6 +251,6 @@ function generateTableHeader() {
     // appends <table> into <body>
     document.body.appendChild(tbl)
     // sets the border attribute of tbl to '2'
-    // tbl.style.border = "1px solid black";
-    // tbl.style.borderCollapse = "collapse";
+    tbl.style.border = "1px solid black";
+    tbl.style.borderCollapse = "collapse";
 }
