@@ -22,11 +22,16 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-header {
-          background-color: #eee;
-          border: 1px solid black;
-          border-collapse: collapse;
-          font-weight: normal;
+         .table-header {
+        background-color: #eee;
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-weight: normal;
+        position: absolute;
+        font-family: 'Verdana';
+        font-size: 11px;
+        align-items: center;
+        text-align: left;
         }
         .table-cell {
           padding: 5px;
@@ -73,7 +78,6 @@ looker.plugins.visualizations.add({
         font-size: 11px;
         align-items: center;
         text-align: left;
-        letter-spacing: -0.03em;
       }
       .table-cell {
         padding: 5px;
