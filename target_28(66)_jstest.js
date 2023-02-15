@@ -99,6 +99,8 @@ function generateTableHeader() {
     const tblBody = document.createElement('tbody');
     tblBody.style.position = "sticky";
     tblBody.style.top = "0px";
+    tblBody.style.border = "1px solid black";
+    tblBody.style.borderCollapse = "collapse";
     //tblBody.style.zIndex = '1';
 
     // creating all cells
