@@ -28,14 +28,11 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-        }
-        .thead {
           position: fixed;
           top: 0;
           left: 100px;
           z-index: 1;
-          background-color: #fff;
-        }        
+        }       
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
@@ -85,14 +82,11 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-        }
-        .thead {
           position: fixed;
           top: 0;
           left: 100px;
           z-index: 1;
-          background-color: #fff;
-        }        
+        }      
         .table-cell {
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
@@ -112,6 +106,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
     generatedHTML += "<table class='table'>";
+    generatedHTML += "<tbody>";
     generatedHTML += "<thead>";
     generatedHTML += "<tr>";
     generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
@@ -137,7 +132,6 @@ looker.plugins.visualizations.add({
     generatedHTML += "</thead>";
 
     // Next rows are the data
-    generatedHTML += "<tbody>";
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
       for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
