@@ -14,18 +14,6 @@ looker.plugins.visualizations.add({
     // Set up the initial state of the visualization
     create: function (element, config) {
         console.log(config);
-        element.innerHTML = `
-      <style>
-        #table {
-          font-size: ${config.font_size}px;
-          border: 1px solid black;
-          border-collapse: collapse;
-          top :0;
-          z-index : 1;
-          margin-top:-20px;
-        }
-      </style>
-    `;
         // Create a container element to let us center the text.
         this._container = element.appendChild(document.createElement("div"));
         var table = generateTableHeader();
@@ -52,7 +40,9 @@ looker.plugins.visualizations.add({
         var table = document.createElement('table');
         table.id = "data_table";
         table.classList.add('table');
-
+        var tableBody = document.createElement('tbody');
+        tableBody.style.position = "sticky";
+        //tableBody.style.top = "0px";
 
         // Create the table header
         var headerRow = document.createElement('tr');
@@ -65,7 +55,6 @@ looker.plugins.visualizations.add({
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
         }
-        var tableBody = document.createElement('tbody');
         tableBody.appendChild(headerRow);
         // Create the table body
 
@@ -99,9 +88,6 @@ function generateTableHeader() {
     const tblBody = document.createElement('tbody');
     tblBody.style.position = "sticky";
     tblBody.style.top = "0px";
-    tblBody.style.border = "1px solid black";
-    tblBody.style.borderCollapse = "collapse";
-    //tblBody.style.zIndex = '1';
 
     // creating all cells
     for (let i = 0; i < 7; i++) {
@@ -114,8 +100,8 @@ function generateTableHeader() {
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
             const cell = document.createElement('th')
-            // cell.style.border = "1px solid black";
-            // cell.style.borderCollapse = "collapse";
+            cell.style.border = "1px solid black";
+            cell.style.borderCollapse = "collapse";
             cell.style.backgroundColor = "#eee";
             if (i == 0) {
                 if (j == 0) {
@@ -257,6 +243,6 @@ function generateTableHeader() {
     // appends <table> into <body>
     document.body.appendChild(tbl)
     // sets the border attribute of tbl to '2'
-    tbl.style.border = "1px solid black";
-    tbl.style.borderCollapse = "collapse";
+    // tbl.style.border = "1px solid black";
+    // tbl.style.borderCollapse = "collapse";
 }
