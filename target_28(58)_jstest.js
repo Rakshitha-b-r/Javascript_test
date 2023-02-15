@@ -76,6 +76,8 @@ looker.plugins.visualizations.add({
             tableRow.classList.add('table-row');
             for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
                 var tableCell = document.createElement('td');
+                tableCell.style.border = "1px solid black";
+                tableCell.style.borderCollapse = "collapse";
                 tableCell.innerHTML = LookerCharts.Utils.htmlForCell(row[field.name]);
                 tableRow.appendChild(tableCell);
             }
@@ -95,10 +97,11 @@ function generateTableHeader() {
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
     const tblBody = document.createElement('tbody');
-    tblBody.style.position = "sticky";
-    //tblBody.style.top="0px";
-    tblBody.style.zIndex = '2';
-
+    
+    const thead = document.createElement('thead');
+    thead.style.position = "sticky";
+    thead.style.top = "0px";
+    thead.style.zIndex = '2';
     // creating all cells
     for (let i = 0; i < 7; i++) {
         // creates a table row
@@ -243,9 +246,9 @@ function generateTableHeader() {
             cell.appendChild(cellText)
             row.appendChild(cell)
         }
-
+        thead.appendChild(row)
         // add the row to the end of the table body
-        tblBody.appendChild(row)
+        tblBody.appendChild(thead)
     }
 
     // put the <tbody> in the <table>
