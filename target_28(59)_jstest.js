@@ -65,9 +65,9 @@ looker.plugins.visualizations.add({
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
         }
+        table.appendChild(headerRow);
         // Create the table body
         var tableBody = document.createElement('tbody');
-        tableBody.appendChild(headerRow);
 
 
         // Loop through the data
@@ -97,11 +97,10 @@ function generateTableHeader() {
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
     const tblBody = document.createElement('tbody');
-    
-    const thead = document.createElement('thead');
-    thead.style.position = "sticky";
-    thead.style.top = "0px";
-    thead.style.zIndex = '2';
+    tblBody.style.position = "sticky";
+    tblBody.style.top = "0px";
+    tblBody.style.zIndex = '2';
+
     // creating all cells
     for (let i = 0; i < 7; i++) {
         // creates a table row
@@ -246,9 +245,8 @@ function generateTableHeader() {
             cell.appendChild(cellText)
             row.appendChild(cell)
         }
-        thead.appendChild(row)
         // add the row to the end of the table body
-        tblBody.appendChild(thead)
+        tblBody.appendChild(row)
     }
 
     // put the <tbody> in the <table>
