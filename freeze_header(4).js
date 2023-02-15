@@ -39,6 +39,10 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        table thead tr {
+          position: fixed;
+          top: 0;
+        }
       </style>
     `;
 
