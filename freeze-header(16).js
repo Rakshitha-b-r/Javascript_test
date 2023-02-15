@@ -29,7 +29,8 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: sticky;
-          top: 10px; 
+          top: 0; 
+          height: 5px;
           z-index: 3;
         } 
         .thead{
@@ -80,7 +81,8 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: sticky;
-          top: 10px; 
+          height: 5px;
+          top: 0; 
           z-index: 3;
         }     
         .thead{
@@ -183,6 +185,16 @@ looker.plugins.visualizations.add({
     //     header.children[i].style.left = cells[i].offsetLeft + "px";
     //   }
     // });
+
+    // Get the table rows you want to freeze
+    // var table = document.querySelector('table');
+    // var rows = table.querySelectorAll('tr');
+
+    // // Set the position and top properties of the first 3 rows
+    // for (var i = 0; i < 3; i++) {
+    //   rows[i].style.position = 'sticky';
+    //   rows[i].style.top = '0';
+    // }
 
 
 
