@@ -84,7 +84,7 @@ looker.plugins.visualizations.add({
 //     element.appendChild(table);
 //     element.innerHTML+=table.outerHTML;
     let table_data=document.getElementById("table");
-    table.appendChild(tableBody);
+    table_data.appendChild(tableBody);
     
     done();
   }
