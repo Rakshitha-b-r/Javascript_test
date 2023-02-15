@@ -67,7 +67,7 @@ looker.plugins.visualizations.add({
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
         }
-        tableBody.appendChild(headerRow);
+        //tableBody.appendChild(headerRow);
 
 
         // Loop through the data
