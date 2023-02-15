@@ -32,6 +32,7 @@ looker.plugins.visualizations.add({
           align-items: center;
           text-align: center;
           margin: auto;
+          width: 90px;
         }
         .table-cell {
           padding: 5px;
@@ -43,9 +44,10 @@ looker.plugins.visualizations.add({
           align-items: center;
           text-align: center;
           margin: auto;
+          width: 90px;
         }
         .thead{
-          position: fixed;
+          position: sticky;
           top: 0; 
           z-index: 3;
         }
@@ -93,6 +95,7 @@ looker.plugins.visualizations.add({
           align-items: center;
           text-align: center;
           margin: auto;
+          width: 90px;
         }
         .table-cell {
           padding: 5px;
@@ -104,13 +107,14 @@ looker.plugins.visualizations.add({
           align-items: center;
           text-align: center;
           margin: auto;
+          width: 90px;
         }
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
         }
         .thead{
-          position: fixed;
+          position: sticky;
           top: 0; 
           z-index: 3;
         }
