@@ -27,11 +27,8 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
         font-weight: normal;
-        position: absolute;
         font-family: 'Verdana';
         font-size: 11px;
-        align-items: center;
-        text-align: left;
         }
         .table-cell {
           padding: 5px;
@@ -73,11 +70,8 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
         font-weight: normal;
-        position: absolute;
         font-family: 'Verdana';
         font-size: 11px;
-        align-items: center;
-        text-align: left;
       }
       .table-cell {
         padding: 5px;
