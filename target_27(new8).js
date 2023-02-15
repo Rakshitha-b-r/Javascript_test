@@ -51,6 +51,9 @@ looker.plugins.visualizations.add({
           //top: 0; 
           z-index: 3;
         }
+        .div {
+          padding-top: 100px;
+      }
       </style>
     `;
 
@@ -115,6 +118,9 @@ looker.plugins.visualizations.add({
           //top: 0; 
           z-index: 3;
         }
+        .div {
+          padding-top: 100px;
+      }
       </style>
     `;
 
@@ -143,7 +149,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
 
-    generatedHTML += "<div>";
+    generatedHTML += "<div class='div'>";
     // Next rows are the data
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
