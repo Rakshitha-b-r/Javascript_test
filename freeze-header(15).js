@@ -29,7 +29,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: sticky;
-          top: 50px; 
+          top: 10px; 
           z-index: 3;
         } 
         .thead{
@@ -80,7 +80,7 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           position: sticky;
-          top: 50px; 
+          top: 10px; 
           z-index: 3;
         }     
         .thead{
