@@ -49,7 +49,7 @@ looker.plugins.visualizations.add({
         .thead{
           position: fixed;
           //top: 0; 
-          z-index: 1;
+          z-index: 3;
         }
       </style>
     `;
@@ -113,12 +113,13 @@ looker.plugins.visualizations.add({
         .thead{
           position: fixed;
           //top: 0; 
-          z-index: 1;
+          z-index: 3;
         }
       </style>
     `;
 
     generatedHTML += "<table class='table'>";
+    generatedHTML += "<tbody>";
     generatedHTML += "<thead class='thead'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;">COUNTERPARTY IDENTIFICATION</th>`;
@@ -151,6 +152,7 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
+    generatedHTML += "</tbody>";
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
