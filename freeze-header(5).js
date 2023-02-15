@@ -17,32 +17,32 @@ looker.plugins.visualizations.add({
     // Insert a <style> tag with some styles we'll use later.
     element.innerHTML = `
       <style>
-      .table {
-        font-size: ${config.font_size}px;
-        height: 50px;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .thead {
-        position: fixed;
-        top:0;
-      }
-      .table-header{
-        font-weight: normal;
-        background-color: #eee;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      .table-cell {
-        padding: 5px;
-        border-bottom: 1px solid #ccc;
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-       .table-row {
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
+        .table {
+          font-size: ${config.font_size}px;
+          height: 50px;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        .table-header{
+          font-weight: normal;
+          background-color: #eee;
+          border: 1px solid black;
+          border-collapse: collapse;
+          position: sticky;
+          top: 0;
+          z-index: 1;
+        }  
+        .thead{
+          position: sticky;
+          top: 0;
+          z-index: 1;
+        }     
+        .table-cell {
+          padding: 5px;
+          border-bottom: 1px solid #ccc;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
       </style>
     `;
 
@@ -75,18 +75,18 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .thead {
-          position: fixed;
-          top:0;
-        }
         .table-header{
           font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+        }      
+        .thead{
+          position: sticky;
+          top: 0;
+          z-index: 1;
         }
         .table-cell {
-          padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
@@ -94,11 +94,12 @@ looker.plugins.visualizations.add({
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
+          width :100%;
         }
       </style>
     `;
-
     generatedHTML += "<table class='table'>";
+    generatedHTML += "<tbody>";
     generatedHTML += "<thead>";
     generatedHTML += "<tr>";
     generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
@@ -131,19 +132,59 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
+    generatedHTML += "</tbody>";
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
-    window.onscroll = function () { myFunction() }; 
-    var header = document.getElementById("thead");
-    var sticky = header.offsetTop; 
-    function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("thead");
-      } else {
-        header.classList.remove("thead");
-      }
-    }
+
+    // let table = document.querySelector('table');
+    // let header = table.querySelector('thead');
+    // let headerClone = header.cloneNode(true);
+    // headerClone.style.position = 'fixed';
+    // headerClone.style.top = '0';
+    // headerClone.style.width = '100%';
+    // table.parentNode.insertBefore(headerClone, table);
+    // table.addEventListener('scroll', function () {
+    //   header.scrollCenter = table.scrollCenter;
+    // });
+
+    // let table = document.querySelector('table');
+    // let header = table.querySelector('thead');
+    // let clonedHeader = header.cloneNode(true);
+    // clonedHeader.id = "clonedHeaderId";
+    // clonedHeader.style.position = "fixed";
+    // clonedHeader.style.top = "0";
+    // clonedHeader.style.backgroundColor = "white";
+    // clonedHeader.style.zIndex = "100";
+    // clonedHeader.style.borderCollapse = "collapse";
+
+    // let clonedHeaderTable = table.getElementsByTagName("table")[0];
+    // clonedHeaderTable.style.width = table.offsetWidth + "px";
+    // clonedHeaderTable.style.margin = "0";
+
+    // let originalHeaderCells = header.getElementsByTagName("th");
+    // let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("th");
+    // for (let i = 0; i < originalHeaderCells.length; i++) {
+    //   clonedHeaderCells[i].style.width = originalHeaderCells[i].offsetWidth + "px";
+    // }
+
+    // table.parentNode.insertBefore(clonedHeader, table);
+    // table.addEventListener('scroll', function () {
+    //   clonedHeader.scrollLeft = table.scrollLeft;
+    // });
+
+    // const header = document.querySelector("table thead tr");
+    // const cells = document.querySelectorAll("table tbody tr:first-child td");
+
+    // window.addEventListener("scroll", function () {
+    //   for (let i = 0; i < cells.length; i++) {
+    //     header.children[i].style.width = cells[i].offsetWidth + "px";
+    //     header.children[i].style.left = cells[i].offsetLeft + "px";
+    //   }
+    // });
+
+
+
     done();
   }
 });
