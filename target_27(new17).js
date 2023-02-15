@@ -43,8 +43,6 @@ looker.plugins.visualizations.add({
           align-items: center;
           text-align: center;
           margin: auto;
-          width: 90px;
-          width:100%;
         }
         .thead{
           position: fixed;
@@ -106,8 +104,6 @@ looker.plugins.visualizations.add({
           align-items: center;
           text-align: center;
           margin: auto;
-          width: 90px;
-          width:100%;
         }
          .table-row {
           border: 1px solid black;
