@@ -28,7 +28,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
-          position: sticky;
+          position: fixed;
           top: 0;
           z-index: 7;
         }  
@@ -82,7 +82,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }      
         .thead{
-          position: sticky;
+          position: fixed;
           top: 0;
           z-index: 7;
         }
