@@ -105,6 +105,9 @@ function generateTableHeader() {
     for (let i = 0; i < 7; i++) {
         // creates a table row
         const row = document.createElement('tr')
+        row.style.border = "1px solid black";
+        row.style.borderCollapse = "collapse";
+        row.style.backgroundColor = "#eee";
 
         for (let j = 0; j < 35; j++) {
             // Create a <td> element and a text node, make the text
