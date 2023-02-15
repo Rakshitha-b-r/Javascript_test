@@ -112,8 +112,8 @@ function generateTableHeader() {
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
             const cell = document.createElement('th')
-            cell.style.border = "1px solid black";
-            cell.style.borderCollapse = "collapse";
+            // cell.style.border = "1px solid black";
+            // cell.style.borderCollapse = "collapse";
             cell.style.backgroundColor = "#eee";
             if (i == 0) {
                 if (j == 0) {
