@@ -99,7 +99,7 @@ function generateTableHeader() {
     const tblBody = document.createElement('tbody');
     tblBody.style.position = "sticky";
     tblBody.style.top = "0px";
-    tblBody.style.zIndex = '2';
+    //tblBody.style.zIndex = '1';
 
     // creating all cells
     for (let i = 0; i < 7; i++) {
@@ -116,7 +116,7 @@ function generateTableHeader() {
             const cell = document.createElement('th')
             cell.style.border = "1px solid black";
             cell.style.borderCollapse = "collapse";
-            cell.style.backgroundColor = "#eee";
+            //cell.style.backgroundColor = "#eee";
             if (i == 0) {
                 if (j == 0) {
                     cell.setAttribute('colspan', 3)
