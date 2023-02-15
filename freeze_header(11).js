@@ -31,7 +31,7 @@ looker.plugins.visualizations.add({
         }
         .thead {
           position: fixed;
-          top: 50px;
+          top: 0;
           left: 100px;
           z-index: 1;
           background-color: #fff;
@@ -44,7 +44,8 @@ looker.plugins.visualizations.add({
         }
         table thead tr {
           position: fixed;
-          top: 50px;
+          top: 0;
+          left: 100px;
           z-index :1;
         }
       </style>
@@ -87,7 +88,7 @@ looker.plugins.visualizations.add({
         }
         .thead {
           position: fixed;
-          top: 50px;
+          top: 0;
           left: 100px;
           z-index: 1;
           background-color: #fff;
@@ -104,7 +105,8 @@ looker.plugins.visualizations.add({
         }
         table thead tr {
           position: fixed;
-          top: 50px;
+          top: 0;
+          left: 100px;
           z-index :1;
         }
       </style>
