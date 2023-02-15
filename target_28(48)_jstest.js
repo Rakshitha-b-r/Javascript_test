@@ -79,10 +79,13 @@ looker.plugins.visualizations.add({
       tableBody.appendChild(tableRow);
     }
 
-    table.appendChild(tableBody);
+//     table.appendChild(tableBody);
     element.innerHTML = '';
-    element.appendChild(table);
-    element.innerHTML+=table.outerHTML;
+//     element.appendChild(table);
+//     element.innerHTML+=table.outerHTML;
+    let table=document.getElementById("table");
+    table.appendChild(tableBody);
+    
     done();
   }
 });
