@@ -144,15 +144,15 @@ looker.plugins.visualizations.add({
     //   header.scrollCenter = table.scrollCenter;
     // });
 
-    // let table = document.querySelector('table');
-    // let header = table.querySelector('thead');
-    // let clonedHeader = header.cloneNode(true);
-    // clonedHeader.id = "clonedHeaderId";
-    // clonedHeader.style.position = "fixed";
-    // clonedHeader.style.top = "0";
+    let table = document.querySelector('table');
+    let header = table.querySelector('thead');
+    let clonedHeader = header.cloneNode(true);
+    clonedHeader.id = "clonedHeaderId";
+    clonedHeader.style.position = "fixed";
+    clonedHeader.style.top = "0";
     // clonedHeader.style.backgroundColor = "white";
-    // clonedHeader.style.zIndex = "100";
-    // clonedHeader.style.borderCollapse = "collapse";
+    clonedHeader.style.zIndex = "100";
+    clonedHeader.style.borderCollapse = "collapse";
 
     // let clonedHeaderTable = table.getElementsByTagName("table")[0];
     // clonedHeaderTable.style.width = table.offsetWidth + "px";
@@ -164,20 +164,20 @@ looker.plugins.visualizations.add({
     //   clonedHeaderCells[i].style.width = originalHeaderCells[i].offsetWidth + "px";
     // }
 
-    // table.parentNode.insertBefore(clonedHeader, table);
-    // table.addEventListener('scroll', function () {
-    //   clonedHeader.scrollLeft = table.scrollLeft;
-    // });
-
-    const header = document.querySelector("table thead tr");
-    const cells = document.querySelectorAll("table tbody tr:first-child td");
-
-    window.addEventListener("scroll", function () {
-      for (let i = 0; i < cells.length; i++) {
-        header.children[i].style.width = cells[i].offsetWidth + "px";
-        header.children[i].style.left = cells[i].offsetLeft + "px";
-      }
+    table.parentNode.insertBefore(clonedHeader, table);
+    table.addEventListener('scroll', function () {
+      clonedHeader.scrollLeft = table.scrollLeft;
     });
+
+//     const header = document.querySelector("table thead tr");
+//     const cells = document.querySelectorAll("table tbody tr:first-child td");
+
+//     window.addEventListener("scroll", function () {
+//       for (let i = 0; i < cells.length; i++) {
+//         header.children[i].style.width = cells[i].offsetWidth + "px";
+//         header.children[i].style.left = cells[i].offsetLeft + "px";
+//       }
+//     });
 
 
 
