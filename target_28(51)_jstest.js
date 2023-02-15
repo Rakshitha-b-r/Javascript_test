@@ -97,8 +97,11 @@ function generateTableHeader() {
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
     const tblBody = document.createElement('tbody')
+    tblBody.style.border="1px solid black";
+    tblBody.style.borderCollapse = "collapse";
     tblBody.style.position="sticky";
     tblBody.style.top="0px";
+    tblBody.style.zIndex='2';
 
     // creating all cells
     for (let i = 0; i < 7; i++) {
@@ -251,6 +254,6 @@ function generateTableHeader() {
     // appends <table> into <body>
     document.body.appendChild(tbl)
     // sets the border attribute of tbl to '2'
-    tbl.setAttribute('border', '1px solid black')
-    tbl.setAttribute('border-collapse', 'collapse')
+    tbl.style.border="1px solid black";
+    tbl.style.borderCollapse = "collapse";
 }
