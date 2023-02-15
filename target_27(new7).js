@@ -119,7 +119,6 @@ looker.plugins.visualizations.add({
     `;
 
     generatedHTML += "<table class='table'>";
-    generatedHTML += "<tbody>";
     generatedHTML += "<thead class='thead'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;">COUNTERPARTY IDENTIFICATION</th>`;
@@ -144,6 +143,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
 
+    generatedHTML += "<div>";
     // Next rows are the data
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
@@ -152,7 +152,7 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
-    generatedHTML += "</tbody>";
+    generatedHTML += "</div>";
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
