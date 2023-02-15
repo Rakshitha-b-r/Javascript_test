@@ -65,9 +65,9 @@ looker.plugins.visualizations.add({
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
         }
-        table.appendChild(headerRow);
-        // Create the table body
         var tableBody = document.createElement('tbody');
+        tableBody.appendChild(headerRow);
+        // Create the table body
 
 
         // Loop through the data
