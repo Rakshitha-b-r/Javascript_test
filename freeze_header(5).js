@@ -139,16 +139,16 @@ looker.plugins.visualizations.add({
 
     this._container.innerHTML = generatedHTML;
 
-    // let table = document.querySelector('table');
-    // let header = table.querySelector('thead');
-    // let headerClone = header.cloneNode(true);
-    // headerClone.style.position = 'fixed';
-    // headerClone.style.top = '0';
-    // headerClone.style.width = '100%';
-    // table.parentNode.insertBefore(headerClone, table);
-    // table.addEventListener('scroll', function () {
-    //   header.scrollCenter = table.scrollCenter;
-    // });
+    let table = document.querySelector('table');
+    let header = table.querySelector('thead');
+    let headerClone = header.cloneNode(true);
+    headerClone.style.position = 'fixed';
+    headerClone.style.top = '0';
+    headerClone.style.width = '100%';
+    table.parentNode.insertBefore(headerClone, table);
+    table.addEventListener('scroll', function () {
+      header.scrollCenter = table.scrollCenter;
+    });
 
     // let table = document.querySelector('table');
     // let header = table.querySelector('thead');
@@ -175,15 +175,15 @@ looker.plugins.visualizations.add({
     //   clonedHeader.scrollLeft = table.scrollLeft;
     // });
 
-    const header = document.querySelector("table thead tr");
-    const cells = document.querySelectorAll("table tbody tr:first-child td");
+    // const header = document.querySelector("table thead tr");
+    // const cells = document.querySelectorAll("table tbody tr:first-child td");
 
-    window.addEventListener("scroll", function () {
-      for (let i = 0; i < cells.length; i++) {
-        header.children[i].style.width = cells[i].offsetWidth + "px";
-        header.children[i].style.left = cells[i].offsetLeft + "px";
-      }
-    });
+    // window.addEventListener("scroll", function () {
+    //   for (let i = 0; i < cells.length; i++) {
+    //     header.children[i].style.width = cells[i].offsetWidth + "px";
+    //     header.children[i].style.left = cells[i].offsetLeft + "px";
+    //   }
+    // });
 
 
 
