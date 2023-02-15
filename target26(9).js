@@ -105,7 +105,7 @@ looker.plugins.visualizations.add({
       for (field of queryResponse.fields[column_type]) {
         // First column is the label
         generatedHTML += `<tr><th class='table-header'>${field.label_short}</th>`;
-        generatedHTML += `<th class='table-header'>${header[i]}</th>`;
+        generatedHTML += `<th class='table-header' style='text-align: left;'>${header[i]}</th>`;
         // Next columns are the data
         for (row of data) {
           generatedHTML += `<td class='table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`
