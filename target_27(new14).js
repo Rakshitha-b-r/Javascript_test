@@ -130,14 +130,14 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;">COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' style="height:100px;">Code</th>`;
-    generatedHTML += `<th class='table-header' style="height:100px;">Type of Code</th>`;
-    generatedHTML += `<th class='table-header' style="height:100px;">Name</th>`;
-    generatedHTML += `<th class='table-header' style="height:100px;">National Code</th>`;
-    generatedHTML += `<th class='table-header' style="height:100px;">Residence of the Counterparty</th>`;
-    generatedHTML += `<th class='table-header' style="height:100px;">Sector of the Counterparty</th>`;
-    generatedHTML += `<th class='table-header' style="height:100px;">NACE Code</th>`;
-    generatedHTML += `<th class='table-header' style="height:100px;">Type of Counterparty</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">Type of Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">Name</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">National Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">Residence of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">Sector of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">NACE Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px; width:90px;">Type of Counterparty</th>`;
     generatedHTML += "</tr>";
    
    
