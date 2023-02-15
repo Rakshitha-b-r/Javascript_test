@@ -48,7 +48,7 @@ looker.plugins.visualizations.add({
         }
         .thead{
           position: fixed;
-          //top: 0; 
+          top: 0; 
           z-index: 3;
         }
         .div {
@@ -115,7 +115,7 @@ looker.plugins.visualizations.add({
         }
         .thead{
           position: fixed;
-          //top: 0; 
+          top: 0; 
           z-index: 3;
         }
         .div {
