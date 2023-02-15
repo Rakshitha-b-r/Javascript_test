@@ -22,19 +22,29 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-         .table-header {
-        background-color: #eee;
-        border: 1px solid black;
-        border-collapse: collapse;
-        font-weight: normal;
-        font-family: 'Verdana';
-        font-size: 11px;
+        .table-header {
+          background-color: #eee;
+          border: 1px solid black;
+          border-collapse: collapse;
+          font-weight: normal;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
       </style>
     `;
@@ -72,12 +82,22 @@ looker.plugins.visualizations.add({
         font-weight: normal;
         font-family: 'Verdana';
         font-size: 11px;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        width: 90px;
       }
       .table-cell {
         padding: 5px;
         border-bottom: 1px solid #ccc;
         border: 1px solid black;
         border-collapse: collapse;
+        font-family: 'Verdana';
+        font-size: 11px;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        width: 90px;
       }
       .table-row {
         border: 1px solid black;
@@ -88,7 +108,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' rowspan='2' colspan='2' > </th>`;
-    generatedHTML += `<th class='table-header' rowspan='1' colspan='9'><b>Applicable limit</b></th>`;
+    generatedHTML += `<th class='table-header' rowspan='1' colspan='9' style='height: 70px;'><b>Applicable limit</b></th>`;
     generatedHTML += "</tr>";
 
     generatedHTML += "<tr class='table-header'>";
@@ -105,7 +125,7 @@ looker.plugins.visualizations.add({
       for (field of queryResponse.fields[column_type]) {
         // First column is the label
         generatedHTML += `<tr><th class='table-header'>${field.label_short}</th>`;
-        generatedHTML += `<th class='table-header' style='text-align: left;'>${header[i]}</th>`;
+        generatedHTML += `<th class='table-header' style='text-align: left; padding: 5px;'>${header[i]}</th>`;
         // Next columns are the data
         for (row of data) {
           generatedHTML += `<td class='table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`
