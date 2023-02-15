@@ -28,6 +28,9 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          position: sticky;
+          top: 0;
+          z-index: 1;
         }  
         .thead{
           position: sticky;
