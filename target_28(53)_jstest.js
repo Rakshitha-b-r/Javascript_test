@@ -53,19 +53,23 @@ looker.plugins.visualizations.add({
         table.id = "data_table";
         table.classList.add('table');
 
+        // Create the table body
+        var tableBody = document.createElement('tbody');
+        tableBody.classList.add('table-body');
+
         // Create the table header
         var headerRow = document.createElement('tr');
         headerRow.classList.add('table-header');
         for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
             var headerCell = document.createElement('th');
+            headerCell.style.border = "1px solid black";
+            headerCell.style.borderCollapse = "collapse";
+            headerCell.style.backgroundColor = "#eee";
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
         }
-        table.appendChild(headerRow);
+        tableBody.appendChild(headerRow);
 
-        // Create the table body
-        var tableBody = document.createElement('tbody');
-        tableBody.classList.add('table-body');
 
         // Loop through the data
         for (row of data) {
@@ -97,9 +101,9 @@ function generateTableHeader() {
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
     const tblBody = document.createElement('tbody');
-    tblBody.style.position="sticky";
-    tblBody.style.top="0px";
-    tblBody.style.zIndex='2';
+    tblBody.style.position = "fixed";
+    //tblBody.style.top="0px";
+    tblBody.style.zIndex = '2';
 
     // creating all cells
     for (let i = 0; i < 7; i++) {
@@ -111,9 +115,9 @@ function generateTableHeader() {
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
             const cell = document.createElement('th')
-            cell.style.border="1px solid black";
+            cell.style.border = "1px solid black";
             cell.style.borderCollapse = "collapse";
-            cell.style.backgroundColor="#eee";
+            cell.style.backgroundColor = "#eee";
             if (i == 0) {
                 if (j == 0) {
                     cell.setAttribute('colspan', 3)
@@ -255,6 +259,6 @@ function generateTableHeader() {
     // appends <table> into <body>
     document.body.appendChild(tbl)
     // sets the border attribute of tbl to '2'
-    tbl.style.border="1px solid black";
+    tbl.style.border = "1px solid black";
     tbl.style.borderCollapse = "collapse";
 }
