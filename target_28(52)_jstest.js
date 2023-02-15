@@ -96,9 +96,7 @@ function generateTableHeader() {
     tbl.id = "table";
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
-    const tblBody = document.createElement('tbody')
-    tblBody.style.border="1px solid black";
-    tblBody.style.borderCollapse = "collapse";
+    const tblBody = document.createElement('tbody');
     tblBody.style.position="sticky";
     tblBody.style.top="0px";
     tblBody.style.zIndex='2';
@@ -113,6 +111,9 @@ function generateTableHeader() {
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
             const cell = document.createElement('th')
+            cell.style.border="1px solid black";
+            cell.style.borderCollapse = "collapse";
+            cell.style.backgroundColor="#eee";
             if (i == 0) {
                 if (j == 0) {
                     cell.setAttribute('colspan', 3)
