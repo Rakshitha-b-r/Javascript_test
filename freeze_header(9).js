@@ -29,10 +29,13 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .thead{
-          width :100px;
-          height : 50px;
-        }
+        .thead {
+          position: fixed;
+          top: 50px;
+          left: 100px;
+          z-index: 1;
+          background-color: #fff;
+        }        
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
@@ -82,9 +85,13 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .thead{
-          width :100%;
-        }
+        .thead {
+          position: fixed;
+          top: 50px;
+          left: 100px;
+          z-index: 1;
+          background-color: #fff;
+        }        
         .table-cell {
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
