@@ -52,7 +52,7 @@ looker.plugins.visualizations.add({
           z-index: 3;
         }
         .div {
-          padding-top: 120px;
+          padding-top: 140px;
       }
       </style>
     `;
@@ -119,7 +119,7 @@ looker.plugins.visualizations.add({
           z-index: 3;
         }
         .div {
-          padding-top: 120px;
+          padding-top: 140px;
       }
       </style>
     `;
