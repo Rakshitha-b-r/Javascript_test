@@ -55,7 +55,6 @@ looker.plugins.visualizations.add({
 
         // Create the table body
         var tableBody = document.createElement('tbody');
-        tableBody.classList.add('table-body');
 
         // Create the table header
         var headerRow = document.createElement('tr');
@@ -82,11 +81,6 @@ looker.plugins.visualizations.add({
             }
             tableBody.appendChild(tableRow);
         }
-
-        //     table.appendChild(tableBody);
-        element.innerHTML = '';
-        //     element.appendChild(table);
-        //     element.innerHTML+=table.outerHTML;
         let table_data = document.getElementById("table");
         table_data.appendChild(tableBody);
 
