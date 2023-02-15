@@ -30,11 +30,11 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: sticky;
           top: 50px; 
-          z-index: 1;
+          z-index: 3;
         } 
         .thead{
           position: sticky;
-          z-index: 7;
+          z-index: 3;
         }     
         .table-cell {
           padding: 5px;
@@ -42,16 +42,12 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
-        .table-header:nth-child(2),
-        .table-header:nth-child(3) {
-          background-color: #ccc;
-        }
 
         /* Add styles for the first column of the header */
         .table-header th:first-child {
           position: sticky;
           left: 0;
-          z-index: 2;
+          z-index: 3;
         }
       </style>
     `;
@@ -92,18 +88,14 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
           position: sticky;
           top: 50px; 
-          z-index: 1;
+          z-index: 3;
         }   
-        .table-header:nth-child(2),
-        .table-header:nth-child(3) {
-          background-color: #ccc;
-        }
 
 /* Add styles for the first column of the header */
         .table-header th:first-child {
           position: sticky;
           left: 0;
-          z-index: 2;
+          z-index: 3;
         }   
         .thead{
           position: sticky;
