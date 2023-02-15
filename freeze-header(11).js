@@ -32,7 +32,7 @@ looker.plugins.visualizations.add({
           z-index: 7;
         }  
         .thead{
-          position: sticky;
+          position: fixed;
           z-index: 7;
         }     
         .table-cell {
@@ -78,6 +78,8 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          position: fixed;
+          z-index: 7;
         }      
         .thead{
           position: fixed;
