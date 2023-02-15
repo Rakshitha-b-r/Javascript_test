@@ -28,9 +28,6 @@ looker.plugins.visualizations.add({
         this._container = element.appendChild(document.createElement("div"));
         var table = generateTableHeader();
         element.appendChild(table);
-        //element.innerHTML=table;
-
-        //this._container.innerHTML = table;
     },
 
     updateAsync: function (data, element, config, queryResponse, details, done) {
@@ -44,14 +41,13 @@ looker.plugins.visualizations.add({
             return;
         }
 
-        // Remove any previous data from the table
-
         // Create a new table
         var table = document.createElement('table');
         table.id = "data_table";
         table.classList.add('table');
-        var tableBody = document.createElement('tbody');
 
+        // Create the table body
+        var tableBody = document.createElement('tbody');
 
         // Create the table header
         var headerRow = document.createElement('tr');
@@ -61,12 +57,11 @@ looker.plugins.visualizations.add({
             headerCell.style.border = "1px solid black";
             headerCell.style.borderCollapse = "collapse";
             headerCell.style.backgroundColor = "#eee";
+            headerCell.style.position = "sticky";
             headerCell.innerHTML = field.label_short;
             headerRow.appendChild(headerCell);
         }
         tableBody.appendChild(headerRow);
-        // Create the table body
-
 
         // Loop through the data
         for (row of data) {
