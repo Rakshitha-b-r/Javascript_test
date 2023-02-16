@@ -108,7 +108,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0">C 28.00+ - Identification of the counterparty (LE 1)</p>`;
+    //generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0">C 28.00+ - Identification of the counterparty (LE 1)</p>`;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
@@ -171,7 +171,7 @@ looker.plugins.visualizations.add({
 
 
 
-    const header=['010','020','030','040','050','060','070','080','090','100','120','130','140','150','160','170','180','190','200','210','220','230','240','250','260','270','280','290','300','310','320','330','340','350',];
+    const header=['010','020','030','040','050','060','070','080','090','100','110','120','130','140','150','160','170','180','190','200','210','220','230','240','250','260','270','280','290','300','310','320','330','340','350',];
     // First row is the header
     generatedHTML += "<tr class='table-header'>";
     for (let i=0;i<header.length;i++) {
