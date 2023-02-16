@@ -21,6 +21,7 @@ looker.plugins.visualizations.add({
           font-size: ${config.font_size}px;
           border: 1px solid black;
           border-collapse: collapse;
+          margin:auto;
         }
         .table-header {
           background-color: #eee;
@@ -88,6 +89,7 @@ looker.plugins.visualizations.add({
           font-size: ${config.font_size}px;
           border: 1px solid black;
           border-collapse: collapse;
+          margin:auto;
         }
         .table-header {
           background-color: #eee;
