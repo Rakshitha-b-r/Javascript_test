@@ -100,15 +100,15 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='4'>Group or individual</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'><b>Total original exposure</b></th>`;
-    generatedHTML += `<th class='table-header' colspan='14' style="height:45px;"></th>`;
+    generatedHTML += `<th class='table-header' colspan='14' style="height:25px;"></th>`;
     generatedHTML += `<th class='table-header' colspan='6' rowspan='2'>(-) Substitution effect of eligible credit risk mitigation techniques</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>(-) Funded credit protection other than substitution effect</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>(-) Real estate</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
     generatedHTML += `<th class='table-header' colspan='1'></th>`;
-    generatedHTML += `<th class='table-header' colspan='6'>Direct exposures</th>`;
-    generatedHTML += `<th class='table-header' colspan='6'>Indirect exposures</th>`;
+    generatedHTML += `<th class='table-header' colspan='6' style="height:25px;">Direct exposures</th>`;
+    generatedHTML += `<th class='table-header' colspan='6' style="height:25px;">Indirect exposures</th>`;
     generatedHTML += `<th class='table-header' rowspan='3'>Additional exposures arising from transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
