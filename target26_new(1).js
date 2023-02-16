@@ -119,13 +119,14 @@ looker.plugins.visualizations.add({
 
     // Loop through the different types of column types looker exposes
     let i = 0;
+    const header1=['010','020','030','040'];
     for (column_type of ["dimension_like", "measure_like", "table_calculations"]) {
 
       // Look through each field (i.e. row of data)
       for (field of queryResponse.fields[column_type]) {
         // First column is the label
-        generatedHTML += `<tr><th class='table-header'>${field.label_short}</th>`;
-        generatedHTML += `<th class='table-header' style='text-align: left; padding: 5px;'>${header[i]}</th>`;
+        generatedHTML += `<tr><th class='table-header'>${header1[i]}</th>`;
+        generatedHTML += `<th class='table-header' style='text-align: left; padding: 5px;width:350px'>${header[i]}</th>`;
         // Next columns are the data
         for (row of data) {
           generatedHTML += `<td class='table-cell'>${LookerCharts.Utils.htmlForCell(row[field.name])}</td>`
