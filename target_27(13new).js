@@ -48,7 +48,7 @@ looker.plugins.visualizations.add({
         }
         .thead{
           position: sticky;
-          top: 45px; 
+          top: 0; 
           z-index: 3;
         }
         .div {
@@ -119,7 +119,7 @@ looker.plugins.visualizations.add({
         }
         .thead{
           position: sticky;
-          top: 45px; 
+          top: 0; 
           z-index: 3;
         }
         .div {
