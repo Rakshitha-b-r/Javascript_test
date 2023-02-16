@@ -54,7 +54,8 @@ looker.plugins.visualizations.add({
         .div {
           //padding-top: 130px;
           position: relative;
-          top: 3em;
+          top: 6em;
+          display:block;
           overflow:scroll;
       }
       </style>
@@ -124,7 +125,8 @@ looker.plugins.visualizations.add({
         .div {
           //padding-top: 130px;
           position: relative;
-          top: 3em;
+          top: 6em;
+          display:block;
           overflow:scroll;
       }
       </style>
