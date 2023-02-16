@@ -69,6 +69,7 @@ looker.plugins.visualizations.add({
             tableRow.classList.add('table-row');
             for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
                 var tableCell = document.createElement('td');
+                tableCell.classList.add('table-cell');
                 tableCell.style.border = "1px solid black";
                 tableCell.style.borderCollapse = "collapse";
                 tableCell.innerHTML = LookerCharts.Utils.htmlForCell(row[field.name]);
@@ -78,6 +79,14 @@ looker.plugins.visualizations.add({
         }
         let table_data = document.getElementById("table");
         table_data.appendChild(tableBody);
+
+        // Get the width and height of the first cell in the table body
+    const cellWidth = element.querySelectorAll('.table-cell')[0].clientWidth;
+    const cellHeight = element.querySelectorAll('.table-cell')[0].clientHeight;
+
+    // Set the width and height of the cells in the header row to match
+    element.querySelectorAll('.table-header')[0].style.width = `${cellWidth}px`;
+    element.querySelectorAll('.table-header')[0].style.height = `${cellHeight}px`;
 
         done();
     }
