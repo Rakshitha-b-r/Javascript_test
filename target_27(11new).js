@@ -47,8 +47,8 @@ looker.plugins.visualizations.add({
           width: 90px;
         }
         .thead{
-          position: fixed;
-          //top: 45px; 
+          position: sticky;
+          top: 45px; 
           z-index: 3;
         }
         .div {
@@ -118,8 +118,8 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          position: fixed;
-          //top: 45px; 
+          position: sticky;
+          top: 45px; 
           z-index: 3;
         }
         .div {
@@ -158,7 +158,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
 
-    generatedHTML += "<div class='div'>";
+    generatedHTML += "<div>";
     // Next rows are the data
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
