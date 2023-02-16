@@ -56,7 +56,7 @@ looker.plugins.visualizations.add({
           position: relative;
           top: 6em;
           display:block;
-          overflow:scroll;
+          overflow-y:scroll;
       }
       </style>
     `;
@@ -127,7 +127,7 @@ looker.plugins.visualizations.add({
           position: relative;
           top: 6em;
           display:block;
-          overflow:scroll;
+          overflow-y:scroll;
       }
       </style>
     `;
