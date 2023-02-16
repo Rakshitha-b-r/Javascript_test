@@ -115,7 +115,7 @@ looker.plugins.visualizations.add({
         }
         .thead{
           position: sticky;
-          top: 0; 
+          top: 5px; 
           z-index: 3;
         }
         .div {
@@ -124,7 +124,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;">C 27.00+ - Identification of the counterparty (LE 1)</p>`;
+    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0">C 27.00+ - Identification of the counterparty (LE 1)</p>`;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead class='thead'>";
     generatedHTML += "<tr class='table-header'>";
@@ -141,11 +141,11 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' style="height:100px;">Type of Counterparty</th>`;
     generatedHTML += "</tr>";
    
-   
+    const header=['011','015','021','035','040','050','060','070'];
     // First row is the header
     generatedHTML += "<tr class='table-header'>";
-    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
+    for (let i=0;i<header.length;i++) {
+      generatedHTML += `<th class='table-header'>${header[i]}</th>`;
     }
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
