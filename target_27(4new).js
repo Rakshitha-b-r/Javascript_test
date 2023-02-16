@@ -25,6 +25,7 @@ looker.plugins.visualizations.add({
         .table-header {
           background-color: #eee;
           border: 1px solid black;
+          border-collapse: collapse;
           font-weight: normal;
           font-family: 'Verdana';
           font-size: 11px;
@@ -32,9 +33,6 @@ looker.plugins.visualizations.add({
           text-align: center;
           margin: auto;
           width: 90px;
-          position: sticky;
-          top: 0; 
-          z-index: 3;
         }
         .table-cell {
           padding: 5px;
@@ -49,7 +47,9 @@ looker.plugins.visualizations.add({
           width: 90px;
         }
         .thead{
-          overflow: auto;
+          position: sticky;
+          top: 0; 
+          z-index: 3;
         }
         .div {
           padding-top: 130px;
@@ -88,6 +88,7 @@ looker.plugins.visualizations.add({
         .table-header {
           background-color: #eee;
           border: 1px solid black;
+          border-collapse: collapse;
           font-weight: normal;
           font-family: 'Verdana';
           font-size: 11px;
@@ -95,9 +96,6 @@ looker.plugins.visualizations.add({
           text-align: center;
           margin: auto;
           width: 90px;
-          position: sticky;
-          top: 0; 
-          z-index: 3;
 
         }
         .table-cell {
@@ -117,7 +115,9 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          overflow: auto;
+          position: sticky;
+          top: 45px; 
+          z-index: 3;
         }
         .div {
           padding-top: 130px;
