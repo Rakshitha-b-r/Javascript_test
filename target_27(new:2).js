@@ -47,7 +47,7 @@ looker.plugins.visualizations.add({
           width: 90px;
         }
         .thead{
-          position: sticky;
+          position: fixed;
           top: 0; 
           z-index: 3;
         }
@@ -114,7 +114,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          position: sticky;
+          position: fixed;
           top: 0; 
           z-index: 3;
         }
@@ -149,7 +149,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
 
-    generatedHTML += "<div>";
+    generatedHTML += "<div class='div'>";
     // Next rows are the data
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
@@ -162,6 +162,13 @@ looker.plugins.visualizations.add({
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
+    // Get the width and height of the first cell in the table body
+    const cellWidth = element.querySelectorAll('.table-cell')[0].clientWidth;
+    const cellHeight = element.querySelectorAll('.table-cell')[0].clientHeight;
+
+    // Set the width and height of the cells in the header row to match
+    element.querySelectorAll('.thead .table-header')[0].style.width = `${cellWidth}px`;
+    element.querySelectorAll('.thead .table-header')[0].style.height = `${cellHeight}px`;
 
     done();
   }
