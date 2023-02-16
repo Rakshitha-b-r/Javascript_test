@@ -25,7 +25,6 @@ looker.plugins.visualizations.add({
         .table-header {
           background-color: #eee;
           border: 1px solid black;
-          border-collapse: collapse;
           font-weight: normal;
           font-family: 'Verdana';
           font-size: 11px;
@@ -33,6 +32,9 @@ looker.plugins.visualizations.add({
           text-align: center;
           margin: auto;
           width: 90px;
+          position: sticky;
+          top: 0; 
+          z-index: 3;
         }
         .table-cell {
           padding: 5px;
@@ -47,9 +49,7 @@ looker.plugins.visualizations.add({
           width: 90px;
         }
         .thead{
-          position: sticky;
-          top: 0; 
-          z-index: 3;
+          overflow: auto;
         }
         .div {
           padding-top: 130px;
@@ -88,7 +88,6 @@ looker.plugins.visualizations.add({
         .table-header {
           background-color: #eee;
           border: 1px solid black;
-          border-collapse: collapse;
           font-weight: normal;
           font-family: 'Verdana';
           font-size: 11px;
@@ -96,6 +95,10 @@ looker.plugins.visualizations.add({
           text-align: center;
           margin: auto;
           width: 90px;
+          position: sticky;
+          top: 0; 
+          z-index: 3;
+
         }
         .table-cell {
           padding: 5px;
@@ -114,9 +117,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          position: sticky;
-          top: 45px; 
-          z-index: 3;
+          overflow: auto;
         }
         .div {
           padding-top: 130px;
@@ -124,7 +125,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0;width:auto;">C 27.00+ - Identification of the counterparty (LE 1)</p>`;
+    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:static;top:0;width:auto;">C 27.00+ - Identification of the counterparty (LE 1)</p>`;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead class='thead'>";
     generatedHTML += "<tr class='table-header'>";
