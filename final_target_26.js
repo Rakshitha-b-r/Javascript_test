@@ -21,7 +21,7 @@ looker.plugins.visualizations.add({
           font-size: ${config.font_size}px;
           border: 1px solid black;
           border-collapse: collapse;
-          marging:auto;
+          margin:auto;
         }
         .table-header {
           background-color: #eee;
