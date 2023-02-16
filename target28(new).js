@@ -108,14 +108,15 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
+    //generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0">C 28.00+ - Identification of the counterparty (LE 1)</p>`;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' colspan='3' style="height:25px;><b>COUNTERPARTY</b></th>`;
-    generatedHTML += `<th class='table-header' colspan='15' style="height:25px;><b>ORIGINAL EXPOSURES</b></th>`;
+    generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
+    generatedHTML += `<th class='table-header' colspan='15'><b>ORIGINAL EXPOSURES</b></th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Value adjustments and provisions</th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Exposures deducted from CET 1 or Additional Tier 1 items</th>`;
     generatedHTML += `<th class='table-header' rowspan='3' colspan='3'><b>Exposure value before application of exemptions and CRM </b></th>`;
-    generatedHTML += `<th class='table-header' colspan='8' style="height:25px;><b>ELIGIBLE CREDIT RISK MITIGATION (CRM) TECHNIQUES</b></th>`;
+    generatedHTML += `<th class='table-header' colspan='8'><b>ELIGIBLE CREDIT RISK MITIGATION (CRM) TECHNIQUES</b></th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Amounts exempted</th>`;
     generatedHTML += `<th class='table-header' rowspan='3' colspan='3'><b>Exposure value after application of exemptions and CRM</b></th>`;
     generatedHTML += "</tr>";
