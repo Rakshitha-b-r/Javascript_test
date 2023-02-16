@@ -52,7 +52,10 @@ looker.plugins.visualizations.add({
           z-index: 3;
         }
         .div {
-          padding-top: 130px;
+          //padding-top: 130px;
+          position: relative;
+          top: 3em;
+          overflow:scroll;
       }
       </style>
     `;
@@ -119,7 +122,10 @@ looker.plugins.visualizations.add({
           z-index: 3;
         }
         .div {
-          padding-top: 130px;
+          //padding-top: 130px;
+          position: relative;
+          top: 3em;
+          overflow:scroll;
       }
       </style>
     `;
