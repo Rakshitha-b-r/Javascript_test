@@ -158,7 +158,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
 
-    generatedHTML += "<div>";
+    generatedHTML += "<div class='div'>";
     // Next rows are the data
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
