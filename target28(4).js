@@ -27,12 +27,24 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           font-weight: normal;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
       </style>
     `;
@@ -70,12 +82,24 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
           font-weight: normal;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
          .table-row {
           border: 1px solid black;
@@ -84,6 +108,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
+    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0">C 28.00+ - Identification of the counterparty (LE 1)</p>`;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
@@ -112,7 +137,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='3'>Additional exposures arising from transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
-    generatedHTML += `<th class='table-header' rowspan='2'>Of which: defaulted</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'><i>Of which: defaulted</i></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
@@ -122,14 +147,14 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
     generatedHTML += `<th class='table-header' colspan='3'>Off balance sheet items</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'><b>Total</b></th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Of which: Non-trading book </th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'><i>Of which: Non-trading book</i></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>% of Tier 1 capital </th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>(-) Debt instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>(-) Equity instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>(-) Derivatives</th>`;
     generatedHTML += `<th class='table-header' colspan='3'>(-) Off balance sheet items</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'><b>Total</b></th>`;
-    generatedHTML += `<th class='table-header' rowspan='2'>Of which: Non-trading book</th>`;
+    generatedHTML += `<th class='table-header' rowspan='2'><i>Of which: Non-trading book</i></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>% of Tier 1 capital</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
@@ -146,10 +171,11 @@ looker.plugins.visualizations.add({
 
 
 
+    const header=['010','020','030','040','050','060','070','080','090','100','120','130','140','150','160','170','180','190','200','210','220','230','240','250','260','270','280','290','300','310','320','330','340','350',];
     // First row is the header
     generatedHTML += "<tr class='table-header'>";
-    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
+    for (let i=0;i<header.length;i++) {
+      generatedHTML += `<th class='table-header'>${header[i]}</th>`;
     }
     generatedHTML += "</tr>";
 
