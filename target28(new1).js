@@ -110,7 +110,7 @@ looker.plugins.visualizations.add({
 
     //generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0">C 28.00+ - Identification of the counterparty (LE 1)</p>`;
     generatedHTML += "<table class='table'>";
-    generatedHTML += "<tr class='table-header'>";
+    generatedHTML += "<tr class='table-header' style='height:25px;'>";
     generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
     generatedHTML += `<th class='table-header' colspan='15'><b>ORIGINAL EXPOSURES</b></th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Value adjustments and provisions</th>`;
