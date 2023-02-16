@@ -48,7 +48,7 @@ looker.plugins.visualizations.add({
         }
         .thead{
           position: sticky;
-          top: 0; 
+          top: 45px; 
           z-index: 3;
         }
         .div {
@@ -96,7 +96,6 @@ looker.plugins.visualizations.add({
           text-align: center;
           margin: auto;
           width: 90px;
-
         }
         .table-cell {
           padding: 5px;
@@ -125,7 +124,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:static;top:0;width:auto;">C 27.00+ - Identification of the counterparty (LE 1)</p>`;
+    generatedHTML += `<p style="font-family: 'Verdana';font-weight:bold;font-size:14px;align-items: center;text-align: left;border: 1px solid black;padding: 5px;background-color: #eee;position:sticky;top:0;width:auto;">C 27.00+ - Identification of the counterparty (LE 1)</p>`;
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead class='thead'>";
     generatedHTML += "<tr class='table-header'>";
