@@ -19,27 +19,47 @@ looker.plugins.visualizations.add({
       <style>
         .table {
           font-size: ${config.font_size}px;
-          height: 50px;
           border: 1px solid black;
           border-collapse: collapse;
+          margin:auto;
         }
         .table-header {
-          font-weight: normal;
           background-color: #eee;
           border: 1px solid black;
+          position: fixed;
           border-collapse: collapse;
-        } 
-        .thead{
-          position: sticky;
-          top: 0; 
-          z-index: 3;
-        }     
+          font-weight: normal;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
+        }
         .table-cell {
           padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
+        .thead{
+          position: sticky;
+          top: 0; 
+          z-index: 1;
+        }
+        .div {
+          //padding-top: 130px;
+          position: relative;
+          top: 6em;
+          display:block;
+          overflow-y:scroll;
+      }
       </style>
     `;
 
@@ -68,59 +88,80 @@ looker.plugins.visualizations.add({
       <style>
         .table {
           font-size: ${config.font_size}px;
-          height: 50px;
           border: 1px solid black;
           border-collapse: collapse;
+          margin:auto;
         }
         .table-header {
-          font-weight: normal;
           background-color: #eee;
+          position: fixed;
           border: 1px solid black;
           border-collapse: collapse;
-        }     
-        .thead{
-          position: sticky;
-          top: 0; 
-          z-index: 3;
+          font-weight: normal;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
         .table-cell {
+          padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+          font-family: 'Verdana';
+          font-size: 11px;
+          align-items: center;
+          text-align: center;
+          margin: auto;
+          width: 90px;
         }
          .table-row {
           border: 1px solid black;
           border-collapse: collapse;
-          width :100%;
         }
+        .thead{
+          position: sticky;
+          top: 0; 
+          z-index: 1;
+        }
+        .div {
+          //padding-top: 130px;
+          position: relative;
+          top: 6em;
+          display:block;
+          overflow-y:scroll;
+      }
       </style>
     `;
+
     generatedHTML += "<table class='table'>";
-    generatedHTML += "<tbody>";
-    generatedHTML += "<thead class='thead'>";
-    generatedHTML += "<tr>";
-    generatedHTML += `<th class='table-header' colspan='8'>COUNTERPARTY IDENTIFICATION</th>`;
+    generatedHTML += "<thead>";
+    generatedHTML += "<tr class='table-header'>";
+    generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;">COUNTERPARTY IDENTIFICATION</th>`;
     generatedHTML += "</tr>";
-    generatedHTML += "<tr>";
-    generatedHTML += `<th class='table-header'>Code</th>`;
-    generatedHTML += `<th class='table-header'>Type of Code</th>`;
-    generatedHTML += `<th class='table-header'>Name</th>`;
-    generatedHTML += `<th class='table-header'>National Code</th>`;
-    generatedHTML += `<th class='table-header'>Residence of the Counterparty</th>`;
-    generatedHTML += `<th class='table-header'>Sector of the Counterparty</th>`;
-    generatedHTML += `<th class='table-header'>NACE Code</th>`;
-    generatedHTML += `<th class='table-header'>Type of Counterparty</th>`;
+    generatedHTML += "<tr class='table-header'>";
+    generatedHTML += `<th class='table-header' style="height:100px;">Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px;">Type of Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px;">Name</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px;">National Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px;">Residence of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px;">Sector of the Counterparty</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px;">NACE Code</th>`;
+    generatedHTML += `<th class='table-header' style="height:100px;">Type of Counterparty</th>`;
     generatedHTML += "</tr>";
-
-
+   
+    const header=['011','015','021','035','040','050','060','070'];
     // First row is the header
-    generatedHTML += "<tr>";
-    for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-      generatedHTML += `<th class='table-header'>${field.label_short}</th>`;
+    generatedHTML += "<tr class='table-header'>";
+    for (let i=0;i<header.length;i++) {
+      generatedHTML += `<th class='table-header'>${header[i]}</th>`;
     }
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
 
+    generatedHTML += "<div>";
     // Next rows are the data
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
@@ -129,68 +170,17 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
-    generatedHTML += "</tbody>";
+    generatedHTML += "</div>";
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
+//     // Get the width and height of the first cell in the table body
+//     const cellWidth = element.querySelectorAll('.table-cell')[0].clientWidth;
+//     const cellHeight = element.querySelectorAll('.table-cell')[0].clientHeight;
 
-    // let table = document.querySelector('table');
-    // let header = table.querySelector('thead');
-    // let headerClone = header.cloneNode(true);
-    // headerClone.style.position = 'fixed';
-    // headerClone.style.top = '0';
-    // headerClone.style.width = '100%';
-    // table.parentNode.insertBefore(headerClone, table);
-    // table.addEventListener('scroll', function () {
-    //   header.scrollCenter = table.scrollCenter;
-    // });
-
-    // let table = document.querySelector('table');
-    // let header = table.querySelector('thead');
-    // let clonedHeader = header.cloneNode(true);
-    // clonedHeader.id = "clonedHeaderId";
-    // clonedHeader.style.position = "fixed";
-    // clonedHeader.style.top = "0";
-    // clonedHeader.style.backgroundColor = "white";
-    // clonedHeader.style.zIndex = "100";
-    // clonedHeader.style.borderCollapse = "collapse";
-
-    // let clonedHeaderTable = table.getElementsByTagName("table")[0];
-    // clonedHeaderTable.style.width = table.offsetWidth + "px";
-    // clonedHeaderTable.style.margin = "0";
-
-    // let originalHeaderCells = header.getElementsByTagName("th");
-    // let clonedHeaderCells = clonedHeaderTable.getElementsByTagName("th");
-    // for (let i = 0; i < originalHeaderCells.length; i++) {
-    //   clonedHeaderCells[i].style.width = originalHeaderCells[i].offsetWidth + "px";
-    // }
-
-    // table.parentNode.insertBefore(clonedHeader, table);
-    // table.addEventListener('scroll', function () {
-    //   clonedHeader.scrollLeft = table.scrollLeft;
-    // });
-
-    // const header = document.querySelector("table thead tr");
-    // const cells = document.querySelectorAll("table tbody tr:first-child td");
-
-    // window.addEventListener("scroll", function () {
-    //   for (let i = 0; i < cells.length; i++) {
-    //     header.children[i].style.width = cells[i].offsetWidth + "px";
-    //     header.children[i].style.left = cells[i].offsetLeft + "px";
-    //   }
-    // });
-
-    // Get the table rows you want to freeze
-    // var table = document.querySelector('table');
-    // var rows = table.querySelectorAll('tr');
-
-    // // Set the position and top properties of the first 3 rows
-    // for (var i = 0; i < 3; i++) {
-    //   rows[i].style.position = 'sticky';
-    //   rows[i].style.top = '0';
-    // }
-
-
+//     // Set the width and height of the cells in the header row to match
+//     element.querySelectorAll('.thead .table-header')[0].style.width = `${cellWidth}px`;
+//     element.querySelectorAll('.thead .table-header')[0].style.height = `${cellHeight}px`;
 
     done();
   }
