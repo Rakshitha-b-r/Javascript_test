@@ -115,7 +115,7 @@ looker.plugins.visualizations.add({
         }
         .thead{
           position: sticky;
-          top: 5px; 
+          top: 45px; 
           z-index: 3;
         }
         .div {
