@@ -90,7 +90,7 @@ function generateTableHeader() {
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
     const tblBody = document.createElement('tbody');
-    tblBody.style.position = "sticky";
+    tblBody.style.position = "fixed";
     tblBody.style.top = "0px";
 
     // creating all cells
