@@ -49,9 +49,10 @@ looker.plugins.visualizations.add({
           width: 90px;
         }
         .thead{
-          position: sticky;
-          top: 0; 
+          position: fixed;
+          top: 0px; 
           z-index: 3;
+          width: 100%;
         }
         .div {
           //padding-top: 130px;
@@ -122,9 +123,10 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          position: sticky;
-          top: 0; 
+          position: fixed;
+          top: 0px; 
           z-index: 3;
+          width: 100%;
         }
         .div {
           //padding-top: 130px;
