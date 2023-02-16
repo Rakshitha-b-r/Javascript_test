@@ -34,6 +34,7 @@ looker.plugins.visualizations.add({
           text-align: center;
           margin: auto;
           width: 90px;
+          postion: inherit;
         }
         .table-cell {
           padding: 5px;
@@ -95,6 +96,7 @@ looker.plugins.visualizations.add({
           background-color: #eee;
           border: 1px solid black;
           border-collapse: collapse;
+          postion: inherit;
           font-weight: normal;
           font-family: 'Verdana';
           font-size: 11px;
