@@ -47,8 +47,8 @@ looker.plugins.visualizations.add({
           width: 90px;
         }
         .thead{
-          position: sticky;
-          top: 45px; 
+          position: fixed;
+          //top: 45px; 
           z-index: 3;
         }
         .div {
@@ -117,8 +117,8 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          position: sticky;
-          top: 45px; 
+          position: fixed;
+          //top: 45px; 
           z-index: 3;
         }
         .div {
