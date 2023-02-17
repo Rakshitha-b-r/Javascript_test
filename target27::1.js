@@ -21,6 +21,9 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
         margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .table-header {
         background-color: #eee;
@@ -105,12 +108,12 @@ function generateTableHeader() {
     tbl.id = "table";
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
-    tbl.style.margin='auto';
+    tbl.style.margin = 'auto';
     const tblBody = document.createElement('tbody');
     tblBody.style.position = "sticky";
     tblBody.style.top = "0px";
 
-    let k=0;
+    let k = 0;
 
     // creating all cells
     for (let i = 0; i < 2; i++) {
@@ -130,8 +133,8 @@ function generateTableHeader() {
             if (i == 0) {
                 if (j == 0) {
                     cell.setAttribute('colspan', 8)
-                    cell.setAttribute('height','19px')
-                    cell.style.fontWeight='bold'
+                    cell.setAttribute('height', '19px')
+                    cell.style.fontWeight = 'bold'
                     //j = j + 2
                 }
                 if (j > 0) {
@@ -140,13 +143,13 @@ function generateTableHeader() {
             }
             if (i == 1) {
                 if (j == 0 || j == 1 || j == 2 || j == 3 || j == 4 || j == 5 || j == 6 || j == 7) {
-                    cell.setAttribute('height','100px')
+                    cell.setAttribute('height', '100px')
                     // i = i + 3
                 }
             }
-            const headers = ['COUNTERPARTY IDENTIFICATION','Code','Type of Code','Name',
-            'National Code','Residence of the Counterparty','Sector of the Counterparty','NACE Code',
-            'Type of Counterparty']
+            const headers = ['COUNTERPARTY IDENTIFICATION', 'Code', 'Type of Code', 'Name',
+                'National Code', 'Residence of the Counterparty', 'Sector of the Counterparty', 'NACE Code',
+                'Type of Counterparty']
             const cellText = document.createTextNode(
                 `${headers[k]}`
             )
@@ -159,7 +162,7 @@ function generateTableHeader() {
     }
 
     const next_row = document.createElement('tr')
-    const header = ['011','015','021','035','040','050','060','070'];
+    const header = ['011', '015', '021', '035', '040', '050', '060', '070'];
     for (let i = 0; i < header.length; i++) {
         const next_cell = document.createElement('th')
         next_cell.classList.add('table-header');
