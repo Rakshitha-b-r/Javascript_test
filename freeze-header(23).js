@@ -127,10 +127,10 @@ function generateTableHeader() {
                     //j = j + 14
                 }
                 if (j == 2) {
-                    cell.setAttribute('rowspan', 35)
+                    cell.setAttribute('rowspan', 6)
                 }
                 if (j == 3) {
-                    cell.setAttribute('rowspan', 35)
+                    cell.setAttribute('rowspan', 6)
                 }
                 if (j == 4) {
                     cell.setAttribute('colspan', 3)
@@ -141,7 +141,7 @@ function generateTableHeader() {
                     //j = j + 7
                 }
                 if (j == 6) {
-                    cell.setAttribute('rowspan', 35)
+                    cell.setAttribute('rowspan', 6)
                 }
                 if (j == 7) {
                     cell.setAttribute('colspan', 3)
