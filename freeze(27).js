@@ -152,7 +152,6 @@ looker.plugins.visualizations.add({
       </style>
     `;
 
-      generatedHTML += "<div class='div'>";
       generatedHTML += "<table class='table'>";
       generatedHTML += "<thead class='thead'>";
       generatedHTML += "<tr class='table-header'>";
@@ -178,7 +177,6 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
 
-    generatedHTML += "<div>";
     // Next rows are the data
     for (row of data) {
       generatedHTML += "<tr class='table-row'>";
@@ -187,7 +185,6 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
     }
-    generatedHTML += "</div>";
     generatedHTML += "</table>";
 
     this._container.innerHTML = generatedHTML;
