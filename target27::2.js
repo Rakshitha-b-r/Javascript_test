@@ -21,9 +21,6 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
         margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
       .table-header {
         background-color: #eee;
