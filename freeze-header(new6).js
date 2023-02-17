@@ -152,7 +152,7 @@ function generateTableHeader() {
                 if (j == 0) {
                     cell.setAttribute('colspan', 3)
                     cell.setAttribute('height','25px')
-                    cell.setAttribute('font-weight','bold')
+                    cell.style.fontWeight='bold'
                     //j = j + 2
                 }
                 if (j == 1) {
