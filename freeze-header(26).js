@@ -154,18 +154,18 @@ function generateTableHeader() {
                 }
             }
             if (i == 1) {
-                if (j == 0 || j == 1 || j == 2) {
+                if (j == 0 || j == 1 || j == 2 || j==3) {
                     cell.setAttribute('rowspan', 6)
                     // i = i + 3
                 }
-                if (j == 4) {
+                if (j == 5) {
                     cell.setAttribute('rowspan', 4)
                     cell.setAttribute('colspan', 6)
                 }
-                if (j == 5 || j == 6) {
+                if (j == 6 || j == 7) {
                     cell.setAttribute('rowspan', 6)
                 }
-                if (j == 3) {
+                if (j == 4) {
                     cell.setAttribute('colspan', 15)
                     cell.setAttribute('rowspan', 2)
                 }
