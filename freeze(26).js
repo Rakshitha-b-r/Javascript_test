@@ -60,6 +60,14 @@ looker.plugins.visualizations.add({
           display:block;
           overflow-y:scroll;
       }
+      th:after {
+        content:''; 
+        position:absolute; 
+        left: 0; 
+        bottom: 0; 
+        width:100%; 
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+      }
       </style>
     `;
 
