@@ -96,16 +96,18 @@ looker.plugins.visualizations.add({
         let table_data = document.getElementById("table");
         table_data.appendChild(tableBody);
         let thead = document.getElementById("table-body");
-        this._container.onscroll = function() {
+        this._container.onscroll = function () {
             thead.style.top = this._container.scrollTop + 'px';
-          };
+        };
         done();
     }
 });
 
 function generateTableHeader() {
     // creates a <table> element and a <tbody> element
-
+    var container = document.createElement('div');
+    container.style.height = '400px';
+    container.style.overflow = 'scroll';
     const tbl = document.createElement('table')
     tbl.classList.add('table');
     tbl.id = "table";
@@ -183,7 +185,7 @@ function generateTableHeader() {
     // put the <tbody> in the <table>
     tbl.appendChild(tblBody)
     // appends <table> into <body>
-    document.body.appendChild(tbl)
+    container.appendChild(tbl)
     tbl.style.border = "1px solid black";
     tbl.style.borderCollapse = "collapse";
 }
