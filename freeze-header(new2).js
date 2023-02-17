@@ -175,7 +175,7 @@ function generateTableHeader() {
             }
             if (i == 2) {
                 if (j == 0) {
-                    cell.setAttribute('colspan', 14)
+                    cell.setAttribute('colspan', 13)
                 }
                 if (j > 0) {
                     break
@@ -244,7 +244,7 @@ function generateTableHeader() {
             'Exposure value before application of exemptions and CRM','ELIGIBLE CREDIT RISK MITIGATION (CRM) TECHNIQUES','(-) Amounts exempted','Exposure value after application of exemptions and CRM',
             'Code','Group or individual','Transactions where there is an exposure to underlying assets','Total original exposure','',
             '(-) Substitution effect of eligible credit risk mitigation techniques','(-) Funded credit protection other than substitution effect',
-            '(-) Real estate','','Direct exposures','Indirect exposures','Additional exposures arising from transactions where there is an exposure to underlying assets',
+            '(-) Real estate','','','Direct exposures','Indirect exposures','Additional exposures arising from transactions where there is an exposure to underlying assets',
             'Of which: defaulted','Debt instruments','Equity instruments','Derivatives','Off balance sheet items','Debt instruments','Equity instruments',
             'Derivatives','Off balance sheet items','Total','Of which: Non-trading book','% of Tier 1 capital','(-) Debt instruments','(-) Equity instruments',
             '(-) Derivatives','(-) Off balance sheet items','Total','Of which: Non-trading book','% of Tier 1 capital','Loan commit-ments','Financial guarantees',
