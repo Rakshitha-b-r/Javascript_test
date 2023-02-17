@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
         this._container.style.height = '400px';
         this._container.style.overflow = 'scroll';
         var table = generateTableHeader();
-        element.appendChild(table);
+        this._container = element.appendChild(table);
     },
 
     updateAsync: function (data, element, config, queryResponse, details, done) {
