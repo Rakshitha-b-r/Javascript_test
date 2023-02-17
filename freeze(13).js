@@ -51,7 +51,7 @@ looker.plugins.visualizations.add({
           .thead{
             position: sticky;
             top: 0px; 
-            z-index: 3;
+            z-index: 1;
           }
           .div {
             //padding-top: 130px;
@@ -59,14 +59,8 @@ looker.plugins.visualizations.add({
             top: 6em;
             display:block;
             overflow-y:scroll;
-        }
-        .table.sticky thead th {
-          position: sticky;
-          top: 0;
-          background-color: white;
-        }
-        
-        .table.sticky thead th::before {
+        }       
+          .thead th::before {
           content: "";
           position: fixed;
           top: 0;
@@ -140,7 +134,7 @@ looker.plugins.visualizations.add({
           .thead{
             position: sticky;
             top: 0px; 
-            z-index: 3;
+            z-index: 1;
           }
           .div {
             //padding-top: 130px;
@@ -149,13 +143,7 @@ looker.plugins.visualizations.add({
             display:block;
             overflow-y:scroll;
         }
-        .table.sticky thead th {
-          position: sticky;
-          top: 0;
-          background-color: white;
-        }
-        
-        .table.sticky thead th::before {
+        .thead th::before {
           content: "";
           position: fixed;
           top: 0;
