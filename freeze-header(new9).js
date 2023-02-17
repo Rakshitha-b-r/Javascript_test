@@ -77,20 +77,6 @@ looker.plugins.visualizations.add({
         // Create the table body
         var tableBody = document.createElement('tbody');
 
-        // // Create the table header
-        // var headerRow = document.createElement('tr');
-        // headerRow.classList.add('table-header');
-        // for (field of queryResponse.fields.dimensions.concat(queryResponse.fields.measures)) {
-        //     var headerCell = document.createElement('th');
-        //     headerCell.style.border = "1px solid black";
-        //     headerCell.style.borderCollapse = "collapse";
-        //     headerCell.style.backgroundColor = "#eee";
-        //     headerCell.innerHTML = field.label_short;
-        //     headerRow.appendChild(headerCell);
-        //     headerRow.style.position = "sticky";
-        // }
-        // tableBody.appendChild(headerRow);
-
         // Loop through the data
         for (row of data) {
             var tableRow = document.createElement('tr');
@@ -107,14 +93,6 @@ looker.plugins.visualizations.add({
         }
         let table_data = document.getElementById("table");
         table_data.appendChild(tableBody);
-
-        //     // Get the width and height of the first cell in the table body
-        // const cellWidth = element.querySelectorAll('.table-cell')[0].clientWidth;
-        // const cellHeight = element.querySelectorAll('.table-cell')[0].clientHeight;
-
-        // // Set the width and height of the cells in the header row to match
-        // element.querySelectorAll('.table-header')[0].style.width = `${cellWidth}px`;
-        // element.querySelectorAll('.table-header')[0].style.height = `${cellHeight}px`;
 
         done();
     }
@@ -200,7 +178,6 @@ function generateTableHeader() {
                 }
                 if (j == 5) {
                     cell.setAttribute('rowspan', 4)
-                    cell.setAttribute('colspan', 6)
                 }
                 if (j == 6 || j == 7) {
                     cell.setAttribute('rowspan', 6)
@@ -291,7 +268,7 @@ function generateTableHeader() {
             'Exposure value before application of exemptions and CRM','ELIGIBLE CREDIT RISK MITIGATION (CRM) TECHNIQUES','(-) Amounts exempted','Exposure value after application of exemptions and CRM',
             'Code','Group or individual','Transactions where there is an exposure to underlying assets','Total original exposure','',
             '(-) Substitution effect of eligible credit risk mitigation techniques','(-) Funded credit protection other than substitution effect',
-            '(-) Real estate','','','Direct exposures','Indirect exposures','Additional exposures arising from transactions where there is an exposure to underlying assets',
+            '(-) Real estate','','Direct exposures','Indirect exposures','Additional exposures arising from transactions where there is an exposure to underlying assets',
             'Of which: defaulted','Debt instruments','Equity instruments','Derivatives','Off balance sheet items','Debt instruments','Equity instruments',
             'Derivatives','Off balance sheet items','Total','Of which: Non-trading book','% of Tier 1 capital','(-) Debt instruments','(-) Equity instruments',
             '(-) Derivatives','(-) Off balance sheet items','Total','Of which: Non-trading book','% of Tier 1 capital','Loan commit-ments','Financial guarantees',
@@ -326,7 +303,6 @@ function generateTableHeader() {
     tbl.appendChild(tblBody)
     // appends <table> into <body>
     document.body.appendChild(tbl)
-    // sets the border attribute of tbl to '2'
     tbl.style.border = "1px solid black";
     tbl.style.borderCollapse = "collapse";
 }
