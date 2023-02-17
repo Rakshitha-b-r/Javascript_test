@@ -157,6 +157,7 @@ function generateTableHeader() {
                 }
                 if (j == 1) {
                     cell.setAttribute('colspan', 15)
+                    cell.style.fontWeight='bold'
                     //j = j + 14
                 }
                 if (j == 2) {
@@ -168,9 +169,11 @@ function generateTableHeader() {
                 if (j == 4) {
                     cell.setAttribute('colspan', 3)
                     cell.setAttribute('rowspan', 5)
+                    cell.style.fontWeight='bold'
                 }
                 if (j == 5) {
                     cell.setAttribute('colspan', 8)
+                    cell.style.fontWeight='bold'
                     //j = j + 7
                 }
                 if (j == 6) {
@@ -179,14 +182,20 @@ function generateTableHeader() {
                 if (j == 7) {
                     cell.setAttribute('colspan', 3)
                     cell.setAttribute('rowspan', 5)
+                    cell.style.fontWeight='bold'
                 }
                 if (j > 7) {
                     break
                 }
             }
             if (i == 1) {
-                if (j == 0 || j == 1 || j == 2 || j == 3) {
+                if (j == 0 || j == 1 || j == 2) {
                     cell.setAttribute('rowspan', 6)
+                    // i = i + 3
+                }
+                if (j == 3) {
+                    cell.setAttribute('rowspan', 6)
+                    cell.style.fontWeight='bold'
                     // i = i + 3
                 }
                 if (j == 5) {
@@ -241,24 +250,29 @@ function generateTableHeader() {
             }
             if (i == 5) {
                 if (
-                    j == 0 ||
                     j == 1 ||
                     j == 2 ||
                     j == 3 ||
                     j == 5 ||
                     j == 6 ||
                     j == 7 ||
-                    j == 9 ||
-                    j == 10 ||
                     j == 11 ||
                     j == 12 ||
                     j == 13 ||
                     j == 14 ||
-                    j == 16 ||
-                    j == 17 ||
                     j == 18
                 ) {
                     cell.setAttribute('rowspan', 2)
+                }
+                if(j==9 || j==16)
+                {
+                    cell.setAttribute('rowspan', 2)
+                    cell.style.fontWeight='bold'
+                }
+                if(j==0 || j==10 || j==17)
+                {
+                    cell.setAttribute('rowspan', 2)
+                    cell.style.fontWeight='italic'
                 }
                 if (j == 4 || j == 8 || j == 15) {
                     cell.setAttribute('colspan', 3)
