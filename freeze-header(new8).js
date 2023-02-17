@@ -272,7 +272,7 @@ function generateTableHeader() {
                 if(j==0 || j==10 || j==17)
                 {
                     cell.setAttribute('rowspan', 2)
-                    cell.style.fontWeight='italic'
+                    cell.style.fontStyle='italic'
                 }
                 if (j == 4 || j == 8 || j == 15) {
                     cell.setAttribute('colspan', 3)
