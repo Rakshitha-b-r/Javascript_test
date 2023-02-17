@@ -16,12 +16,40 @@ looker.plugins.visualizations.add({
         console.log(config);
         element.innerHTML = `
       <style>
-        #table {
-          font-size: ${config.font_size}px;
-          border: 1px solid black;
-          border-collapse: collapse;
-          top :0;
-        }
+      .table {
+        font-size: ${config.font_size}px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: auto;
+      }
+      .table-header {
+        background-color: #eee;
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-weight: normal;
+        font-family: 'Verdana';
+        font-size: 11px;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        width: 90px;
+      }
+      .table-cell {
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-family: 'Verdana';
+        font-size: 11px;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        width: 90px;
+      }
+       .table-row {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
       </style>
     `;
         // Create a container element to let us center the text.
@@ -95,6 +123,7 @@ looker.plugins.visualizations.add({
 function generateTableHeader() {
     // creates a <table> element and a <tbody> element
     const tbl = document.createElement('table')
+    tbl.classList.add('table');
     tbl.id = "table";
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
@@ -175,7 +204,7 @@ function generateTableHeader() {
             }
             if (i == 2) {
                 if (j == 0) {
-                    cell.setAttribute('colspan', 13)
+                    cell.setAttribute('colspan', 14)
                 }
                 if (j > 0) {
                     break
