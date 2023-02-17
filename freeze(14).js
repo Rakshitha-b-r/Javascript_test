@@ -63,9 +63,6 @@ looker.plugins.visualizations.add({
           .thead th::before {
           content: "";
           position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
           border-bottom: 1px solid black;
           z-index: 1;
         }
@@ -146,9 +143,6 @@ looker.plugins.visualizations.add({
         .thead th::before {
           content: "";
           position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
           border-bottom: 1px solid black;
           z-index: 1;
         }
