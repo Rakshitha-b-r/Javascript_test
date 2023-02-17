@@ -102,6 +102,8 @@ function generateTableHeader() {
     tblBody.style.position = "sticky";
     tblBody.style.top = "0px";
 
+    let k=0;
+
     // creating all cells
     for (let i = 0; i < 7; i++) {
         // creates a table row
@@ -241,10 +243,19 @@ function generateTableHeader() {
                     break
                 }
             }
-
+            const headers = ['COUNTERPARTY','ORIGINAL EXPOSURES','(-) Value adjustments and provisions','(-) Exposures deducted from CET 1 or Additional Tier 1 items',
+            'Exposure value before application of exemptions and CRM','ELIGIBLE CREDIT RISK MITIGATION (CRM) TECHNIQUES','(-) Amounts exempted','Exposure value after application of exemptions and CRM',
+            'Code','Group or individual','Transactions where there is an exposure to underlying assets','Total original exposure','','',
+            '(-) Substitution effect of eligible credit risk mitigation techniques','(-) Funded credit protection other than substitution effect',
+            '(-) Real estate','','Direct exposures','Indirect exposures','Additional exposures arising from transactions where there is an exposure to underlying assets',
+            'Of which: defaulted','Debt instruments','Equity instruments','Derivatives','Off balance sheet items','Debt instruments','Equity instruments',
+            'Derivatives','Off balance sheet items','Total','Of which: Non-trading book','% of Tier 1 capital','(-) Debt instruments','(-) Equity instruments',
+            '(-) Derivatives','(-) Off balance sheet items','Total','Of which: Non-trading book','% of Tier 1 capital','Loan commit-ments','Financial guarantees',
+            'Other commit-ments','Loan commit-ments','Financial guarantees','Other commit-ments','(-) Loan commit-ments','(-) Financial guarantees','(-) Other commit-ments']
             const cellText = document.createTextNode(
-                `cell in row ${i}, column ${j}`
+                `${headers[k]}`
             )
+            k++;
             cell.appendChild(cellText)
             row.appendChild(cell)
         }
