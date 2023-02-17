@@ -53,7 +53,7 @@ looker.plugins.visualizations.add({
           top: 0px; 
           z-index: 3;
         }
-        .div {
+        .tbody {
           position:absolute;
           width: -webkit-fill-available;
           border: 1px solid black;
@@ -133,7 +133,7 @@ looker.plugins.visualizations.add({
           top: 0px; 
           z-index: 3;
         }
-        .div {
+        .tbody {
           position:absolute;
           width: -webkit-fill-available;
           border: 1px solid black;
@@ -155,7 +155,7 @@ looker.plugins.visualizations.add({
       generatedHTML += "<tr class='table-header'>";
       generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;width: -webkit-fill-available; position: absolute">COUNTERPARTY IDENTIFICATION</th>`;
       generatedHTML += "</tr>";
-      generatedHTML += "<div class='div'>";
+      generatedHTML += "<tbody class='tbody'>";
       generatedHTML += "<tr class='table-header'>";
       generatedHTML += `<th class='table-header' style="height:100px; width:148px;">Code</th>`;
       generatedHTML += `<th class='table-header' style="height:100px; width:80px;">Type of Code</th>`;
@@ -165,7 +165,7 @@ looker.plugins.visualizations.add({
       generatedHTML += `<th class='table-header' style="height:100px; width:200px">Sector of the Counterparty</th>`;
       generatedHTML += `<th class='table-header' style="height:100px; width:40px">NACE Code</th>`;
       generatedHTML += `<th class='table-header' style="height:100px; width:50px">Type of Counterparty</th>`;
-      generatedHTML += "</div>";
+      generatedHTML += "</tbody>";
       generatedHTML += "</tr>";
    
     const header=['011','015','021','035','040','050','060','070'];
