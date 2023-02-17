@@ -178,6 +178,7 @@ function generateTableHeader() {
                 }
                 if (j == 5) {
                     cell.setAttribute('rowspan', 4)
+                    cell.setAttribute('colspan', 6)
                 }
                 if (j == 6 || j == 7) {
                     cell.setAttribute('rowspan', 6)
