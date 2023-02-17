@@ -54,18 +54,10 @@ looker.plugins.visualizations.add({
             z-index: 1;
           }
           .div {
-            //padding-top: 130px;
             position: relative;
-            top: 6em;
-            display:block;
             overflow-y:scroll;
-        }       
-          .thead th::before {
-          content: "";
-          position: fixed;
-          border-bottom: 1px solid black;
-          z-index: 1;
-        }
+            height: 100px;
+        }      
         
         </style>
       `;
@@ -134,17 +126,9 @@ looker.plugins.visualizations.add({
             z-index: 1;
           }
           .div {
-            //padding-top: 130px;
             position: relative;
-            top: 6em;
-            display:block;
             overflow-y:scroll;
-        }
-        .thead th::before {
-          content: "";
-          position: fixed;
-          border-bottom: 1px solid black;
-          z-index: 1;
+            height: 100px;
         }
         
         </style>
@@ -175,7 +159,7 @@ looker.plugins.visualizations.add({
       generatedHTML += "</tr>";
       generatedHTML += "</thead>";
   
-      generatedHTML += "<div>";
+      generatedHTML += "<div class='div'>";
       // Next rows are the data
       for (row of data) {
         generatedHTML += "<tr class='table-row'>";
