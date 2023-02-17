@@ -105,6 +105,7 @@ function generateTableHeader() {
     tbl.id = "table";
     tbl.style.position = "absolute";
     tbl.style.top = "0px";
+    tbl.style.margin='auto';
     const tblBody = document.createElement('tbody');
     tblBody.style.position = "sticky";
     tblBody.style.top = "0px";
