@@ -154,7 +154,7 @@ function generateTableHeader() {
                 }
             }
             if (i == 1) {
-                if (j == 0 || j == 1 || j == 2 || j==3) {
+                if (j == 0 || j == 1 || j == 2 || j == 3) {
                     cell.setAttribute('rowspan', 6)
                     // i = i + 3
                 }
@@ -169,7 +169,7 @@ function generateTableHeader() {
                     cell.setAttribute('colspan', 14)
                     cell.setAttribute('rowspan', 2)
                 }
-                if (j > 6) {
+                if (j > 7) {
                     break
                 }
             }
