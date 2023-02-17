@@ -186,6 +186,7 @@ function generateTableHeader() {
     tbl.appendChild(tblBody)
     // appends <table> into <body>
     container.appendChild(tbl)
+    document.body.appendChild(container)
     tbl.style.border = "1px solid black";
     tbl.style.borderCollapse = "collapse";
 }
