@@ -49,7 +49,7 @@ looker.plugins.visualizations.add({
           width: 90px;
         }
         .thead{
-          position: fixed;
+          position: sticky;
           top: 0px; 
           z-index: 3;
         }
@@ -122,7 +122,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .thead{
-          position: fixed;
+          position: sticky;
           top: 0px; 
           z-index: 3;
         }
@@ -132,6 +132,14 @@ looker.plugins.visualizations.add({
           top: 6em;
           display:block;
           overflow-y:scroll;
+      }
+      th:after {
+        content:''; 
+        position:absolute; 
+        left: 0; 
+        bottom: 0; 
+        width:100%; 
+        border-bottom: 1px solid rgba(0,0,0,0.12);
       }
       </style>
     `;
