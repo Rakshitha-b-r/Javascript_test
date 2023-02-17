@@ -53,8 +53,7 @@ looker.plugins.visualizations.add({
             top: 0px; 
             z-index: 1;
           }
-          .div {
-            position: relative;
+          .table-body {
             overflow-y:scroll;
             height: 100px;
         }      
@@ -125,8 +124,7 @@ looker.plugins.visualizations.add({
             top: 0px; 
             z-index: 1;
           }
-          .div {
-            position: relative;
+          .table-body {
             overflow-y:scroll;
             height: 100px;
         }
@@ -159,7 +157,7 @@ looker.plugins.visualizations.add({
       generatedHTML += "</tr>";
       generatedHTML += "</thead>";
   
-      generatedHTML += "<div class='div'>";
+      generatedHTML += "<div class='table-body'>";
       // Next rows are the data
       for (row of data) {
         generatedHTML += "<tr class='table-row'>";
