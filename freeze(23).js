@@ -54,10 +54,7 @@ looker.plugins.visualizations.add({
     `;
         // Create a container element to let us center the text.
         this._container = element.appendChild(document.createElement("div"));
-        this._container.style.height = '400px';
-        this._container.style.overflow = 'scroll';
         var table = generateTableHeader();
-        this._container = element.appendChild(table);
     },
 
     updateAsync: function (data, element, config, queryResponse, details, done) {
