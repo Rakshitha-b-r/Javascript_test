@@ -192,14 +192,14 @@ function generateTableHeader() {
                     break
                 }
             }
-            if (i == 2) {
-                if (j == 0) {
-                    cell.setAttribute('colspan', 14)
-                }
-                if (j > 0) {
-                    break
-                }
-            }
+            // if (i == 2) {
+            //     if (j == 0) {
+            //         cell.setAttribute('colspan', 14)
+            //     }
+            //     if (j > 0) {
+            //         break
+            //     }
+            // }
             if (i == 3) {
                 if (j == 0) {
                     cell.setAttribute('rowspan', 2)
