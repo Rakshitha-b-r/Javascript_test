@@ -183,23 +183,20 @@ function generateTableHeader() {
             }
             if (i == 3) {
                 if (j == 0) {
-                    cell.setAttribute('rowspan', 4)
+                    cell.setAttribute('rowspan', 2)
                 }
                 if (j == 1) {
                     cell.setAttribute('rowspan', 2)
+                    cell.setAttribute('colspan', 6)
                 }
                 if (j == 2) {
                     cell.setAttribute('rowspan', 2)
                     cell.setAttribute('colspan', 6)
                 }
                 if (j == 3) {
-                    cell.setAttribute('rowspan', 2)
-                    cell.setAttribute('colspan', 6)
-                }
-                if (j == 4) {
                     cell.setAttribute('rowspan', 4)
                 }
-                if (j > 4) {
+                if (j > 3) {
                     break
                 }
             }
