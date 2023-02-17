@@ -151,6 +151,7 @@ function generateTableHeader() {
             if (i == 0) {
                 if (j == 0) {
                     cell.setAttribute('colspan', 3)
+                    cell.setAttribute('height','25px')
                     //j = j + 2
                 }
                 if (j == 1) {
@@ -197,6 +198,7 @@ function generateTableHeader() {
                 if (j == 4) {
                     cell.setAttribute('colspan', 14)
                     cell.setAttribute('rowspan', 2)
+                    cell.setAttribute('height','25px')
                 }
                 if (j > 7) {
                     break
@@ -217,6 +219,7 @@ function generateTableHeader() {
                 if (j == 1) {
                     cell.setAttribute('rowspan', 2)
                     cell.setAttribute('colspan', 6)
+                    cell.setAttribute('height','25px')
                 }
                 if (j == 2) {
                     cell.setAttribute('rowspan', 2)
