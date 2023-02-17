@@ -177,7 +177,7 @@ function generateTableHeader() {
                 if (j == 0) {
                     cell.setAttribute('colspan', 15)
                 }
-                if (j >= 0) {
+                if (j > 0) {
                     break
                 }
             }
