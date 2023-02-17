@@ -54,11 +54,10 @@ looker.plugins.visualizations.add({
           z-index: 3;
         }
         .div {
-          //padding-top: 130px;
-          position: relative;
-          top: 6em;
-          display:block;
-          overflow-y:scroll;
+          position:absolute;
+          width: -webkit-fill-available;
+          border: 1px solid black;
+          border-collapse: collapse;
       }
       th:after {
         content:''; 
@@ -135,11 +134,10 @@ looker.plugins.visualizations.add({
           z-index: 3;
         }
         .div {
-          //padding-top: 130px;
-          position: relative;
-          top: 6em;
-          display:block;
-          overflow-y:scroll;
+          position:absolute;
+          width: -webkit-fill-available;
+          border: 1px solid black;
+          border-collapse: collapse;
       }
       th:after {
         content:''; 
@@ -157,7 +155,7 @@ looker.plugins.visualizations.add({
       generatedHTML += "<tr class='table-header'>";
       generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;width: -webkit-fill-available; position: absolute">COUNTERPARTY IDENTIFICATION</th>`;
       generatedHTML += "</tr>";
-      generatedHTML += "<div>";
+      generatedHTML += "<div class='div'>";
       generatedHTML += "<tr class='table-header'>";
       generatedHTML += `<th class='table-header' style="height:100px; width:148px;">Code</th>`;
       generatedHTML += `<th class='table-header' style="height:100px; width:80px;">Type of Code</th>`;
