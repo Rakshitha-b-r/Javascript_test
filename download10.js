@@ -78,6 +78,7 @@ looker.plugins.visualizations.add({
       
         downloadLink.download = filename;
         downloadLink.href = window.URL.createObjectURL(csvFile);
+        console.log(downloadLink.href);
         downloadLink.style.display = "none";
         document.body.appendChild(downloadLink);
         downloadLink.click();
