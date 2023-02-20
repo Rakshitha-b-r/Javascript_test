@@ -73,6 +73,14 @@ looker.plugins.visualizations.add({
         width: 100%;
         left: 0;
     }
+    th:not(:nth-child(19)):after {
+        content: '';
+        top: 27px;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        border: 1px solid black;
+    }
       </style>
     `;
         // Create a container element to let us center the text.
