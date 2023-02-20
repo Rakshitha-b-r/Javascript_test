@@ -82,16 +82,30 @@ looker.plugins.visualizations.add({
   
     // Combine each row data with new line character
       csv_data = csv_data.join('\n');
-      const blob = new Blob([csv_data], {type: 'text/csv'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      // Define the name of the downloaded file
-      a.download = 'file.csv';
-      document.body.appendChild(a);
-      a.click();
-      URL.revokeObjectURL(url);
+  // Create CSV file object and feed
+  // our csv_data into it
+  CSVFile = new Blob([csv_data], {
+    type: "text/csv"
+  });
+
+  // Create to temporary link to initiate
+  // download process
+  var temp_link = document.createElement('a');
+
+  // Download csv file
+  temp_link.download = "GfG.csv";
+  var url = window.URL.createObjectURL(CSVFile);
+  temp_link.href = url;
+  console.log(temp_link.href)
+
+  // This link should not be displayed
+  temp_link.style.display = "none";
+  document.body.appendChild(temp_link);
+
+  // Automatically click the link to
+  // trigger download
+  temp_link.click();
+  document.body.removeChild(temp_link);
     });
   },
   // Render in response to the data or settings changing
