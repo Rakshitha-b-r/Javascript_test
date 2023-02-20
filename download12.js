@@ -53,36 +53,51 @@ looker.plugins.visualizations.add({
     this._container = element.appendChild(document.createElement("div"));
 
   },
+  // addDownloadButtonListener: function () {
+  //   const downloadButton = this._container.querySelector('button');
+  //   downloadButton.addEventListener('click', (event) => {
+  //       var csv = [];
+  //       var rows = document.querySelectorAll("table tr");
+      
+  //       for (var i = 0; i < rows.length; i++) {
+  //         var row = [];
+  //         var cols = rows[i].querySelectorAll("td, th");
+      
+  //         for (var j = 0; j < cols.length; j++) {
+  //           row.push(cols[j].innerText);
+  //         }
+      
+  //         csv.push(row.join(","));
+  //       }
+      
+  //       // Download CSV file
+  //       var filename = "data.csv";
+  //       var csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
+  //       var downloadLink = document.createElement("a");
+      
+  //       downloadLink.download = filename;
+  //       downloadLink.href = window.URL.createObjectURL(csvFile);
+  //       console.log(downloadLink.href);
+  //       downloadLink.style.display = "none";
+  //       document.body.appendChild(downloadLink);
+  //       downloadLink.click();      
+  //   });
+  // },
+
   addDownloadButtonListener: function () {
     const downloadButton = this._container.querySelector('button');
     downloadButton.addEventListener('click', (event) => {
-        var csv = [];
-        var rows = document.querySelectorAll("table tr");
-      
-        for (var i = 0; i < rows.length; i++) {
-          var row = [];
-          var cols = rows[i].querySelectorAll("td, th");
-      
-          for (var j = 0; j < cols.length; j++) {
-            row.push(cols[j].innerText);
-          }
-      
-          csv.push(row.join(","));
-        }
-      
-        // Download CSV file
-        var filename = "data.csv";
-        var csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
-        var downloadLink = document.createElement("a");
-      
-        downloadLink.download = filename;
-        downloadLink.href = window.URL.createObjectURL(csvFile);
-        console.log(downloadLink.href);
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        downloadLink.click();      
+        // Create an empty workbook
+        const wb = XLSX.utils.book_new();
+        // Create a worksheet
+        const ws = XLSX.utils.table_to_sheet(document.querySelector('table'));
+        // Add the worksheet to the workbook
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+        // Save the workbook
+        XLSX.writeFile(wb, 'data.xlsx');      
     });
   },
+  
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
     console.log(config);
