@@ -86,6 +86,10 @@ looker.plugins.visualizations.add({
 
   addDownloadButtonListener: function () {
     const downloadButton = this._container.querySelector('button');
+    var XLSX = document.createElement("script");
+    XLSX.type = "text/javascript";
+    XLSX.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js";
+    document.head.appendChild(XLSX);
     downloadButton.addEventListener('click', (event) => {
         // Create an empty workbook
         const wb = XLSX.utils.book_new();
