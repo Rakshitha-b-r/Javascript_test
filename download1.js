@@ -144,38 +144,36 @@ looker.plugins.visualizations.add({
 
     done();
   }
+  
 });
+
 function tableToCSV() {
- 
-  // Variable to store the final csv data
-  var csv_data = [];
+  var csv = [];
+  var rows = document.querySelectorAll("table tr");
 
-  // Get each row data
-  var rows = document.getElementsByTagName('tr');
   for (var i = 0; i < rows.length; i++) {
+    var row = [];
+    var cols = rows[i].querySelectorAll("td, th");
 
-      // Get each column data
-      var cols = rows[i].querySelectorAll('td,th');
-
-      // Stores each csv row data
-      var csvrow = [];
-      for (var j = 0; j < cols.length; j++) {
-
-          // Get the text data of each cell
-          // of a row and push it to csvrow
-          csvrow.push(cols[j].innerHTML);
-      }
-      // Combine each column value with comma
-      csv_data.push(csvrow.join(","));
+    for (var j = 0; j < cols.length; j++) {
+      row.push(cols[j].innerText);
     }
 
-    // Combine each row data with new line character
-    csv_data = csv_data.join('\n');
+    csv.push(row.join(","));
+  }
 
-    // Call this function to download csv file 
-    downloadCSVFile(csv_data);
+  // Download CSV file
+  var filename = "data.csv";
+  var csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
+  var downloadLink = document.createElement("a");
 
+  downloadLink.download = filename;
+  downloadLink.href = window.URL.createObjectURL(csvFile);
+  downloadLink.style.display = "none";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
 }
+
 
 function downloadCSVFile(csv_data) {
  
