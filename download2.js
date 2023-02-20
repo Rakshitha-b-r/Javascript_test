@@ -138,7 +138,7 @@ looker.plugins.visualizations.add({
       }
     }   
     generatedHTML += "</table>";
-    generatedHTML += `<button type="button" onclick="tableToCSV()">download CSV</button>`;
+    generatedHTML += `<button type="button" onclick="${tableToCSV()}">download CSV</button>`;
 
     this._container.innerHTML = generatedHTML;
 
