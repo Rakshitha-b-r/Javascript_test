@@ -89,8 +89,8 @@ looker.plugins.visualizations.add({
     var XLSX = document.createElement("script");
     XLSX.type = "text/javascript";
     XLSX.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js";
-    document.head.appendChild(XLSX);
-    downloadButton.addEventListener('click', (event) => {
+    XLSX.onload = () => {
+      downloadButton.addEventListener('click', (event) => {
         // Create an empty workbook
         const wb = XLSX.utils.book_new();
         // Create a worksheet
@@ -99,8 +99,11 @@ looker.plugins.visualizations.add({
         XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
         // Save the workbook
         XLSX.writeFile(wb, 'data.xlsx');      
-    });
+      });
+    }
+    document.head.appendChild(XLSX);
   },
+  
   
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
