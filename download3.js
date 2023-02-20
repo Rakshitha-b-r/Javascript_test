@@ -121,7 +121,7 @@ looker.plugins.visualizations.add({
 
     // Loop through the different types of column types looker exposes
     let i = 0;
-    const header1=['010','020','030','040'];
+    const header1 = ['010', '020', '030', '040'];
     for (column_type of ["dimension_like", "measure_like", "table_calculations"]) {
 
       // Look through each field (i.e. row of data)
@@ -136,7 +136,7 @@ looker.plugins.visualizations.add({
         generatedHTML += '</tr>';
         i++;
       }
-    }   
+    }
     generatedHTML += "</table>";
     generatedHTML += `<button type="button" onclick="${tableToCSV()}">download CSV</button>`;
 
@@ -144,43 +144,49 @@ looker.plugins.visualizations.add({
 
     done();
   }
-  
+
 });
 
 function tableToCSV() {
-  var csv = [];
-  var rows = document.querySelectorAll("table tr");
 
+  // Variable to store the final csv data
+  var csv_data = [];
+
+  // Get each row data
+  var rows = document.getElementsByTagName('tr');
   for (var i = 0; i < rows.length; i++) {
-    var row = [];
-    var cols = rows[i].querySelectorAll("td, th");
 
+    // Get each column data
+    var cols = rows[i].querySelectorAll('td,th');
+
+    // Stores each csv row data
+    var csvrow = [];
     for (var j = 0; j < cols.length; j++) {
-      row.push(cols[j].innerText);
+
+      // Get the text data of each cell
+      // of a row and push it to csvrow
+      csvrow.push(cols[j].innerHTML);
     }
 
-    csv.push(row.join(","));
+    // Combine each column value with comma
+    csv_data.push(csvrow.join(","));
   }
 
-  // Download CSV file
-  var filename = "data.csv";
-  var csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
-  var downloadLink = document.createElement("a");
+  // Combine each row data with new line character
+  csv_data = csv_data.join('\n');
 
-  downloadLink.download = filename;
-  downloadLink.href = window.URL.createObjectURL(csvFile);
-  downloadLink.style.display = "none";
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
+  // Call this function to download csv file 
+  downloadCSVFile(csv_data);
+
 }
 
 
 function downloadCSVFile(csv_data) {
- 
+
   // Create CSV file object and feed
   // our csv_data into it
   CSVFile = new Blob([csv_data], {
-      type: "text/csv"
+    type: "text/csv"
   });
 
   // Create to temporary link to initiate
@@ -199,5 +205,5 @@ function downloadCSVFile(csv_data) {
   // Automatically click the link to
   // trigger download
   temp_link.click();
-            document.body.removeChild(temp_link);
+  document.body.removeChild(temp_link);
 }
