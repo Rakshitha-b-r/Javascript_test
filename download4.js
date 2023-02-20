@@ -138,9 +138,13 @@ looker.plugins.visualizations.add({
       }
     }
     generatedHTML += "</table>";
-    generatedHTML += `<button type="button" onclick="${tableToCSV()}">download CSV</button>`;
+    generatedHTML += `<button type="button" class="button">download CSV</button>`;
 
     this._container.innerHTML = generatedHTML;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('button').addEventListener('click', tableToCSV, false);
+     }, false)
 
     done();
   }
@@ -197,6 +201,7 @@ function downloadCSVFile(csv_data) {
   temp_link.download = "GfG.csv";
   var url = window.URL.createObjectURL(CSVFile);
   temp_link.href = url;
+  console.log(temp_link.href)
 
   // This link should not be displayed
   temp_link.style.display = "none";
