@@ -53,6 +53,47 @@ looker.plugins.visualizations.add({
     this._container = element.appendChild(document.createElement("div"));
 
   },
+  addDownloadButtonListener: function () {
+    const downloadButton = this._container.querySelector('button');
+    downloadButton.addEventListener('click', (event) => {
+      // Define the CSV data to be downloaded
+      // Variable to store the final csv data
+    var csv_data = [];
+  
+    // Get each row data
+    var rows = document.getElementsByTagName('tr');
+    for (var i = 0; i < rows.length; i++) {
+  
+      // Get each column data
+      var cols = rows[i].querySelectorAll('td,th');
+  
+      // Stores each csv row data
+      var csvrow = [];
+      for (var j = 0; j < cols.length; j++) {
+  
+        // Get the text data of each cell
+        // of a row and push it to csvrow
+        csvrow.push(cols[j].innerHTML);
+      }
+  
+      // Combine each column value with comma
+      csv_data.push(csvrow.join(","));
+    }
+  
+    // Combine each row data with new line character
+      csv_data = csv_data.join('\n');
+      const blob = new Blob([csv_data], {type: 'text/csv'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      // Define the name of the downloaded file
+      a.download = 'file.csv';
+      document.body.appendChild(a);
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
     console.log(config);
@@ -148,48 +189,6 @@ looker.plugins.visualizations.add({
 
 });
 
-
-function addDownloadButtonListener() {
-  const downloadButton = this._container.querySelector('button');
-  downloadButton.addEventListener('click', (event) => {
-    // Define the CSV data to be downloaded
-    // Variable to store the final csv data
-  var csv_data = [];
-
-  // Get each row data
-  var rows = document.getElementsByTagName('tr');
-  for (var i = 0; i < rows.length; i++) {
-
-    // Get each column data
-    var cols = rows[i].querySelectorAll('td,th');
-
-    // Stores each csv row data
-    var csvrow = [];
-    for (var j = 0; j < cols.length; j++) {
-
-      // Get the text data of each cell
-      // of a row and push it to csvrow
-      csvrow.push(cols[j].innerHTML);
-    }
-
-    // Combine each column value with comma
-    csv_data.push(csvrow.join(","));
-  }
-
-  // Combine each row data with new line character
-    csv_data = csv_data.join('\n');
-    const blob = new Blob([csv_data], {type: 'text/csv'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    // Define the name of the downloaded file
-    a.download = 'file.csv';
-    document.body.appendChild(a);
-    a.click();
-    URL.revokeObjectURL(url);
-  });
-}
 
 // function tableToCSV() {
 
