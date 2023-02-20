@@ -50,6 +50,29 @@ looker.plugins.visualizations.add({
         border: 1px solid black;
         border-collapse: collapse;
       }
+      th:before {
+        content: '';
+        top: 0;
+        left: 0;
+        border-top: 1px solid black;
+        position: absolute;
+        width: 100%;
+    }
+    tr:before {
+        top: 177.5px;
+        content: '';
+        border-top: 1px solid black;
+        position: absolute;
+        width: 100%;
+    }
+    tr:after {
+        bottom: 0;
+        content: '';
+        border-top: 1px solid black;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
       </style>
     `;
         // Create a container element to let us center the text.
@@ -108,6 +131,7 @@ function generateTableHeader() {
     const tblBody = document.createElement('tbody');
     tblBody.style.position = "sticky";
     tblBody.style.top = "0px";
+    tblBody.style.zIndex = "1";
 
     let k=0;
 
