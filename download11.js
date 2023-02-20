@@ -56,7 +56,6 @@ looker.plugins.visualizations.add({
   addDownloadButtonListener: function () {
     const downloadButton = this._container.querySelector('button');
     downloadButton.addEventListener('click', (event) => {
-      function tableToCSV() {
         var csv = [];
         var rows = document.querySelectorAll("table tr");
       
@@ -81,9 +80,7 @@ looker.plugins.visualizations.add({
         console.log(downloadLink.href);
         downloadLink.style.display = "none";
         document.body.appendChild(downloadLink);
-        downloadLink.click();
-      }
-      
+        downloadLink.click();      
     });
   },
   // Render in response to the data or settings changing
