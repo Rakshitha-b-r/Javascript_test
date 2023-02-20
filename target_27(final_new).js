@@ -148,7 +148,7 @@ looker.plugins.visualizations.add({
             position: absolute;
             content: '';
             width: 100%;
-            border-top: 1px solid rgba(0,0,0,0.12);
+            border-top: 1px solid #4c535b;
             top: 102px;
         }
         </style>
