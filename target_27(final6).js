@@ -53,13 +53,6 @@ looker.plugins.visualizations.add({
             top: 0px; 
             z-index: 3;
           }
-          .div {
-            //padding-top: 130px;
-            position: relative;
-            top: 6em;
-            display:block;
-            overflow-y:scroll;
-        }
         </style>
       `;
   
@@ -126,20 +119,29 @@ looker.plugins.visualizations.add({
             top: 0px; 
             z-index: 3;
           }
-          .div {
-            //padding-top: 130px;
-            position: relative;
-            top: 6em;
-            display:block;
-            overflow-y:scroll;
-        }
+          th:after {
+            content:''; 
+            position:absolute; 
+            left: 0; 
+            bottom: 0; 
+            width:100%; 
+            border-bottom: 1px solid rgba(0,0,0,0.12);
+         }
+        th:before {
+            left: 0;
+            position: absolute;
+            content: '';
+            width: 100%;
+            border-top: 1px solid rgba(0,0,0,0.12);
+            top: 102px;
+    }
         </style>
       `;
   
       generatedHTML += "<table class='table'>";
       generatedHTML += "<thead class='thead'>";
       generatedHTML += "<tr class='table-header'>";
-      generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;border: 1px solid black;border-collapse: collapse;">COUNTERPARTY IDENTIFICATION</th>`;
+      generatedHTML += `<th class='table-header' colspan='8' style="font-weight: bold;height:19px;width: -webkit-fill-available; position: absolute">COUNTERPARTY IDENTIFICATION</th>`;
       generatedHTML += "</tr>";
       generatedHTML += "<tr class='table-header'>";
       generatedHTML += `<th class='table-header' style="height:100px;">Code</th>`;
@@ -160,8 +162,7 @@ looker.plugins.visualizations.add({
       }
       generatedHTML += "</tr>";
       generatedHTML += "</thead>";
-  
-      generatedHTML += "<div>";
+
       // Next rows are the data
       for (row of data) {
         generatedHTML += "<tr class='table-row'>";
@@ -170,7 +171,6 @@ looker.plugins.visualizations.add({
         }
         generatedHTML += "</tr>";
       }
-      generatedHTML += "</div>";
       generatedHTML += "</table>";
   
       this._container.innerHTML = generatedHTML;
