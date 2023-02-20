@@ -139,21 +139,21 @@ looker.plugins.visualizations.add({
     }
     generatedHTML += "</table>";
     generatedHTML += `<button type="button" class="button">download CSV</button>`;
-
     this._container.innerHTML = generatedHTML;
+    this.addDownloadButtonListener();
 
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('button').addEventListener('click', tableToCSV, false);
-     }, false)
 
     done();
   }
 
 });
 
-function tableToCSV() {
 
-  // Variable to store the final csv data
+function addDownloadButtonListener() {
+  const downloadButton = this._container.querySelector('button');
+  downloadButton.addEventListener('click', (event) => {
+    // Define the CSV data to be downloaded
+    // Variable to store the final csv data
   var csv_data = [];
 
   // Get each row data
@@ -177,38 +177,78 @@ function tableToCSV() {
   }
 
   // Combine each row data with new line character
-  csv_data = csv_data.join('\n');
-
-  // Call this function to download csv file 
-  downloadCSVFile(csv_data);
-
-}
-
-
-function downloadCSVFile(csv_data) {
-
-  // Create CSV file object and feed
-  // our csv_data into it
-  CSVFile = new Blob([csv_data], {
-    type: "text/csv"
+    csv_data = csv_data.join('\n');
+    const blob = new Blob([csv_data], {type: 'text/csv'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    // Define the name of the downloaded file
+    a.download = 'file.csv';
+    document.body.appendChild(a);
+    a.click();
+    URL.revokeObjectURL(url);
   });
-
-  // Create to temporary link to initiate
-  // download process
-  var temp_link = document.createElement('a');
-
-  // Download csv file
-  temp_link.download = "GfG.csv";
-  var url = window.URL.createObjectURL(CSVFile);
-  temp_link.href = url;
-  console.log(temp_link.href)
-
-  // This link should not be displayed
-  temp_link.style.display = "none";
-  document.body.appendChild(temp_link);
-
-  // Automatically click the link to
-  // trigger download
-  temp_link.click();
-  document.body.removeChild(temp_link);
 }
+
+// function tableToCSV() {
+
+//   // Variable to store the final csv data
+//   var csv_data = [];
+
+//   // Get each row data
+//   var rows = document.getElementsByTagName('tr');
+//   for (var i = 0; i < rows.length; i++) {
+
+//     // Get each column data
+//     var cols = rows[i].querySelectorAll('td,th');
+
+//     // Stores each csv row data
+//     var csvrow = [];
+//     for (var j = 0; j < cols.length; j++) {
+
+//       // Get the text data of each cell
+//       // of a row and push it to csvrow
+//       csvrow.push(cols[j].innerHTML);
+//     }
+
+//     // Combine each column value with comma
+//     csv_data.push(csvrow.join(","));
+//   }
+
+//   // Combine each row data with new line character
+//   csv_data = csv_data.join('\n');
+
+//   // Call this function to download csv file 
+//   downloadCSVFile(csv_data);
+
+// }
+
+
+// function downloadCSVFile(csv_data) {
+
+//   // Create CSV file object and feed
+//   // our csv_data into it
+//   CSVFile = new Blob([csv_data], {
+//     type: "text/csv"
+//   });
+
+//   // Create to temporary link to initiate
+//   // download process
+//   var temp_link = document.createElement('a');
+
+//   // Download csv file
+//   temp_link.download = "GfG.csv";
+//   var url = window.URL.createObjectURL(CSVFile);
+//   temp_link.href = url;
+//   console.log(temp_link.href)
+
+//   // This link should not be displayed
+//   temp_link.style.display = "none";
+//   document.body.appendChild(temp_link);
+
+//   // Automatically click the link to
+//   // trigger download
+//   temp_link.click();
+//   document.body.removeChild(temp_link);
+// }
