@@ -69,13 +69,11 @@ looker.plugins.visualizations.add({
       var ws = XLSX.utils.table_to_sheet(table);
 
       XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-      let sheet = ws.getItem("Sheet1");
-      let expensesTable = sheet.tables.getItem("table");
 
-      expensesTable.getHeaderRowRange().format.fill.color = "#C70039";
-      expensesTable.getDataBodyRange().format.fill.color = "#DAF7A6";
-      expensesTable.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
-      expensesTable.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
+      table.getHeaderRowRange().format.fill.color = "#C70039";
+      table.getDataBodyRange().format.fill.color = "#DAF7A6";
+      table.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
+      table.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
 
       var filename = "data.xlsx";
       var binaryData = XLSX.write(wb, { bookType: 'xlsx', cellStyles: true, type: 'binary' });
