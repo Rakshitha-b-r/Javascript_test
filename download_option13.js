@@ -99,7 +99,7 @@ looker.plugins.visualizations.add({
     var filename = "data.xlsx";
     var binaryData = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
     var downloadLink = document.createElement("a");
-    var blob = new Blob([s2ab(binaryData)], {type: "application/octet-stream"});
+    var blob = new Blob([s2ab(binaryData)], {type: "application/vnd.ms-excel"});
     downloadLink.download = filename;
     downloadLink.href = window.URL.createObjectURL(blob);
      console.log(downloadLink.href);
