@@ -47,6 +47,26 @@ looker.plugins.visualizations.add({
           margin: auto;
           width: 90px;
         }
+        .thead{
+          position: sticky;
+          top: 0px; 
+          z-index: 3;
+        }
+        tr:before {
+          top: 177.5px;
+          content: '';
+          border-top: 1px solid black;
+          position: absolute;
+          width: 100%;
+      }
+      tr:after {
+          bottom: 0;
+          content: '';
+          border-top: 1px solid black;
+          position: absolute;
+          width: 100%;
+          left: 0;
+      }
       </style>
     `;
 
@@ -107,10 +127,31 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .thead{
+          position: sticky;
+          top: 0px; 
+          z-index: 3;
+        }
+        tr:before {
+          top: 177.5px;
+          content: '';
+          border-top: 1px solid black;
+          position: absolute;
+          width: 100%;
+      }
+      tr:after {
+          bottom: 0;
+          content: '';
+          border-top: 1px solid black;
+          position: absolute;
+          width: 100%;
+          left: 0;
+      }
       </style>
     `;
 
     generatedHTML += "<table class='table'>";
+    generatedHTML += "<thead class='thead'>";
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
     generatedHTML += `<th class='table-header' colspan='15' style='height:25px;'><b>ORIGINAL EXPOSURES</b></th>`;
@@ -179,6 +220,7 @@ looker.plugins.visualizations.add({
       generatedHTML += `<th class='table-header'>${header[i]}</th>`;
     }
     generatedHTML += "</tr>";
+    generatedHTML += "</thead>";
 
     // Next rows are the data
     for (row of data) {
