@@ -65,24 +65,16 @@ looker.plugins.visualizations.add({
     const downloadButton = this._container.querySelector('button');
     downloadButton.addEventListener('click', (event) => {
       var table = document.querySelector("table");
-      var wb = XLSX.utils.book_new();
-      var ws = XLSX.utils.table_to_sheet(table);
-      var range = XLSX.utils.decode_range(ws['!ref']);
-      
-      // Loop through each row and cell in the worksheet and set the cell styles
-      for (var row = range.s.r; row <= range.e.r; row++) {
-        for (var col = range.s.c; col <= range.e.c; col++) {
-          var cellAddress = XLSX.utils.encode_cell({r: row, c: col});
-          var cellRef = ws[cellAddress];
-          if (cellRef != null && cellRef.s != null) {
-            cellRef.s = Object.assign(cellRef.s, {bgColor: {indexed: cellRef.s.fgColor.rgb}});
-          }
-        }
-      }
+      const worksheet = XLSX.utils.table_to_sheet(table);
+      const workbook = XLSX.utils.book_new();
   
-      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
       var filename = "data.xlsx";
-      var binaryData = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+      var binaryData = XLSX.writeFile(workbook, 'data.xlsx', {
+        bookType: 'xlsx',
+        cellStyles: true,
+        type: 'binary',
+      });
       var downloadLink = document.createElement("a");
       var blob = new Blob([s2ab(binaryData)], {type: "application/vnd.ms-excel"});
       downloadLink.download = filename;
