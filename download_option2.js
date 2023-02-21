@@ -118,6 +118,7 @@ looker.plugins.visualizations.add({
     var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
     var filename = "data.xlsx";
     XLSX.writeFile(wb, filename);
+    console.log(window.URL.createObjectURL(new Blob([wb], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })));
   });
 },
 
