@@ -67,12 +67,20 @@ looker.plugins.visualizations.add({
       var table = document.querySelector("table");
       var wb = XLSX.utils.book_new();
       var ws = XLSX.utils.table_to_sheet(table);
-  
+
       XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+      let sheet = ws.getItem("Sheet1");
+      let expensesTable = sheet.tables.getItem("table");
+
+      expensesTable.getHeaderRowRange().format.fill.color = "#C70039";
+      expensesTable.getDataBodyRange().format.fill.color = "#DAF7A6";
+      expensesTable.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
+      expensesTable.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
+
       var filename = "data.xlsx";
-      var binaryData = XLSX.write(wb, { bookType: 'xlsx',cellStyles: true, type: 'binary' });
+      var binaryData = XLSX.write(wb, { bookType: 'xlsx', cellStyles: true, type: 'binary' });
       var downloadLink = document.createElement("a");
-      var blob = new Blob([s2ab(binaryData)], {type: "application/vnd.ms-excel"});
+      var blob = new Blob([s2ab(binaryData)], { type: "application/vnd.ms-excel" });
       downloadLink.download = filename;
       downloadLink.href = window.URL.createObjectURL(blob);
       console.log(downloadLink.href);
@@ -80,18 +88,18 @@ looker.plugins.visualizations.add({
       document.body.appendChild(downloadLink);
       downloadLink.click();
     });
-  
+
     function s2ab(s) {
       var buf = new ArrayBuffer(s.length);
       var view = new Uint8Array(buf);
-      for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+      for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
       return buf;
     }
-  }, 
+  },
 
-// Utility function to convert string to ArrayBuffer
+  // Utility function to convert string to ArrayBuffer
 
-  
+
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
     console.log(config);
