@@ -93,44 +93,45 @@ looker.plugins.visualizations.add({
   // },
 
   addDownloadButtonListener: function () {
-  const downloadButton = this._container.querySelector('button');
-  downloadButton.addEventListener('click', (event) => {
-    // var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
-    var table = document.querySelector("table");
-    // Convert the table to a worksheet
-    var ws = XLSX.utils.table_to_sheet(table);
-    // Create a new workbook and add the worksheet
-    var wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-    // Set the cell styles and background colors
-    var range = XLSX.utils.decode_range(ws["!ref"]);
-    for (var row = range.s.r; row <= range.e.r; row++) {
-      for (var col = range.s.c; col <= range.e.c; col++) {
-        var cell = ws[XLSX.utils.encode_cell({r: row, c: col})];
-        if (cell != null && cell.s != null) {
-          cell.s.fgColor = {rgb: cell.style.backgroundColor};
-          delete cell.style;
+    const downloadButton = this._container.querySelector('button');
+    downloadButton.addEventListener('click', (event) => {
+      var table = document.querySelector("table");
+      // Convert the table to a worksheet
+      var ws = XLSX.utils.table_to_sheet(table);
+      // Create a new workbook and add the worksheet
+      var wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+      // Set the cell styles and background colors
+      var range = XLSX.utils.decode_range(ws["!ref"]);
+      for (var row = range.s.r; row <= range.e.r; row++) {
+        for (var col = range.s.c; col <= range.e.c; col++) {
+          var cell = ws[XLSX.utils.encode_cell({r: row, c: col})];
+          if (cell != null && cell.s != null) {
+            var bgColor = window.getComputedStyle(table.rows[row].cells[col]).backgroundColor;
+            cell.s.fill = {fgColor: {rgb: bgColor.substring(4, bgColor.length-1)}};
+            delete cell.style;
+          }
         }
       }
-    }
-    var filename = "data.xlsx";
-    var binaryData = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
-    var downloadLink = document.createElement("a");
-    var blob = new Blob([s2ab(binaryData)], {type: "application/vnd.ms-excel"});
-    downloadLink.download = filename;
-    downloadLink.href = window.URL.createObjectURL(blob);
-     console.log(downloadLink.href);
-    downloadLink.style.display = "none";
-    document.body.appendChild(downloadLink);
-    downloadLink.click(); 
-  });
-  function s2ab(s) {
-  var buf = new ArrayBuffer(s.length);
-  var view = new Uint8Array(buf);
-  for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-  return buf;
-}
-},
+      var filename = "data.xlsx";
+      var binaryData = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+      var downloadLink = document.createElement("a");
+      var blob = new Blob([s2ab(binaryData)], {type: "application/vnd.ms-excel"});
+      downloadLink.download = filename;
+      downloadLink.href = window.URL.createObjectURL(blob);
+       console.log(downloadLink.href);
+      downloadLink.style.display = "none";
+      document.body.appendChild(downloadLink);
+      downloadLink.click(); 
+    });
+    function s2ab(s) {
+    var buf = new ArrayBuffer(s.length);
+    var view = new Uint8Array(buf);
+    for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+    return buf;
+  }
+  },
+  
 
 // Utility function to convert string to ArrayBuffer
 
