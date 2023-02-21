@@ -72,8 +72,8 @@ looker.plugins.visualizations.add({
         }
       
         // Download CSV file
-        var filename = "data.xlsx";
-        var csvFile = new Blob([csv.join("\n")], { type: "xlsx" });
+        var filename = "data.xls";
+        var csvFile = new Blob([csv.join("\n")], { type: "application/vnd.ms-excel" });
         var downloadLink = document.createElement("a");
       
         downloadLink.download = filename;
