@@ -60,93 +60,46 @@ looker.plugins.visualizations.add({
     };
     document.head.appendChild(XLSX);
   },
-  // addDownloadButtonListener: function () {
-  //   const downloadButton = this._container.querySelector('button');
-  //   downloadButton.addEventListener('click', (event) => {
-  //       var csv = [];
-  //       var rows = document.querySelectorAll("table tr");
-      
-  //       for (var i = 0; i < rows.length; i++) {
-  //         var row = [];
-  //         var cols = rows[i].querySelectorAll("td, th");
-      
-  //         for (var j = 0; j < cols.length; j++) {
-  //           row.push(cols[j].innerText);
-  //         }
-      
-  //         csv.push(row.join(" "));
-  //         //csv.push(row);
-  //       }
-      
-  //       // Download CSV file
-  //       var filename = "data.xls";
-  //       var csvFile = new Blob([csv.join("\n")], { type: "application/vnd.ms-excel" });
-  //       var downloadLink = document.createElement("a");
-      
-  //       downloadLink.download = filename;
-  //       downloadLink.href = window.URL.createObjectURL(csvFile);
-  //       console.log(downloadLink.href);
-  //       downloadLink.style.display = "none";
-  //       document.body.appendChild(downloadLink);
-  //       downloadLink.click();      
-  //   });
-  // },
 
   addDownloadButtonListener: function () {
     const downloadButton = this._container.querySelector('button');
     downloadButton.addEventListener('click', (event) => {
-      // var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
       var table = document.querySelector("table");
-      // Convert the table to a worksheet
-      var ws = XLSX.utils.table_to_sheet(table);
-      // Create a new workbook and add the worksheet
       var wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-      // Set the cell styles and background colors
-      var range = XLSX.utils.decode_range(ws["!ref"]);
+      var ws = XLSX.utils.table_to_sheet(table);
+      var range = XLSX.utils.decode_range(ws['!ref']);
+      
+      // Loop through each row and cell in the worksheet and set the cell styles
       for (var row = range.s.r; row <= range.e.r; row++) {
         for (var col = range.s.c; col <= range.e.c; col++) {
-          var cell = ws[XLSX.utils.encode_cell({r: row, c: col})];
-          if (cell != null && cell.s != null) {
-            var color = cell.style.backgroundColor;
-            if (color) {
-              cell.s.fill = {fgColor: {rgb: rgbToHex(color)}, patternType: "solid"};
-              delete cell.style;
-            }
+          var cellAddress = XLSX.utils.encode_cell({r: row, c: col});
+          var cellRef = ws[cellAddress];
+          if (cellRef != null && cellRef.s != null) {
+            cellRef.s = Object.assign(cellRef.s, {bgColor: {indexed: cellRef.s.fgColor.rgb}});
           }
         }
       }
+  
+      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
       var filename = "data.xlsx";
       var binaryData = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
       var downloadLink = document.createElement("a");
       var blob = new Blob([s2ab(binaryData)], {type: "application/vnd.ms-excel"});
       downloadLink.download = filename;
       downloadLink.href = window.URL.createObjectURL(blob);
-       console.log(downloadLink.href);
+      console.log(downloadLink.href);
       downloadLink.style.display = "none";
       document.body.appendChild(downloadLink);
-      downloadLink.click(); 
+      downloadLink.click();
     });
+  
     function s2ab(s) {
-    var buf = new ArrayBuffer(s.length);
-    var view = new Uint8Array(buf);
-    for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-    return buf;
-  }
-  
-  function rgbToHex(color) {
-    if (!color) return null;
-    var r = color.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    if (r) {
-      return "#" + ("0" + parseInt(r[1], 10).toString(16)).slice(-2) +
-                   ("0" + parseInt(r[2], 10).toString(16)).slice(-2) +
-                   ("0" + parseInt(r[3], 10).toString(16)).slice(-2);
+      var buf = new ArrayBuffer(s.length);
+      var view = new Uint8Array(buf);
+      for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+      return buf;
     }
-    return null;
-  }
-},
-  
-  
+  }, 
 
 // Utility function to convert string to ArrayBuffer
 
