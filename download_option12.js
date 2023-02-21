@@ -97,20 +97,26 @@ looker.plugins.visualizations.add({
   downloadButton.addEventListener('click', (event) => {
     var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
     var filename = "data.xlsx";
-    //XLSX.writeFile(wb, filename, { bookType: "xlsx", type: 'array' });
-    //console.log(window.URL.createObjectURL(new Blob([wb], { type: "application/vnd.ms-excel" })));
-        var downloadLink = document.createElement("a");
-        var excelfile = new Blob([XLSX.write(wb, { bookType: 'xlsx', type: 'binary' })], { type: 'application/vnd.ms-excel' });
-        downloadLink.download = filename;
-        downloadLink.href = window.URL.createObjectURL(excelfile);
-        console.log(downloadLink.href);
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        downloadLink.click(); 
+    var binaryData = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+    var downloadLink = document.createElement("a");
+    var blob = new Blob([s2ab(binaryData)], {type: "application/octet-stream"});
+    downloadLink.download = filename;
+    downloadLink.href = window.URL.createObjectURL(blob);
+     console.log(downloadLink.href);
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click(); 
   });
+  function s2ab(s) {
+  var buf = new ArrayBuffer(s.length);
+  var view = new Uint8Array(buf);
+  for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+  return buf;
+}
 },
 
-  
+// Utility function to convert string to ArrayBuffer
+
   
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
