@@ -95,6 +95,7 @@ looker.plugins.visualizations.add({
   addDownloadButtonListener: function () {
     const downloadButton = this._container.querySelector('button');
     downloadButton.addEventListener('click', (event) => {
+      // var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
       var table = document.querySelector("table");
       // Convert the table to a worksheet
       var ws = XLSX.utils.table_to_sheet(table);
@@ -107,9 +108,11 @@ looker.plugins.visualizations.add({
         for (var col = range.s.c; col <= range.e.c; col++) {
           var cell = ws[XLSX.utils.encode_cell({r: row, c: col})];
           if (cell != null && cell.s != null) {
-            var bgColor = window.getComputedStyle(table.rows[row].cells[col]).backgroundColor;
-            cell.s.fill = {fgColor: {rgb: bgColor.substring(4, bgColor.length-1)}};
-            delete cell.style;
+            var color = cell.style.backgroundColor;
+            if (color) {
+              cell.s.fill = {fgColor: {rgb: rgbToHex(color)}, patternType: "solid"};
+              delete cell.style;
+            }
           }
         }
       }
@@ -130,7 +133,19 @@ looker.plugins.visualizations.add({
     for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
     return buf;
   }
-  },
+  
+  function rgbToHex(color) {
+    if (!color) return null;
+    var r = color.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    if (r) {
+      return "#" + ("0" + parseInt(r[1], 10).toString(16)).slice(-2) +
+                   ("0" + parseInt(r[2], 10).toString(16)).slice(-2) +
+                   ("0" + parseInt(r[3], 10).toString(16)).slice(-2);
+    }
+    return null;
+  }
+},
+  
   
 
 // Utility function to convert string to ArrayBuffer
