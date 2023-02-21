@@ -56,37 +56,37 @@ looker.plugins.visualizations.add({
     XLSX.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js";
 
   },
-  addDownloadButtonListener: function () {
-    const downloadButton = this._container.querySelector('button');
-    downloadButton.addEventListener('click', (event) => {
-        var csv = [];
-        var rows = document.querySelectorAll("table tr");
+  // addDownloadButtonListener: function () {
+  //   const downloadButton = this._container.querySelector('button');
+  //   downloadButton.addEventListener('click', (event) => {
+  //       var csv = [];
+  //       var rows = document.querySelectorAll("table tr");
       
-        for (var i = 0; i < rows.length; i++) {
-          var row = [];
-          var cols = rows[i].querySelectorAll("td, th");
+  //       for (var i = 0; i < rows.length; i++) {
+  //         var row = [];
+  //         var cols = rows[i].querySelectorAll("td, th");
       
-          for (var j = 0; j < cols.length; j++) {
-            row.push(cols[j].innerText);
-          }
+  //         for (var j = 0; j < cols.length; j++) {
+  //           row.push(cols[j].innerText);
+  //         }
       
-          csv.push(row.join(" "));
-          //csv.push(row);
-        }
+  //         csv.push(row.join(" "));
+  //         //csv.push(row);
+  //       }
       
-        // Download CSV file
-        var filename = "data.xls";
-        var csvFile = new Blob([csv.join("\n")], { type: "application/vnd.ms-excel" });
-        var downloadLink = document.createElement("a");
+  //       // Download CSV file
+  //       var filename = "data.xls";
+  //       var csvFile = new Blob([csv.join("\n")], { type: "application/vnd.ms-excel" });
+  //       var downloadLink = document.createElement("a");
       
-        downloadLink.download = filename;
-        downloadLink.href = window.URL.createObjectURL(csvFile);
-        console.log(downloadLink.href);
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        downloadLink.click();      
-    });
-  },
+  //       downloadLink.download = filename;
+  //       downloadLink.href = window.URL.createObjectURL(csvFile);
+  //       console.log(downloadLink.href);
+  //       downloadLink.style.display = "none";
+  //       document.body.appendChild(downloadLink);
+  //       downloadLink.click();      
+  //   });
+  // },
 
   // addDownloadButtonListener: function () {
   //   const downloadButton = this._container.querySelector('button');
@@ -107,6 +107,17 @@ looker.plugins.visualizations.add({
   //   }
   //   document.head.appendChild(XLSX);
   // },
+
+  addDownloadButtonListener: function () {
+  const downloadButton = this._container.querySelector('button');
+  downloadButton.addEventListener('click', (event) => {
+    var XLSX=document.getElementsByName(XLSX);
+    var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
+    var filename = "data.xlsx";
+    XLSX.writeFile(wb, filename);
+  });
+},
+
   
   
   // Render in response to the data or settings changing
