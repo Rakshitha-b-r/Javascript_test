@@ -55,6 +55,10 @@ looker.plugins.visualizations.add({
     XLSX.type = "text/javascript";
     XLSX.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js";
 
+    XLSX.onload = () => {
+      this.addDownloadButtonListener();
+    };
+    document.head.appendChild(XLSX);
   },
   // addDownloadButtonListener: function () {
   //   const downloadButton = this._container.querySelector('button');
@@ -111,7 +115,6 @@ looker.plugins.visualizations.add({
   addDownloadButtonListener: function () {
   const downloadButton = this._container.querySelector('button');
   downloadButton.addEventListener('click', (event) => {
-    var XLSX=document.getElementsByName(XLSX);
     var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
     var filename = "data.xlsx";
     XLSX.writeFile(wb, filename);
