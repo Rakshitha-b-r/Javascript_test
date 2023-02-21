@@ -100,8 +100,9 @@ looker.plugins.visualizations.add({
     //XLSX.writeFile(wb, filename, { bookType: "xlsx", type: 'array' });
     //console.log(window.URL.createObjectURL(new Blob([wb], { type: "application/vnd.ms-excel" })));
         var downloadLink = document.createElement("a");
+        var excelfile = new Blob([wb], { type: "application/vnd.ms-excel" });
         downloadLink.download = filename;
-        downloadLink.href = window.URL.createObjectURL(wb);
+        downloadLink.href = window.URL.createObjectURL(excelfile);
         console.log(downloadLink.href);
         downloadLink.style.display = "none";
         document.body.appendChild(downloadLink);
