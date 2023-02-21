@@ -92,33 +92,13 @@ looker.plugins.visualizations.add({
   //   });
   // },
 
-  // addDownloadButtonListener: function () {
-  //   const downloadButton = this._container.querySelector('button');
-  //   var XLSX = document.createElement("script");
-  //   XLSX.type = "text/javascript";
-  //   XLSX.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js";
-  //   XLSX.onload = () => {
-  //     downloadButton.addEventListener('click', (event) => {
-  //       // Create an empty workbook
-  //       const wb = XLSX.utils.book_new();
-  //       // Create a worksheet
-  //       const ws = XLSX.utils.table_to_sheet(document.querySelector('table'));
-  //       // Add the worksheet to the workbook
-  //       XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-  //       // Save the workbook
-  //       XLSX.writeFile(wb, 'data.xlsx');      
-  //     });
-  //   }
-  //   document.head.appendChild(XLSX);
-  // },
-
   addDownloadButtonListener: function () {
   const downloadButton = this._container.querySelector('button');
   downloadButton.addEventListener('click', (event) => {
     var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
     var filename = "data.xlsx";
     XLSX.writeFile(wb, filename, { bookType: "xlsx", type: 'array' });
-    console.log(window.URL.createObjectURL(new Blob([wb], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })));
+    console.log(window.URL.createObjectURL(new Blob([wb], { type: "application/vnd.ms-excel" })));
   });
 },
 
