@@ -65,16 +65,12 @@ looker.plugins.visualizations.add({
     const downloadButton = this._container.querySelector('button');
     downloadButton.addEventListener('click', (event) => {
       var table = document.querySelector("table");
-      const worksheet = XLSX.utils.table_to_sheet(table);
-      const workbook = XLSX.utils.book_new();
+      var wb = XLSX.utils.book_new();
+      var ws = XLSX.utils.table_to_sheet(table);
   
-      XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
       var filename = "data.xlsx";
-      var binaryData = XLSX.writeFile(workbook, 'data.xlsx', {
-        bookType: 'xlsx',
-        cellStyles: true,
-        type: 'binary',
-      });
+      var binaryData = XLSX.write(wb, { bookType: 'xlsx',cellStyles: true, type: 'binary' });
       var downloadLink = document.createElement("a");
       var blob = new Blob([s2ab(binaryData)], {type: "application/vnd.ms-excel"});
       downloadLink.download = filename;
