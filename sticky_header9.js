@@ -183,18 +183,18 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
-    generatedHTML += `<th class='table-header' colspan='3'>Off balance sheet items<hr></th>`;
+    generatedHTML += `<th class='table-header' colspan='3'>Off balance sheet items<hr style="margin: 0;height: 0.6px;position: absolute;width: 6.97%;top: 121.5px;background-color: black;left: 722px;"></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Debt instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Equity instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>Derivatives</th>`;
-    generatedHTML += `<th class='table-header' colspan='3'>Off balance sheet items<hr></th>`;
+    generatedHTML += `<th class='table-header' colspan='3'>Off balance sheet items<hr style="margin: 0;height: 0.6px;position: absolute;width: 6.97%;top: 121.5px;background-color: black;left: 1184.5px;"></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'><b>Total</b></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'><i>Of which: Non-trading book</i></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>% of Tier 1 capital </th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>(-) Debt instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>(-) Equity instruments</th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>(-) Derivatives</th>`;
-    generatedHTML += `<th class='table-header' colspan='3'>(-) Off balance sheet items<hr></th>`;
+    generatedHTML += `<th class='table-header' colspan='3'>(-) Off balance sheet items<hr style="margin: 0;height: 0.6px;position: absolute;width: 7.24%;top: 121.5px;background-color: black;left: 2146.7px;"></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'><b>Total</b></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'><i>Of which: Non-trading book</i></th>`;
     generatedHTML += `<th class='table-header' rowspan='2'>% of Tier 1 capital</th>`;
@@ -217,7 +217,7 @@ looker.plugins.visualizations.add({
     // First row is the header
     generatedHTML += "<tr class='table-header'>";
     for (let i=0;i<header.length;i++) {
-      generatedHTML += `<th class='table-header'>${header[i]}</th>`;
+      generatedHTML += `<th class='table-header'>${header[i]}<hr></th>`;
     }
     generatedHTML += "</tr>";
     generatedHTML += "</thead>";
