@@ -155,21 +155,13 @@ looker.plugins.visualizations.add({
           position: absolute;
           width: 100%;
       }
-      tr:after {
-          bottom: 0;
-          content: '';
-          border-top: 1px solid black;
-          position: absolute;
-          width: 100%;
-          left: 0;
-      }
       </style>
     `;
 
     generatedHTML += "<table class='table'>";
     generatedHTML += "<thead class='thead'>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b></th>`;
+    generatedHTML += `<th class='table-header' colspan='3'><b>COUNTERPARTY</b><hr></th>`;
     generatedHTML += `<th class='table-header' colspan='15' style='height:25px;'><b>ORIGINAL EXPOSURES</b></th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Value adjustments and provisions</th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Exposures deducted from CET 1 or Additional Tier 1 items</th>`;
@@ -179,7 +171,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='3' colspan='3'><b>Exposure value after application of exemptions and CRM</b></th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<hr><th class='table-header' rowspan='4'>Code</th>`;
+    generatedHTML += `<th class='table-header' rowspan='4'>Code</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Group or individual</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'><b>Total original exposure</b></th>`;
