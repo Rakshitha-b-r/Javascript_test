@@ -51,6 +51,9 @@ looker.plugins.visualizations.add({
     `;
     // Create a container element to let us center the text.
     this._container = element.appendChild(document.createElement("div"));
+    var XLSX = document.createElement("script");
+    XLSX.type = "text/javascript";
+    XLSX.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js";
 
   },
   addDownloadButtonListener: function () {
@@ -67,8 +70,8 @@ looker.plugins.visualizations.add({
             row.push(cols[j].innerText);
           }
       
-          //csv.push(row.join(","));
-          csv.push(row);
+          csv.push(row.join(" "));
+          //csv.push(row);
         }
       
         // Download CSV file
