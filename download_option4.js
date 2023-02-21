@@ -116,8 +116,8 @@ looker.plugins.visualizations.add({
   const downloadButton = this._container.querySelector('button');
   downloadButton.addEventListener('click', (event) => {
     var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
-    var filename = "data.xls";
-    XLSX.writeFile(wb, filename);
+    var filename = "data.xlsx";
+    XLSX.writeFile(wb, filename, { bookType: "xlsx", type: 'array' });
     console.log(window.URL.createObjectURL(new Blob([wb], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })));
   });
 },
