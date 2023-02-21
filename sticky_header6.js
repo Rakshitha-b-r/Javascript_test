@@ -158,7 +158,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Value adjustments and provisions</th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Exposures deducted from CET 1 or Additional Tier 1 items</th>`;
     generatedHTML += `<th class='table-header' rowspan='3' colspan='3'><b>Exposure value before application of exemptions and CRM </b></th>`;
-    generatedHTML += `<th class='table-header' colspan='8'><b>ELIGIBLE CREDIT RISK MITIGATION (CRM) TECHNIQUES</b><hr></th>`;
+    generatedHTML += `<th class='table-header' colspan='8'><b>ELIGIBLE CREDIT RISK MITIGATION (CRM) TECHNIQUES</b><hr style="height: 1px;top: 27px;position: absolute;left: 1885px;width: 22.71%;margin: 0;background-color: black;"></th>`;
     generatedHTML += `<th class='table-header' rowspan='5'>(-) Amounts exempted</th>`;
     generatedHTML += `<th class='table-header' rowspan='3' colspan='3'><b>Exposure value after application of exemptions and CRM</b></th>`;
     generatedHTML += "</tr>";
@@ -167,7 +167,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='4'>Group or individual</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'><b>Total original exposure</b></th>`;
-    generatedHTML += `<th class='table-header' colspan='14' style="height:25px;"></th>`;
+    generatedHTML += `<th class='table-header' colspan='14' style="height:25px;"><hr></th>`;
     generatedHTML += `<th class='table-header' colspan='6' rowspan='2'>(-) Substitution effect of eligible credit risk mitigation techniques</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>(-) Funded credit protection other than substitution effect</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>(-) Real estate</th>`;
