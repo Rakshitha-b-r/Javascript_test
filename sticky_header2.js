@@ -52,6 +52,14 @@ looker.plugins.visualizations.add({
           top: 0px; 
           z-index: 3;
         }
+        th:before {
+          content: '';
+          top: 0;
+          left: 0;
+          border-top: 1px solid black;
+          position: absolute;
+          width: 100%;
+      }
         tr:before {
           top: 177.5px;
           content: '';
@@ -132,6 +140,14 @@ looker.plugins.visualizations.add({
           top: 0px; 
           z-index: 3;
         }
+        th:before {
+          content: '';
+          top: 0;
+          left: 0;
+          border-top: 1px solid black;
+          position: absolute;
+          width: 100%;
+      }
         tr:before {
           top: 177.5px;
           content: '';
@@ -163,7 +179,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='3' colspan='3'><b>Exposure value after application of exemptions and CRM</b></th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' rowspan='4'><hr>Code</th>`;
+    generatedHTML += `<hr><th class='table-header' rowspan='4'>Code</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Group or individual</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'><b>Total original exposure</b></th>`;
