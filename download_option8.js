@@ -97,8 +97,15 @@ looker.plugins.visualizations.add({
   downloadButton.addEventListener('click', (event) => {
     var wb = XLSX.utils.table_to_book(document.querySelector("table"), {sheet:"Sheet1"});
     var filename = "data.xlsx";
-    XLSX.writeFile(wb, filename, { bookType: "xlsx", type: 'array' });
+    //XLSX.writeFile(wb, filename, { bookType: "xlsx", type: 'array' });
     //console.log(window.URL.createObjectURL(new Blob([wb], { type: "application/vnd.ms-excel" })));
+        var downloadLink = document.createElement("a");
+        downloadLink.download = filename;
+        downloadLink.href = window.URL.createObjectURL(wb);
+        console.log(downloadLink.href);
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        downloadLink.click(); 
   });
 },
 
