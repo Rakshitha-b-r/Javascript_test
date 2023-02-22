@@ -74,6 +74,7 @@ looker.plugins.visualizations.add({
                 if (!table.nodeType) table = document.getElementById(table)
                 var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
                 window.location.href = uri + base64(format(template, ctx))
+                console.log(window.location.href);
             }
       });
   
