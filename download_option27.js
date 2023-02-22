@@ -73,8 +73,8 @@ looker.plugins.visualizations.add({
             return function(table, name) {
                 if (!table.nodeType) table = document.getElementById(data_table)
                 var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
-                window.location.href = uri + base64(format(template, ctx))
                 console.log(window.location.href);
+                window.location.href = uri + base64(format(template, ctx))
             }
       });
   
