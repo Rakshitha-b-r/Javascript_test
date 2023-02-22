@@ -70,10 +70,10 @@ looker.plugins.visualizations.add({
 
       XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
 
-      table.getHeaderRowRange().format.fill.color = "#C70039";
-      table.getDataBodyRange().format.fill.color = "#DAF7A6";
-      table.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
-      table.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
+      // table.getHeaderRowRange().format.fill.color = "#C70039";
+      // table.getDataBodyRange().format.fill.color = "#DAF7A6";
+      // table.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
+      // table.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
 
       var filename = "data.xlsx";
       var binaryData = XLSX.write(wb, { bookType: 'xlsx', cellStyles: true, type: 'binary' });
