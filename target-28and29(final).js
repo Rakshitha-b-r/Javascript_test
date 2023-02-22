@@ -200,13 +200,13 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='2'>% of Tier 1 capital</th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr>";
-    generatedHTML += `<th class='table-header' rowspan='1'>Loan commit-ments</th>`;
+    generatedHTML += `<th class='table-header' rowspan='1'>Loan commitments</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>Financial guarantees</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>Other commit-ments</th>`;
-    generatedHTML += `<th class='table-header' rowspan='1'>Loan commit-ments</th>`;
+    generatedHTML += `<th class='table-header' rowspan='1'>Loan commitments</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>Financial guarantees</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>Other commit-ments</th>`;
-    generatedHTML += `<th class='table-header' rowspan='1'>(-) Loan commit-ments</th>`;
+    generatedHTML += `<th class='table-header' rowspan='1'>(-) Loan commitments</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>(-) Financial guarantees</th>`;
     generatedHTML += `<th class='table-header' rowspan='1'>(-) Other commit-ments</th>`;
     generatedHTML += "</tr>";
