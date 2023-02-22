@@ -53,7 +53,7 @@ looker.plugins.visualizations.add({
       this._container = element.appendChild(document.createElement("div"));
       var XLSX = document.createElement("script");
       XLSX.type = "text/javascript";
-      XLSX.src = "https://code.jquery.com/jquery-3.6.1.min.jss";
+      XLSX.src = "https://code.jquery.com/jquery-3.6.1.min.js";
       XLSX.integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=";
       XLSX.crossOrigin="anonymous";
   
