@@ -86,7 +86,7 @@ looker.plugins.visualizations.add({
       wb.Sheets['test'] = ws_data; // set workseet data to the cell data
       var wbout = XLSX.write(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' }); //workbook output
       var blob = new Blob([s2ab(wbout)], { type: "application/vnd.ms-excel" });
-      saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), "Test Color.xlsx") // save workbook
+      //saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), "Test Color.xlsx") // save workbook
 
       // var wb = XLSX.utils.book_new();
       // var ws = XLSX.utils.table_to_sheet(table);
