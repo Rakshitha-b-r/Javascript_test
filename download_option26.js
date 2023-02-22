@@ -71,7 +71,7 @@ looker.plugins.visualizations.add({
             , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
             , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
             return function(table, name) {
-                if (!table.nodeType) table = document.getElementById(table)
+                if (!table.nodeType) table = document.getElementById(data_table)
                 var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
                 window.location.href = uri + base64(format(template, ctx))
                 console.log(window.location.href);
@@ -137,7 +137,7 @@ looker.plugins.visualizations.add({
         }
   </style>
   `;
-      generatedHTML += `<table class='table' id='excel-table' style="background-color: transparent; border:2px solid black; margin-top:15px;">`;
+      generatedHTML += `<table class='table' id='data_table' style="background-color: transparent; border:2px solid black; margin-top:15px;">`;
       generatedHTML += "<tr class='table-header'>";
       generatedHTML += `<th class='table-header' rowspan='2' colspan='2' > </th>`;
       generatedHTML += `<th class='table-header' rowspan='1' colspan='9' style='height: 40px;'><b>Applicable<br>limit</br></b></th>`;
