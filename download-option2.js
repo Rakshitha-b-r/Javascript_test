@@ -65,51 +65,29 @@ looker.plugins.visualizations.add({
     const downloadButton = this._container.querySelector('button');
     downloadButton.addEventListener('click', (event) => {
       var table = document.querySelector("table");
-      // create the worksheet data
-      var ws_data = {}
-      var range = { s: { c: 0, r: 0 }, e: { c: 10, r: 10 } }; // worksheet cell range 
-      ws_data['!ref'] = XLSX.utils.encode_range(range); // set cell the range
 
-      var cell = { // create cell
-        v: 'test', // value
-        s: { // style
-          fill: {
-            fgColor: { rgb: "FF6666" } // red
+      var wb = XLSX.utils.book_new();
+      var ws = XLSX.utils.table_to_sheet(table);
+
+      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+      // Loop through each row and cell in the worksheet and set the cell styles
+      var range = XLSX.utils.decode_range(ws["!ref"]);
+      for (var row = range.s.r; row <= range.e.r; row++) {
+        for (var col = range.s.c; col <= range.e.c; col++) {
+          var cell = ws[XLSX.utils.encode_cell({ r: row, c: col })];
+          if (cell != null && cell.s != null) {
+            var bgColor = window.getComputedStyle(table.rows[row].cells[col]).backgroundColor;
+            cell.s.fill = { fgColor: { rgb: bgColor.substring(4, bgColor.length - 1) } };
+            //delete cell.style;
           }
         }
       }
-      ws_data[XLSX.utils.encode_cell({ c: 1, r: 1 })] = cell; // add the cell to the sheet data
-
-      // create workbook and download
-      var wb = new Workbook();
-      wb.SheetNames.push('test'); // create new worksheet
-      wb.Sheets['test'] = ws_data; // set workseet data to the cell data
-      var wbout = XLSX.write(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' }); //workbook output
-      var blob = new Blob([s2ab(wbout)], { type: "application/vnd.ms-excel" });
-      //saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), "Test Color.xlsx") // save workbook
-
-      // var wb = XLSX.utils.book_new();
-      // var ws = XLSX.utils.table_to_sheet(table);
-
-      // XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-
-      // Loop through each row and cell in the worksheet and set the cell styles
-      // var range = XLSX.utils.decode_range(ws["!ref"]);
-      // for (var row = range.s.r; row <= range.e.r; row++) {
-      //   for (var col = range.s.c; col <= range.e.c; col++) {
-      //     var cell = ws[XLSX.utils.encode_cell({ r: row, c: col })];
-      //     if (cell != null && cell.s != null) {
-      //       var bgColor = window.getComputedStyle(table.rows[row].cells[col]).backgroundColor;
-      //       cell.s.fill = { fgColor: { rgb: bgColor.substring(4, bgColor.length - 1) } };
-      //       //delete cell.style;
-      //     }
-      //   }
-      // }
-      //var filename = "data.xlsx";
-      //var binaryData = XLSX.write(wb, { bookType: 'xlsx', cellStyles: true, type: 'binary' });
+      var filename = "data.xlsx";
+      var binaryData = XLSX.write(wb, { bookType: 'xlsx', cellStyles: true, type: 'binary' });
       var downloadLink = document.createElement("a");
-      //var blob = new Blob([s2ab(binaryData)], { type: "application/vnd.ms-excel" });
-      //downloadLink.download = filename;
+      var blob = new Blob([s2ab(binaryData)], { type: "application/vnd.ms-excel" });
+      downloadLink.download = filename;
       downloadLink.href = window.URL.createObjectURL(blob);
       console.log(downloadLink.href);
       downloadLink.style.display = "none";
@@ -122,12 +100,6 @@ looker.plugins.visualizations.add({
       var view = new Uint8Array(buf);
       for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
       return buf;
-    }
-    class Workbook {
-      constructor() {
-        this.SheetNames = [];
-        this.Sheets = {};
-      }
     }
   },
 
