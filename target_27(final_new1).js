@@ -69,6 +69,12 @@ looker.plugins.visualizations.add({
             border-top: 1px solid #4c535b;
             top: 102px;
          }
+         .div{
+            overflow-y: auto;
+            height: calc(100vh - 50px);
+            margin-bottom: 50px;
+            border-bottom: 0.5px solid black;
+        }
         </style>
       `;
   
@@ -150,6 +156,12 @@ looker.plugins.visualizations.add({
             width: 100%;
             border-top: 1px solid #4c535b;
             top: 102px;
+        }
+        .div{
+            overflow-y: auto;
+            height: calc(100vh - 50px);
+            margin-bottom: 50px;
+            border-bottom: 0.5px solid black;
         }
         </style>
       `;
