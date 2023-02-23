@@ -103,7 +103,7 @@ looker.plugins.visualizations.add({
             cell.setAttribute('style', style);
           }
         }
-        var ctx = {Worksheet: 'Worksheet', table: table.innerHTML}
+        var ctx = {Worksheet: '26', table: table.innerHTML}
         //window.location.href = uri + base64(format(template, ctx))
         const downloadUrl = uri + base64(format(template, ctx));
         console.log(downloadUrl); // Prints the download URL to the console
