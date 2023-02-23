@@ -90,9 +90,13 @@ looker.plugins.visualizations.add({
             var backgroundColor = window.getComputedStyle(cell).backgroundColor;
             var border = window.getComputedStyle(cell).border;
             var fontWeight = window.getComputedStyle(cell).fontWeight;
-            cell.setAttribute('style', 'background-color:' + backgroundColor);
+            var fontFamily = window.getComputedStyle(cell).fontFamily;
+            var fontSize = window.getComputedStyle(cell).fontSize;
             cell.setAttribute('style', 'border:' + border);
             cell.setAttribute('style', 'font-weight:' + fontWeight);
+            cell.setAttribute('style', 'font-family:' + fontFamily);
+            cell.setAttribute('style', 'font-family:' + fontSize);
+            cell.setAttribute('style', 'background-color:' + backgroundColor);
           }
         }
         var ctx = {Worksheet: 'Worksheet', table: table.innerHTML}
