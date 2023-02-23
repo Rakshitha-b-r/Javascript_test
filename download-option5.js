@@ -74,6 +74,7 @@ looker.plugins.visualizations.add({
             , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
         var table = document.querySelector('table');
         var ctx = {Worksheet: 'Worksheet', table: table.innerHTML}
+        console.log(window.location.href)
         window.location.href = uri + base64(format(template, ctx))
       });
     },
