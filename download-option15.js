@@ -96,7 +96,7 @@ looker.plugins.visualizations.add({
             cell.setAttribute('style', 'border:' + border);
             cell.setAttribute('style', 'font-weight:' + fontWeight);
             cell.setAttribute('style', 'font-family:' + fontFamily);
-            cell.setAttribute('style', 'font-family:' + fontSize);
+            cell.setAttribute('style', 'font-size:' + fontSize);
           }
         }
         var ctx = {Worksheet: 'Worksheet', table: table.innerHTML}
