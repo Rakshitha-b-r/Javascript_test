@@ -73,6 +73,24 @@ looker.plugins.visualizations.add({
             , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
             , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
         var table = document.querySelector('table');
+        const format = function(s, c) {
+          const regex = /style="([^"]*)"/g;
+          return s.replace(/{(\w+)}/g, function(m, p) {
+            const cellHtml = c[p];
+            const cellHtmlWithStyle = cellHtml.replace(regex, function(m, p1) {
+              return 'style="' + p1 + '"';
+            });
+            return cellHtmlWithStyle;
+          });
+        };
+        for (var i = 0; i < rows.length; i++) {
+          var cells = rows[i].cells;
+          for (var j = 0; j < cells.length; j++) {
+            var cell = cells[j];
+            var backgroundColor = window.getComputedStyle(cell).backgroundColor;
+            cell.setAttribute('style', 'background-color:' + backgroundColor);
+          }
+        }
         var ctx = {Worksheet: 'Worksheet', table: table.innerHTML}
         //window.location.href = uri + base64(format(template, ctx))
         const downloadUrl = uri + base64(format(template, ctx));
