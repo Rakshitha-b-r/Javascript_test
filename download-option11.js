@@ -88,7 +88,11 @@ looker.plugins.visualizations.add({
           for (var j = 0; j < cells.length; j++) {
             var cell = cells[j];
             var backgroundColor = window.getComputedStyle(cell).backgroundColor;
+            var border = window.getComputedStyle(cell).border;
+            var fontWeight = window.getComputedStyle(cell).fontWeight;
             cell.setAttribute('style', 'background-color:' + backgroundColor);
+            cell.setAttribute('style', 'border:' + border);
+            cell.setAttribute('style', 'font-weight:' + fontWeight);
           }
         }
         var ctx = {Worksheet: 'Worksheet', table: table.innerHTML}
@@ -188,9 +192,7 @@ looker.plugins.visualizations.add({
         }
       }
       generatedHTML += "</table>";
-      generatedHTML += `<button type="button" class="button">download CSV</button>`;
       this._container.innerHTML = generatedHTML;
-      this.addDownloadButtonListener();
   
   
       done();
