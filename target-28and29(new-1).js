@@ -60,18 +60,18 @@ looker.plugins.visualizations.add({
           position: absolute;
           width: 100%;
       }
-        tr:before {
-          top: 177.5px;
-          content: '';
-          border-top: 1px solid black;
-          position: absolute;
-          width: 100%;
+       th:after {
+        content:''; 
+        position:absolute; 
+        left: 0; 
+        bottom: 0; 
+        width:100%; 
+        border-bottom: 1px solid rgba(0,0,0,0.12);
       }
       .div{
-        overflow-y: overlay;
+        overflow-y: auto;
         height: calc(100vh - 100px);
         margin-bottom: 100px;
-        width: auto;
       }
       </style>
     `;
@@ -148,18 +148,18 @@ looker.plugins.visualizations.add({
           position: absolute;
           width: 100%;
       }
-        tr:before {
-          top: 177.5px;
-          content: '';
-          border-top: 1px solid black;
-          position: absolute;
-          width: 100%;
+        th:after {
+        content:''; 
+        position:absolute; 
+        left: 0; 
+        bottom: 0; 
+        width:100%; 
+        border-bottom: 1px solid rgba(0,0,0,0.12);
       }
       .div{
-        overflow-y: overlay;
+        overflow-y: auto;
         height: calc(100vh - 100px);
         margin-bottom: 100px;
-        width: auto;
       }
       </style>
     `;
@@ -177,7 +177,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<th class='table-header' rowspan='3' colspan='3'><b>Exposure value after application of exemptions and CRM</b><hr style="margin: 0;height: 0.6px;top: 83px;position: absolute;width: 8.4%;left: 3711.5px;background-color: black;"></th>`;
     generatedHTML += "</tr>";
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header' rowspan='4'>Code</th>`;
+    generatedHTML += `<th class='table-header' rowspan='4'>Code<hr style="margin: 0;height: 0.6px;position: absolute;width: 100%;left: 0;top: 177px;background-color: black;"></th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Group or individual</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'>Transactions where there is an exposure to underlying assets</th>`;
     generatedHTML += `<th class='table-header' rowspan='4'><b>Total original exposure</b></th>`;
