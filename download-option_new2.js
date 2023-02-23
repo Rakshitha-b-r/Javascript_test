@@ -48,6 +48,9 @@ looker.plugins.visualizations.add({
             margin: auto;
             width: 90px;
           }
+          .text-cell {
+            mso-number-format: "\@";
+          }
         </style>
       `;
       // Create a container element to let us center the text.
@@ -168,6 +171,9 @@ looker.plugins.visualizations.add({
           border: 1px solid black;
           border-collapse: collapse;
         }
+        .text-cell {
+            mso-number-format: "\@";
+          }
   </style>
   `;
       generatedHTML += `<table class='table'>`;
@@ -177,7 +183,7 @@ looker.plugins.visualizations.add({
       generatedHTML += "</tr>";
   
       generatedHTML += "<tr class='table-header'>";
-      generatedHTML += `<th class='table-header' colspan='9' style='font-size: 10px;'> '010 </th>`;
+      generatedHTML += `<th class='table-header text-cell' colspan='9' style='font-size: 10px;'> 010 </th>`;
       generatedHTML += "</tr>";
   
       const header = ['Non institutions', 'Institutions', 'Institutions in %', 'Globally Systemic Important Institutions (G-SIIs)'];
