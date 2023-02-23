@@ -69,9 +69,8 @@ looker.plugins.visualizations.add({
       }
       .div{
         overflow-y: auto;
-        height: calc(100vh - 80px);
-        margin-bottom: 80px;
-        border-bottom: 0.5px solid black;
+        height: calc(100vh - 100px);
+        margin-bottom: 100px;
       }
       </style>
     `;
@@ -157,9 +156,8 @@ looker.plugins.visualizations.add({
       }
       .div{
         overflow-y: auto;
-        height: calc(100vh - 80px);
-        margin-bottom: 80px;
-        border-bottom: 0.5px solid black;
+        height: calc(100vh - 100px);
+        margin-bottom: 100px;
       }
       </style>
     `;
