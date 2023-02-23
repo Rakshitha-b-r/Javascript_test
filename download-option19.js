@@ -34,7 +34,7 @@ looker.plugins.visualizations.add({
             text-align: center;
             margin: auto;
             width: 90px;
-            background-clip: padding-box
+            background-clip: padding-box;
           }
           .table-cell {
             padding: 5px;
@@ -83,6 +83,7 @@ looker.plugins.visualizations.add({
               });
             };
         var table = document.querySelector('table');
+        table.style.border = '1px solid black';
         var rows = table.rows;
         for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].cells;
@@ -94,7 +95,7 @@ looker.plugins.visualizations.add({
             var fontFamily = window.getComputedStyle(cell).fontFamily;
             var fontSize = window.getComputedStyle(cell).fontSize;
             var style = 'background-color:' + backgroundColor + ';' +
-                'border:' + border + ';' +
+                'border: 1px solid black;' +
                 'font-weight:' + fontWeight + ';' +
                 'font-family:' + fontFamily + ';' +
                 'font-size:' + fontSize + ';';
@@ -149,7 +150,7 @@ looker.plugins.visualizations.add({
           text-align: center;
           margin: auto;
           width: 90px;
-          background-clip: padding-box
+          background-clip: padding-box;
         }
         .table-cell {
           padding: 5px;
