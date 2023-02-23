@@ -82,6 +82,7 @@ looker.plugins.visualizations.add({
               });
             };
         var table = document.querySelector('table');
+        var rows = table.rows;
         for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].cells;
           for (var j = 0; j < cells.length; j++) {
