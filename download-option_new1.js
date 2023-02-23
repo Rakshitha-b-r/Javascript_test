@@ -170,14 +170,14 @@ looker.plugins.visualizations.add({
         }
   </style>
   `;
-      generatedHTML += `<table class='table' id='data_table' style="background-color: transparent; border:2px solid black; margin-top:15px;">`;
+      generatedHTML += `<table class='table'>`;
       generatedHTML += "<tr class='table-header'>";
       generatedHTML += `<th class='table-header' rowspan='2' colspan='2' > </th>`;
       generatedHTML += `<th class='table-header' rowspan='1' colspan='9' style='height: 40px;'><b>Applicable<br>limit</br></b></th>`;
       generatedHTML += "</tr>";
   
       generatedHTML += "<tr class='table-header'>";
-      generatedHTML += `<th class='table-header' colspan='9' style='font-size: 10px;'> 010 </th>`;
+      generatedHTML += `<th class='table-header' colspan='9' style='font-size: 10px;'> '010 </th>`;
       generatedHTML += "</tr>";
   
       const header = ['Non institutions', 'Institutions', 'Institutions in %', 'Globally Systemic Important Institutions (G-SIIs)'];
