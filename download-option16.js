@@ -92,11 +92,13 @@ looker.plugins.visualizations.add({
             var fontWeight = window.getComputedStyle(cell).fontWeight;
             var fontFamily = window.getComputedStyle(cell).fontFamily;
             var fontSize = window.getComputedStyle(cell).fontSize;
-            cell.setAttribute('style', 'background-color:' + backgroundColor);
-            cell.setAttribute('style', 'border:' + border);
-            cell.setAttribute('style', 'font-weight:' + fontWeight);
-            cell.setAttribute('style', 'font-family:' + fontFamily);
-            cell.setAttribute('style', 'font-size:' + fontSize);
+            var style = 'background-color:' + backgroundColor + ';' +
+                'border:' + border + ';' +
+                'font-weight:' + fontWeight + ';' +
+                'font-family:' + fontFamily + ';' +
+                'font-size:' + fontSize + ';';
+
+            cell.setAttribute('style', style);
           }
         }
         var ctx = {Worksheet: 'Worksheet', table: table.innerHTML}
