@@ -20,13 +20,11 @@ looker.plugins.visualizations.add({
           .table {
             font-size: ${config.font_size}px;
             border: 1px solid black;
-            border-collapse: collapse;
             margin:auto;
           }
           .table-header {
             background-color: #eee;
             border: 1px solid black;
-            border-collapse: collapse;
             font-weight: normal;
             font-family: 'Verdana';
             font-size: 11px;
@@ -39,7 +37,6 @@ looker.plugins.visualizations.add({
             padding: 5px;
             border-bottom: 1px solid #ccc;
             border: 1px solid black;
-            border-collapse: collapse;
             font-family: 'Verdana';
             font-size: 11px;
             align-items: center;
@@ -134,13 +131,11 @@ looker.plugins.visualizations.add({
         .table {
           font-size: ${config.font_size}px;
           border: 1px solid black;
-          border-collapse: collapse;
           margin:auto;
         }
         .table-header {
           background-color: #eee;
           border: 1px solid black;
-          border-collapse: collapse;
           font-weight: normal;
           font-family: 'Verdana';
           font-size: 11px;
@@ -153,7 +148,6 @@ looker.plugins.visualizations.add({
           padding: 5px;
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
-          border-collapse: collapse;
           font-family: 'Verdana';
           font-size: 11px;
           align-items: center;
@@ -163,7 +157,6 @@ looker.plugins.visualizations.add({
         }
         .table-row {
           border: 1px solid black;
-          border-collapse: collapse;
         }
   </style>
   `;
