@@ -67,11 +67,19 @@ looker.plugins.visualizations.add({
           position: absolute;
           width: 100%;
       }
+      .div{
+        overflow-y: auto;
+        height: calc(100vh - 80px);
+        margin-bottom: 80px;
+        border-bottom: 0.5px solid black;
+      }
       </style>
     `;
 
     // Create a container element to let us center the text.
-    this._container = element.appendChild(document.createElement("div"));
+    const div = document.createElement("div");
+    div.classList.add('div');
+    this._container = element.appendChild(div);
 
   },
 
@@ -146,6 +154,12 @@ looker.plugins.visualizations.add({
           border-top: 1px solid black;
           position: absolute;
           width: 100%;
+      }
+      .div{
+        overflow-y: auto;
+        height: calc(100vh - 80px);
+        margin-bottom: 80px;
+        border-bottom: 0.5px solid black;
       }
       </style>
     `;
