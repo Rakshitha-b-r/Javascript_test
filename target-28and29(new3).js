@@ -71,6 +71,7 @@ looker.plugins.visualizations.add({
         overflow-y: overlay;
         height: calc(100vh - 100px);
         margin-bottom: 100px;
+        width: 1127px;
       }
       </style>
     `;
@@ -158,6 +159,7 @@ looker.plugins.visualizations.add({
         overflow-y: overlay;
         height: calc(100vh - 100px);
         margin-bottom: 100px;
+        width: 1127px;
       }
       </style>
     `;
