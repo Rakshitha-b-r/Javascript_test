@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
       //   cell.style.fontSize='20px !important';
       // });
       table.style.border = '1px solid black';
-      table.style.fontSize = '20px';
+      table.style.fontSize = '11px';
       var rows = table.rows;
       for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].cells;
@@ -107,6 +107,8 @@ looker.plugins.visualizations.add({
         }
       }
       var ctx = { Worksheet: '26', table: table.innerHTML }
+      var tagName = ctx.getElementsByTagName('sz');
+      console.log("font-size :"+tagName);
       //window.location.href = uri + base64(format(template, ctx))
       const downloadUrl = uri + base64(format(template, ctx));
       console.log(downloadUrl); // Prints the download URL to the console
