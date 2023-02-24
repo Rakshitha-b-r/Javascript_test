@@ -104,12 +104,13 @@ looker.plugins.visualizations.add({
       XLSX.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
       document.head.appendChild(XLSX);
       var ctx = { Worksheet: '26', table: table.innerHTML }
-      //var sheet = XLSX.xl['styles.xml'];
-      //console.log("sheet :"+sheet);
-      //var tagName = sheet.getElementsByTagName('sz');
-      //console.log("font-size :"+tagName);
+      var xl = format(template, ctx);
+      var sheet = XLSX.xl['styles.xml'];
+      console.log("sheet :"+sheet);
+      var tagName = sheet.getElementsByTagName('sz');
+      console.log("font-size :"+tagName);
       //window.location.href = uri + base64(format(template, ctx))
-      const downloadUrl = uri + base64(format(template, ctx));
+      const downloadUrl = uri + base64(xl);
       console.log(downloadUrl); // Prints the download URL to the console
       window.location.href = downloadUrl;
     });
