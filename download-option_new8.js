@@ -49,7 +49,7 @@ looker.plugins.visualizations.add({
             width: 90px;
           }
           .text-cell {
-            mso-number-format: "\@";
+            mso-number-format: \@;
           }
         </style>
       `;
@@ -170,7 +170,7 @@ looker.plugins.visualizations.add({
           border-collapse: collapse;
         }
         .text-cell {
-            mso-number-format: "\@";
+            mso-number-format: \@;
           }
   </style>
   `;
@@ -190,7 +190,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
 
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header text-cell' colspan='${k}' style='font-size: 10px;'> 0&nbsp;10 </th>`;
+    generatedHTML += `<th class='table-header text-cell' colspan='${k}' style='font-size: 10px;'> 010 </th>`;
     generatedHTML += "</tr>";
 
     const header = ['Non institutions', 'Institutions', 'Institutions in %', 'Globally Systemic Important Institutions (G-SIIs)'];
