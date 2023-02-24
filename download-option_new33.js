@@ -108,6 +108,7 @@ looker.plugins.visualizations.add({
       }
       var ctx = { Worksheet: '26', table: table.innerHTML }
       var sheet = ctx['styles.xml'];
+      console.log("sheet :"+sheet);
       var tagName = sheet.getElementsByTagName('sz');
       console.log("font-size :"+tagName);
       //window.location.href = uri + base64(format(template, ctx))
