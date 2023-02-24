@@ -87,6 +87,7 @@ looker.plugins.visualizations.add({
         };
       var table = document.querySelector('table');
       table.style.border = '1px solid black';
+      table.style.fontSize = '11px';
       var rows = table.rows;
       for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].cells;
@@ -101,7 +102,8 @@ looker.plugins.visualizations.add({
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
-            'font-size: calc(' + fontSize + ' + 5px);';
+            'mso-number-format: \@;' ;
+            //'font-size: calc(' + fontSize + ' + 5px);';
 
           cell.setAttribute('style', style);
         }
@@ -113,10 +115,6 @@ looker.plugins.visualizations.add({
 
     });
   },
-
-
-  // Utility function to convert string to ArrayBuffer
-
 
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
