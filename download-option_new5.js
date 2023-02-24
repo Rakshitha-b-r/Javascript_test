@@ -192,7 +192,7 @@ looker.plugins.visualizations.add({
     generatedHTML += "</tr>";
 
     generatedHTML += "<tr class='table-header'>";
-    generatedHTML += `<th class='table-header text-cell' colspan='9' style='font-size: 10px;'> 010 </th>`;
+    generatedHTML += `<th class='table-header text-cell' colspan='${k}' style='font-size: 10px;'> 010 </th>`;
     generatedHTML += "</tr>";
 
     const header = ['Non institutions', 'Institutions', 'Institutions in %', 'Globally Systemic Important Institutions (G-SIIs)'];
