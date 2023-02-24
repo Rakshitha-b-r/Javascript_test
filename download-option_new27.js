@@ -100,8 +100,8 @@ looker.plugins.visualizations.add({
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             //'font-family:' + fontFamily + ';' +
-            'mso-number-format: "\ \@";' +
-            'font-size: 20px !important;';
+            'mso-number-format: "\ \@";' ;
+            //'font-size: 20px !important;';
           cell.setAttribute('style', style);
           //console.log(j + " : " +cell.style.fontSize);
         }
