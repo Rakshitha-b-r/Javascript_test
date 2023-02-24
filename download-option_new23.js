@@ -95,6 +95,7 @@ looker.plugins.visualizations.add({
           var fontWeight = window.getComputedStyle(cell).fontWeight;
           var fontFamily = window.getComputedStyle(cell).fontFamily;
           var fontSize = window.getComputedStyle(cell).fontSize;
+          console.log(j + " : " +fontSize);
           var style = 'background-color:' + backgroundColor + ';' +
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
