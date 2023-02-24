@@ -188,7 +188,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<table class='table'>`;
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' rowspan='2' colspan='2' > </th>`;
-    generatedHTML += `<th class='table-header' rowspan='1' colspan='9' style='height: 40px;'><b>Applicable<br>limit</br></b></th>`;
+    generatedHTML += `<th class='table-header' rowspan='1' colspan='${i}' style='height: 40px;'><b>Applicable<br>limit</br></b></th>`;
     generatedHTML += "</tr>";
 
     generatedHTML += "<tr class='table-header'>";
