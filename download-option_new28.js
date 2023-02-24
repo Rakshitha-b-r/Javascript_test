@@ -80,12 +80,12 @@ looker.plugins.visualizations.add({
           });
         };
       var table = document.querySelector('table');
-      var table_cell = table.querySelectorAll('td');
-      table_cell.forEach(function(cell){
-        cell.style.fontSize='20px !important';
-      });
+      // var table_cell = table.querySelectorAll('td');
+      // table_cell.forEach(function(cell){
+      //   cell.style.fontSize='20px !important';
+      // });
       table.style.border = '1px solid black';
-      table.style.fontSize = '11px !important';
+      table.style.fontSize = '20px !important';
       var rows = table.rows;
       for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].cells;
