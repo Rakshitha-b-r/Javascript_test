@@ -102,7 +102,7 @@ looker.plugins.visualizations.add({
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
-            'mso-number-format: "\'\ \'\@";';
+            'mso-number-format: "\ \@";';
             //'font-size: calc(' + fontSize + ' + 5px);';
 
           cell.setAttribute('style', style);
