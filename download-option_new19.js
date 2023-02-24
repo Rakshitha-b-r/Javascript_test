@@ -81,7 +81,7 @@ looker.plugins.visualizations.add({
         };
       var table = document.querySelector('table');
       table.style.border = '1px solid black';
-      //table.style.fontSize = '11px';
+      table.style.fontSize = '11px !important';
       var rows = table.rows;
       for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].cells;
