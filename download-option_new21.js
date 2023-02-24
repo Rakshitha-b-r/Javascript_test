@@ -80,6 +80,8 @@ looker.plugins.visualizations.add({
           });
         };
       var table = document.querySelector('table');
+      var table_cell = table.querySelector('td');
+      table_cell.style.fontSize='11px !important';
       table.style.border = '1px solid black';
       table.style.fontSize = '11px !important';
       var rows = table.rows;
