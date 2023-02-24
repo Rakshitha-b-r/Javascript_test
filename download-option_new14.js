@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
     this._container = element.appendChild(document.createElement("div"));
     const meta = document.createElement('meta');
     meta.httpEquiv = 'Content-Security-Policy';
-    meta.content = 'sandbox allow-downloads';
+    meta.content = 'sandbox allow-downloads;';
     document.head.appendChild(meta);
   },
 
@@ -96,8 +96,8 @@ looker.plugins.visualizations.add({
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
-            'mso-number-format: "\ \@";' +
-            'font-size: 11px;';
+            'mso-number-format: "\ \@";' ;
+            //'font-size: 11px;';
           //'font-size: calc(' + fontSize + ' + 5px);';
 
           cell.setAttribute('style', style);
