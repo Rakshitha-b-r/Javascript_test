@@ -41,6 +41,7 @@ looker.plugins.visualizations.add({
             border-bottom: 1px solid #ccc;
             border: 1px solid black;
             border-collapse: collapse;
+            font-weight: normal;
             font-family: 'Verdana';
             font-size: 11px;
             align-items: center;
@@ -80,10 +81,6 @@ looker.plugins.visualizations.add({
           });
         };
       var table = document.querySelector('table');
-      // var table_cell = table.querySelectorAll('td');
-      // table_cell.forEach(function(cell){
-      //   cell.style.fontSize='20px !important';
-      // });
       table.style.border = '1px solid black';
       table.style.fontSize = '11px';
       var rows = table.rows;
@@ -95,25 +92,22 @@ looker.plugins.visualizations.add({
           var fontWeight = window.getComputedStyle(cell).fontWeight;
           var fontFamily = window.getComputedStyle(cell).fontFamily;
           var fontSize = window.getComputedStyle(cell).fontSize;
-          console.log(j + " : " +fontSize);
           var style = 'background-color:' + backgroundColor + ';' +
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
             'mso-number-format: "\ \@";' ;
-            //'font-size: 20px !important;';
           cell.setAttribute('style', style);
-          //console.log(j + " : " +cell.style.fontSize);
         }
       }
       const XLSX = document.createElement('script');
       XLSX.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
       document.head.appendChild(XLSX);
       var ctx = { Worksheet: '26', table: table.innerHTML }
-      var sheet = XLSX.xl['styles.xml'];
-      console.log("sheet :"+sheet);
-      var tagName = sheet.getElementsByTagName('sz');
-      console.log("font-size :"+tagName);
+      //var sheet = XLSX.xl['styles.xml'];
+      //console.log("sheet :"+sheet);
+      //var tagName = sheet.getElementsByTagName('sz');
+      //console.log("font-size :"+tagName);
       //window.location.href = uri + base64(format(template, ctx))
       const downloadUrl = uri + base64(format(template, ctx));
       console.log(downloadUrl); // Prints the download URL to the console
@@ -163,6 +157,7 @@ looker.plugins.visualizations.add({
           border-bottom: 1px solid #ccc;
           border: 1px solid black;
           border-collapse: collapse;
+          font-weight: normal;
           font-family: 'Verdana';
           font-size: 11px;
           align-items: center;
