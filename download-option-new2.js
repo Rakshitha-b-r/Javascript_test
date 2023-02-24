@@ -110,7 +110,7 @@ looker.plugins.visualizations.add({
       XLSX.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
       document.head.appendChild(XLSX);
       var ctx = { Worksheet: '26', table: table.innerHTML }
-      var sheet = XLSX.ctx['styles.xml'];
+      var sheet = XLSX.xl['styles.xml'];
       console.log("sheet :"+sheet);
       var tagName = sheet.getElementsByTagName('sz');
       console.log("font-size :"+tagName);
