@@ -99,7 +99,7 @@ looker.plugins.visualizations.add({
           var style = 'background-color:' + backgroundColor + ';' +
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
-            //'font-family:' + fontFamily + ';' +
+            'font-family:' + fontFamily + ';' +
             'mso-number-format: "\ \@";' ;
             //'font-size: 20px !important;';
           cell.setAttribute('style', style);
