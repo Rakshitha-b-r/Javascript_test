@@ -60,8 +60,12 @@ looker.plugins.visualizations.add({
     meta.content = 'sandbox allow-downloads';
     document.head.appendChild(meta);
     const XLSX = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
+    XLSX.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
     document.head.appendChild(XLSX);
+    XLSX.addEventListener('load', function() {
+      // XLSX is now globally available and can be used in other functions
+      console.log(XLSX);
+    });
   },
 
   addDownloadButtonListener: function () {
