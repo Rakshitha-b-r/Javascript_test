@@ -59,6 +59,9 @@ looker.plugins.visualizations.add({
     meta.httpEquiv = 'Content-Security-Policy';
     meta.content = 'sandbox allow-downloads';
     document.head.appendChild(meta);
+    const XLSX = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
+    document.head.appendChild(XLSX);
   },
 
   addDownloadButtonListener: function () {
@@ -107,7 +110,7 @@ looker.plugins.visualizations.add({
         }
       }
       var ctx = { Worksheet: '26', table: table.innerHTML }
-      var sheet = ctx['styles.xml'];
+      var sheet = XLSX.ctx['styles.xml'];
       console.log("sheet :"+sheet);
       var tagName = sheet.getElementsByTagName('sz');
       console.log("font-size :"+tagName);
