@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
     this._container = element.appendChild(document.createElement("div"));
     const meta = document.createElement('meta');
     meta.httpEquiv = 'Content-Security-Policy';
-    meta.content = 'sandbox allow-downloads; default-src \'self\'; style-src \'unsafe-inline\'';
+    meta.content = 'sandbox allow-downloads';
     document.head.appendChild(meta);
   },
 
@@ -81,14 +81,13 @@ looker.plugins.visualizations.add({
         };
       var table = document.querySelector('table');
       table.style.border = '1px solid black';
-      table.style.fontSize = '11px';
+      //table.style.fontSize = '11px';
       var rows = table.rows;
       for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].cells;
         for (var j = 0; j < cells.length; j++) {
           var cell = cells[j];
           var backgroundColor = window.getComputedStyle(cell).backgroundColor;
-          var border = window.getComputedStyle(cell).border;
           var fontWeight = window.getComputedStyle(cell).fontWeight;
           var fontFamily = window.getComputedStyle(cell).fontFamily;
           var fontSize = window.getComputedStyle(cell).fontSize;
@@ -96,8 +95,8 @@ looker.plugins.visualizations.add({
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
-            'mso-number-format: "\ \@";';
-          //'font-size: 11px;';
+            'mso-number-format: "\ \@";' +
+            'font-size: 11;';
           //'font-size: calc(' + fontSize + ' + 5px);';
 
           cell.setAttribute('style', style);
