@@ -82,7 +82,7 @@ looker.plugins.visualizations.add({
       var table = document.querySelector('table');
       var table_cell = table.querySelectorAll('td');
       table_cell.forEach(function(cell){
-        cell.style.fontSize='11px !important';
+        cell.style.fontSize='20px !important';
       });
       table.style.border = '1px solid black';
       table.style.fontSize = '11px !important';
@@ -99,11 +99,11 @@ looker.plugins.visualizations.add({
           var style = 'background-color:' + backgroundColor + ';' +
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
-            'font-family:' + fontFamily + ';' +
+            //'font-family:' + fontFamily + ';' +
             'mso-number-format: "\ \@";' +
-            'font-size: 11pt !important;';
+            'font-size: 20px !important;';
           cell.setAttribute('style', style);
-          console.log(j + " : " +cell.style.fontSize);
+          //console.log(j + " : " +cell.style.fontSize);
         }
       }
       var ctx = { Worksheet: '26', table: table.innerHTML }
