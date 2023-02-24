@@ -55,16 +55,10 @@ looker.plugins.visualizations.add({
       `;
     // Create a container element to let us center the text.
     this._container = element.appendChild(document.createElement("div"));
-    var XLSX = document.createElement("script");
-    XLSX.type = "text/javascript";
-    XLSX.src = "https://code.jquery.com/jquery-3.6.1.min.js";
-    XLSX.integrity = "sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=";
-    XLSX.crossOrigin = "anonymous";
-
-    XLSX.onload = () => {
-      this.addDownloadButtonListener();
-    };
-    document.head.appendChild(XLSX);
+    const meta = document.createElement('meta');
+    meta.httpEquiv = 'Content-Security-Policy';
+    meta.content = 'sandbox allow-downloads';
+    document.head.appendChild(meta);
   },
 
   addDownloadButtonListener: function () {
@@ -102,8 +96,9 @@ looker.plugins.visualizations.add({
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
-            'mso-number-format: "\ \@";';
-            //'font-size: calc(' + fontSize + ' + 5px);';
+            'mso-number-format: "\ \@";' +
+            'font-size: 11px;';
+          //'font-size: calc(' + fontSize + ' + 5px);';
 
           cell.setAttribute('style', style);
         }
@@ -112,7 +107,7 @@ looker.plugins.visualizations.add({
       //window.location.href = uri + base64(format(template, ctx))
       const downloadUrl = uri + base64(format(template, ctx));
       console.log(downloadUrl); // Prints the download URL to the console
-
+      window.location.href = downloadUrl;
     });
   },
 
