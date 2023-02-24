@@ -100,11 +100,10 @@ looker.plugins.visualizations.add({
             'border: 1px solid black;' +
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
-            'mso-number-format: "\ \@";';
-            //'font-size: 11px !important;';
-          //'font-size: calc(' + fontSize + ' + 5px);';
-
+            'mso-number-format: "\ \@";' +
+            'font-size: 11px !important;';
           cell.setAttribute('style', style);
+          console.log(j + " : " +cell.style.fontSize);
         }
       }
       var ctx = { Worksheet: '26', table: table.innerHTML }
