@@ -59,13 +59,6 @@ looker.plugins.visualizations.add({
     meta.httpEquiv = 'Content-Security-Policy';
     meta.content = 'sandbox allow-downloads';
     document.head.appendChild(meta);
-    const XLSX = document.createElement('script');
-    XLSX.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
-    document.head.appendChild(XLSX);
-    XLSX.addEventListener('load', function() {
-      // XLSX is now globally available and can be used in other functions
-      console.log(XLSX);
-    });
   },
 
   addDownloadButtonListener: function () {
@@ -113,6 +106,9 @@ looker.plugins.visualizations.add({
           //console.log(j + " : " +cell.style.fontSize);
         }
       }
+      const XLSX = document.createElement('script');
+      XLSX.src = 'https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js';
+      document.head.appendChild(XLSX);
       var ctx = { Worksheet: '26', table: table.innerHTML }
       var sheet = XLSX.ctx['styles.xml'];
       console.log("sheet :"+sheet);
