@@ -176,11 +176,11 @@ looker.plugins.visualizations.add({
           }
   </style>
   `;
-    var i = 0;
+    var k = 0;
     for (column_type of ["dimension_like", "measure_like", "table_calculations"]) {
       for (field of queryResponse.fields[column_type]) {
         for (row of data) {
-          i++;
+          k++;
         }
         break
       }
@@ -188,7 +188,7 @@ looker.plugins.visualizations.add({
     generatedHTML += `<table class='table'>`;
     generatedHTML += "<tr class='table-header'>";
     generatedHTML += `<th class='table-header' rowspan='2' colspan='2' > </th>`;
-    generatedHTML += `<th class='table-header' rowspan='1' colspan='${i}' style='height: 40px;'><b>Applicable<br>limit</br></b></th>`;
+    generatedHTML += `<th class='table-header' rowspan='1' colspan='${k}' style='height: 40px;'><b>Applicable<br>limit</br></b></th>`;
     generatedHTML += "</tr>";
 
     generatedHTML += "<tr class='table-header'>";
