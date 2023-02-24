@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
     this._container = element.appendChild(document.createElement("div"));
     const meta = document.createElement('meta');
     meta.httpEquiv = 'Content-Security-Policy';
-    meta.content = 'sandbox allow-downloads;';
+    meta.content = 'sandbox allow-downloads; default-src \'self\'';
     document.head.appendChild(meta);
   },
 
