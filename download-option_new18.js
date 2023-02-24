@@ -96,7 +96,7 @@ looker.plugins.visualizations.add({
             'font-weight:' + fontWeight + ';' +
             'font-family:' + fontFamily + ';' +
             'mso-number-format: "\ \@";' +
-            'font-size: 11;';
+            'font-size: 11px !important;';
           //'font-size: calc(' + fontSize + ' + 5px);';
 
           cell.setAttribute('style', style);
